@@ -52,7 +52,6 @@ C:\Users\Daniel Coelho\Desktop\ProjFinal\cSharp\ProjetoFinal\ProjetoFinal\bin\ro
 C:\Users\Daniel Coelho\Desktop\ProjFinal\cSharp\ProjetoFinal\ProjetoFinal\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\Daniel Coelho\Desktop\ProjFinal\cSharp\ProjetoFinal\ProjetoFinal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\Daniel Coelho\Desktop\ProjFinal\cSharp\ProjetoFinal\ProjetoFinal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Daniel Coelho\Desktop\ProjFinal\cSharp\ProjetoFinal\ProjetoFinal\obj\Debug\ProjetoFinal.csprojAssemblyReference.cache
 C:\Users\Daniel Coelho\Desktop\ProjFinal\cSharp\ProjetoFinal\ProjetoFinal\obj\Debug\ProjetoFinal.csproj.CoreCompileInputs.cache
 C:\Users\Daniel Coelho\Desktop\ProjFinal\cSharp\ProjetoFinal\ProjetoFinal\obj\Debug\ProjetoFinal.csproj.CopyComplete
 C:\Users\Daniel Coelho\Desktop\ProjFinal\cSharp\ProjetoFinal\ProjetoFinal\obj\Debug\ProjetoFinal.dll
@@ -116,3 +115,4 @@ C:\Users\utilizador\Desktop\CURSO\Trabalho Final\Projeto Final\ProjetoFinal\Proj
 C:\Users\utilizador\Desktop\CURSO\Trabalho Final\Projeto Final\ProjetoFinal\ProjetoFinal\obj\Debug\ProjetoFinal.csproj.CopyComplete
 C:\Users\utilizador\Desktop\CURSO\Trabalho Final\Projeto Final\ProjetoFinal\ProjetoFinal\obj\Debug\ProjetoFinal.dll
 C:\Users\utilizador\Desktop\CURSO\Trabalho Final\Projeto Final\ProjetoFinal\ProjetoFinal\obj\Debug\ProjetoFinal.pdb
+C:\Users\Daniel Coelho\Desktop\ProjFinal\cSharp\ProjetoFinal\ProjetoFinal\obj\Debug\ProjetoFinal.csprojAssemblyReference.cache
