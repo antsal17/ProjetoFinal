@@ -32,19 +32,20 @@
                                 <div method="POST" class="register-form" id="login-form">
                                     <div class="form-group">
                                         <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                        <input type="text" name="your_name" id="your_name" placeholder="Your Name" runat="server"/>
+                                        <input type="text" name="your_name" id="tb_email_user" placeholder="Your Name" runat="server" required="required"/>
                                     </div>
                                     <div class="form-group">
                                         <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
-                                        <input type="password" name="your_pass" id="your_pass" placeholder="Password" runat="server"/>
+                                        <input type="password" name="your_pass" id="tb_pass" placeholder="Password" runat="server" required="required"/>
                                     </div>
                                     <div class="form-group">
                                         <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
                                         <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
                                     </div>
                                     <div class="form-group form-button">
-                                        <input type="submit" name="signin" id="signin" class="form-submit" value="Log in" runat="server"/>
+                                      <asp:Button type="submit" name="signin" ID="btn_entrar" class="form-submit" Text="Log in" runat="server" OnClick="btn_entrar_Click"/>
                                     </div>
+                                    
                                 </div>
                                 <div class="social-login">
                                     <span class="social-label">Or login with</span>

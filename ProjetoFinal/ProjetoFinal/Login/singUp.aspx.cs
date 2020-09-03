@@ -19,7 +19,7 @@ namespace ProjetoFinal.Login
         {
             Utilizador utilizador = new Utilizador();
             utilizador.username = username.Value;
-            utilizador.pass = pass.Value;
+            utilizador.pass = pass.Value.ToString();
             utilizador.email = email.Value;
             Session["novoUtilizador"] = utilizador;
             Response.Redirect("singUpCont.aspx");

@@ -8,6 +8,7 @@ namespace ProjetoFinal.Classes.ObjectClasses
     
     public class Utilizador
     {
+        public int id { get; set; }
         public string nome { get; set; }
         public string apelido { get; set; }
         public string telefone { get; set; }
@@ -19,6 +20,8 @@ namespace ProjetoFinal.Classes.ObjectClasses
         public string pass { get; set; }
         public string username { get; set; }
         public string email { get; set; }
+        
+
 
     }
 }

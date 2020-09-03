@@ -1,4 +1,5 @@
-﻿using ProjetoFinal.Classes.ObjectClasses;
+﻿using ProjetoFinal.Classes.FunctionClasses;
+using ProjetoFinal.Classes.ObjectClasses;
 using ProjetoFinal.FunctionClasses;
 using System;
 using System.Collections.Generic;
@@ -32,10 +33,24 @@ namespace ProjetoFinal.Login
                 utilizador.foto = nif.Value.ToString()+nomeFicheiro;
             }
             else
-                return;
-            string resposta = DBConnections.insereRegisto(utilizador.username, utilizador.nome, utilizador.apelido, utilizador.telefone, utilizador.nif, utilizador.foto, utilizador.pass, utilizador.email, utilizador.id_tipoUtilizador);
+                return; // Deverá colocar-se uma mensagem ao utilizador caso ele não coloque a foto?????
             
-            Response.Write(resposta.ToString());
+            string resposta = DBConnections.insereRegisto(utilizador.username, utilizador.nome, utilizador.apelido, utilizador.telefone, utilizador.nif, utilizador.foto, utilizador.pass, utilizador.email, utilizador.id_tipoUtilizador);
+
+            utilizador.id = Convert.ToInt32(resposta);
+
+            if (Convert.ToInt32(resposta)>=0) {
+                Response.Write("Utilizador Registado Com Sucesso!");
+
+                //Envia email ao utilizador para agradecer o registo e envia link para ativar a conta
+
+                EmailSending.enviaEmailNovoUtilizador(utilizador.email, utilizador.id.ToString(),utilizador.nome);
+
+                Response.Write("<script>alert('Verifique o seu email para ativar a sua conta')</script>");
+
+
+            }
+            utilizador = null;
         }
     }
 }

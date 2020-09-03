@@ -11,7 +11,7 @@ namespace ProjetoFinal.Login
 {
 
 
-    public partial class Login
+    public partial class NewPassRecovery
     {
 
         /// <summary>
@@ -24,30 +24,30 @@ namespace ProjetoFinal.Login
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// tb_email_user control.
+        /// pass control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText tb_email_user;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword pass;
 
         /// <summary>
-        /// tb_pass control.
+        /// re_pass control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword tb_pass;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword re_pass;
 
         /// <summary>
-        /// btn_entrar control.
+        /// btn_recuperar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_entrar;
+        protected global::System.Web.UI.WebControls.Button btn_recuperar;
     }
 }
