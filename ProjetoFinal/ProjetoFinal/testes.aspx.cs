@@ -1,4 +1,5 @@
 ﻿using ProjetoFinal.Classes.FunctionClasses;
+using ProjetoFinal.FunctionClasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +29,17 @@ namespace ProjetoFinal
         protected void Button3_Click(object sender, EventArgs e)
         {
             Label2.Text = PassEncrypt.DecryptString(tb0.Text.ToString());
+        }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            string id = "", nome = "";
+
+            (id, nome) = DBConnections.recuperacaoPW(TextBox2.Text.ToString());
+
+            Label3.Text = $"ID:{id},nome:{nome}";
+
+            //EmailSending.enviaEmailRecuperaPW(tb_email.Value.ToString(), id, nome);
         }
     }
 }

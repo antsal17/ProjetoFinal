@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css"/>
 
     <link rel="stylesheet" href="css/style.css"/>
+    <script src="js/main.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -25,6 +26,7 @@
                                 <figure>
                                     <img src="images/signin-image.jpg" alt="sing up image"></figure>
                                 <a href="singUp.aspx" class="signup-image-link">Create an account</a>
+                                <a href="PassRecovery.aspx" class="signup-image-link">Forgot your Password</a>
                             </div>
 
                             <div class="signin-form">
@@ -32,11 +34,11 @@
                                 <div method="POST" class="register-form" id="login-form">
                                     <div class="form-group">
                                         <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                        <input type="text" name="your_name" id="tb_email_user" placeholder="Your Name" runat="server" required="required"/>
+                                        <input type="email" name="your_name" id="tb_email_user" placeholder="Your Name" runat="server" required="required"/>
                                     </div>
                                     <div class="form-group">
                                         <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
-                                        <input type="password" name="your_pass" id="tb_pass" placeholder="Password" runat="server" required="required"/>
+                                        <input type="password" name="your_pass" id="tb_pass" placeholder="Password" runat="server" required="required" value='' class="block" onpaste="return false"/>
                                     </div>
                                     <div class="form-group">
                                         <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
@@ -63,6 +65,15 @@
         </div>
     </form>
     <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="js/main.js"></script>
+    <script>
+        document.getElementById("tb_pass").onkeypress = function (e) {
+            var chr = String.fromCharCode(e.which);
+            if ("></\"".indexOf(chr) >= 0)
+                return false;
+        };
+    </script>
+   
+        
+    
 </body>
 </html>

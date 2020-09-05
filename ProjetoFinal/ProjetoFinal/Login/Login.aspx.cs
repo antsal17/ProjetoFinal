@@ -27,6 +27,7 @@ namespace ProjetoFinal.Login
             {
                 Session["utilizador"] = utilizador;
                 Response.Write(utilizador.email.ToString());
+                Response.Redirect("../Home/index.aspx");
             }
             else
             {

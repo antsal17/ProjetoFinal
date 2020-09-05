@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Home\index.aspx" />
     <Content Include="Login\AccountUpdate.aspx" />
     <Content Include="Login\css\style.css" />
     <Content Include="Login\fonts\material-icon\css\material-design-iconic-font.css" />
@@ -94,6 +95,7 @@
     <Content Include="Login\js\main.js" />
     <Content Include="Login\Login.aspx" />
     <Content Include="Login\NewPassRecovery.aspx" />
+    <Content Include="Login\PassChange.aspx" />
     <Content Include="Login\PassRecovery.aspx" />
     <Content Include="Login\singUp.aspx" />
     <Content Include="Login\singUpCont.aspx" />
@@ -106,6 +108,13 @@
     <Compile Include="Classes\FunctionClasses\EmailSending.cs" />
     <Compile Include="Classes\FunctionClasses\PassEncrypt.cs" />
     <Compile Include="Classes\ObjectClasses\Utilizador.cs" />
+    <Compile Include="Home\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login\AccountUpdate.aspx.cs">
       <DependentUpon>AccountUpdate.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -126,6 +135,13 @@
     </Compile>
     <Compile Include="Login\NewPassRecovery.aspx.designer.cs">
       <DependentUpon>NewPassRecovery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login\PassChange.aspx.cs">
+      <DependentUpon>PassChange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login\PassChange.aspx.designer.cs">
+      <DependentUpon>PassChange.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login\PassRecovery.aspx.cs">
       <DependentUpon>PassRecovery.aspx</DependentUpon>

@@ -16,13 +16,13 @@ namespace ProjetoFinal.Login
 
         }
 
-        protected void btn_sumeter_Click(object sender, EventArgs e)
+        protected void btn_recuperar_Click(object sender, EventArgs e)
         {
             string id = "", nome = "";
 
-            (id, nome)=DBConnections.recuperacaoPW(tb_email.Text.ToString());
+            (id, nome)=DBConnections.recuperacaoPW(tb_email.Value.ToString());
 
-            EmailSending.enviaEmailRecuperaPW(tb_email.Text.ToString(), id, nome);
+            EmailSending.enviaEmailRecuperaPW(tb_email.Value.ToString(), id, nome);
         }
     }
 }

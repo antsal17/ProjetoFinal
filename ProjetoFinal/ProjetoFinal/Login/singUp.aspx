@@ -33,7 +33,7 @@
                                 <div class="form-group">
                                     <label for="pass"><i class="zmdi zmdi-lock"></i></label>
                                     <%--REGEX A FUNCIONAR^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$--%>
-                                    <input type="password" name="pass" id="pass" placeholder="Password" runat="server" required="required"/>
+                                    <input type="password" name="pass" id="pass" placeholder="Password" runat="server" required="required" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" />
                                 </div>
                                 <div class="form-group">
                                     <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>

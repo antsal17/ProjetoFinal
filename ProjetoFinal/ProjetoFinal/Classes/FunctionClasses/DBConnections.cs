@@ -131,6 +131,7 @@ namespace ProjetoFinal.FunctionClasses
             }
         }
 
+        //ativacao de conta pretende-se que a conta seja ativada via email
         public static string ativacaoConta(string id_utilizador)
         {
             SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["ProjetoFinalConnectionString"].ConnectionString);
@@ -174,14 +175,14 @@ namespace ProjetoFinal.FunctionClasses
             }
         }
 
-
+        //recuperacao de pw atraves de link de email
         public static (string, string) recuperacaoPW(string email_user)
         {
             SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["ProjetoFinalConnectionString"].ConnectionString);
 
             SqlCommand myCommand = new SqlCommand();
 
-            myCommand.Parameters.AddWithValue("@email_user", email_user);
+            myCommand.Parameters.AddWithValue("@email", email_user);
 
 
 
@@ -227,7 +228,7 @@ namespace ProjetoFinal.FunctionClasses
         }
 
 
-
+        //depois de ser enviado link por email o utilizador pode fazer a recuperacao da pw
         public static  string recuperacaoPWInsercao(string id, string pass)
         {
             SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["ProjetoFinalConnectionString"].ConnectionString);
@@ -241,6 +242,53 @@ namespace ProjetoFinal.FunctionClasses
 
             myCommand.CommandType = CommandType.StoredProcedure;
             myCommand.CommandText = "usp_insere_pw_recuperacao";
+
+            SqlParameter valor = new SqlParameter();
+            valor.ParameterName = "@retorno";
+            valor.Direction = ParameterDirection.Output;
+            valor.SqlDbType = SqlDbType.Int;
+            valor.Size = 1;
+
+
+            myCommand.Parameters.Add(valor);
+            myCommand.Connection = myConn;
+            try
+            {
+                myConn.Open();
+
+                myCommand.ExecuteNonQuery();
+
+                string retorno = myCommand.Parameters["@retorno"].Value.ToString();
+
+
+                return retorno;
+
+            }
+            catch (Exception m)
+            {
+                return m.ToString();
+            }
+            finally
+            {
+                myConn.Close();
+            }
+        }
+
+        //altera a palavra pass, recebendo a pw antiga e a nova
+        public static string alteracaoPW(int id, string Oldpass, string Newpass)
+        {
+            SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["ProjetoFinalConnectionString"].ConnectionString);
+
+            SqlCommand myCommand = new SqlCommand();
+
+            myCommand.Parameters.AddWithValue("@id", id);
+            myCommand.Parameters.AddWithValue("@Oldpass", Oldpass);
+            myCommand.Parameters.AddWithValue("@Newpass", Newpass);
+
+
+
+            myCommand.CommandType = CommandType.StoredProcedure;
+            myCommand.CommandText = "usp_altera_pw";
 
             SqlParameter valor = new SqlParameter();
             valor.ParameterName = "@retorno";

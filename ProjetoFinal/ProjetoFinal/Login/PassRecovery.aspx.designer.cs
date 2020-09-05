@@ -30,15 +30,15 @@ namespace ProjetoFinal.Login
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_email;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl tb_email;
 
         /// <summary>
-        /// btn_sumeter control.
+        /// btn_recuperar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_sumeter;
+        protected global::System.Web.UI.WebControls.Button btn_recuperar;
     }
 }

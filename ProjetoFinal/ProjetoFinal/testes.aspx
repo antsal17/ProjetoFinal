@@ -24,6 +24,14 @@
             <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
             <br />
             <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Button" />
+
+            Teste recuperacao pw: :<br />
+            Coloca email:<br />
+            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+            ID e nome:
+            <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
+            <br />
+            <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Button" />
         </div>
     </form>
 </body>
