@@ -25,7 +25,7 @@ namespace ProjetoFinal.Classes.FunctionClasses
             sc.Host=System.Configuration.ConfigurationManager.AppSettings.Get("Host"); ;
             sc.Port=Convert.ToInt32(System.Configuration.ConfigurationManager.AppSettings.Get("Port"));
             sc.Credentials=new System.Net.NetworkCredential(userName, passWord);
-            System.Net.Mail.Attachment attachment;
+            //System.Net.Mail.Attachment attachment;
 
             sc.EnableSsl=true;
             sc.Send(m);
@@ -265,7 +265,7 @@ namespace ProjetoFinal.Classes.FunctionClasses
             sc.Host = System.Configuration.ConfigurationManager.AppSettings.Get("Host"); ;
             sc.Port = Convert.ToInt32(System.Configuration.ConfigurationManager.AppSettings.Get("Port"));
             sc.Credentials = new System.Net.NetworkCredential(userName, passWord);
-            System.Net.Mail.Attachment attachment;
+            //System.Net.Mail.Attachment attachment;
 
             sc.EnableSsl = true;
             sc.Send(m);

@@ -67,6 +67,152 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BackEnd\Admin\assets\css\animate.min.css" />
+    <Content Include="BackEnd\Admin\assets\css\bootstrap.min.css" />
+    <Content Include="BackEnd\Admin\assets\css\cropper.min.css" />
+    <Content Include="BackEnd\Admin\assets\css\datatables.min.css" />
+    <Content Include="BackEnd\Admin\assets\css\driver.min.css" />
+    <Content Include="BackEnd\Admin\assets\css\ion.rangeSlider.min.css" />
+    <Content Include="BackEnd\Admin\assets\css\jquery-ui.min.css" />
+    <Content Include="BackEnd\Admin\assets\css\morris.css" />
+    <Content Include="BackEnd\Admin\assets\css\slick.css" />
+    <Content Include="BackEnd\Admin\assets\css\style.css" />
+    <Content Include="BackEnd\Admin\assets\css\sweetalert2.min.css" />
+    <Content Include="BackEnd\Admin\assets\css\toastr.min.css" />
+    <Content Include="BackEnd\Admin\assets\img\costic\add-product-1.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\costic\add-product-2.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\costic\add-product-3.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\costic\add-product-4.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\costic\banner-1.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\costic\banner-1000x370.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\costic\banner-2.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\costic\banner-3.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\costic\banner-4.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\costic\cereals.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\costic\coming-soon.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\costic\costic-logo-216x62.png" />
+    <Content Include="BackEnd\Admin\assets\img\costic\costic-logo-84x41.png" />
+    <Content Include="BackEnd\Admin\assets\img\costic\country-1.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\costic\country-2.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\costic\country-3.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\costic\country-4.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\costic\country-5.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\costic\cropper.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\costic\customer-1.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\costic\customer-10.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\costic\customer-2.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\costic\customer-3.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\costic\customer-4.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\costic\customer-5.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\costic\customer-6.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\costic\customer-7.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\costic\customer-8.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\costic\customer-9.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\costic\default-login.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\costic\egg-sandwich.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\costic\food-1.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\costic\food-2.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\costic\food-3.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\costic\food-4.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\costic\food-5.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\costic\food-6.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\costic\food-7.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\costic\food-8.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\costic\french-fries.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\costic\lock-screen.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\costic\pizza.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\costic\portfolio-1.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\costic\portfolio-2.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\costic\portfolio-3.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\costic\portfolio-4.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\costic\portfolio-5.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\costic\portfolio-6.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\others\banner.html" />
+    <Content Include="BackEnd\Admin\assets\img\others\features-bg.html" />
+    <Content Include="BackEnd\Admin\assets\img\others\ui-icons_444444_256x240.html" />
+    <Content Include="BackEnd\Admin\assets\img\others\ui-icons_555555_256x240.html" />
+    <Content Include="BackEnd\Admin\assets\img\others\ui-icons_777620_256x240.html" />
+    <Content Include="BackEnd\Admin\assets\img\others\ui-icons_777777_256x240.html" />
+    <Content Include="BackEnd\Admin\assets\img\others\ui-icons_cc0000_256x240.html" />
+    <Content Include="BackEnd\Admin\assets\img\others\ui-icons_ffffff_256x240.html" />
+    <Content Include="BackEnd\Admin\assets\img\payment\payment-master.png" />
+    <Content Include="BackEnd\Admin\assets\img\payment\payment-payoneer.png" />
+    <Content Include="BackEnd\Admin\assets\img\payment\payment-paypal.png" />
+    <Content Include="BackEnd\Admin\assets\img\payment\payment-visa.png" />
+    <Content Include="BackEnd\Admin\assets\img\people\people-10.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\people\people-3.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\people\people-5.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\people\people-7.jpg" />
+    <Content Include="BackEnd\Admin\assets\img\people\people-9.jpg" />
+    <Content Include="BackEnd\Admin\assets\js\animate.js" />
+    <Content Include="BackEnd\Admin\assets\js\bootstrap.min.js" />
+    <Content Include="BackEnd\Admin\assets\js\Chart.bundle.min.js" />
+    <Content Include="BackEnd\Admin\assets\js\Chart.Financial.js" />
+    <Content Include="BackEnd\Admin\assets\js\charts.js" />
+    <Content Include="BackEnd\Admin\assets\js\client-managemenet.js" />
+    <Content Include="BackEnd\Admin\assets\js\clients.js" />
+    <Content Include="BackEnd\Admin\assets\js\coming-soon.js" />
+    <Content Include="BackEnd\Admin\assets\js\crop.js" />
+    <Content Include="BackEnd\Admin\assets\js\cropper.min.js" />
+    <Content Include="BackEnd\Admin\assets\js\d3.v3.min.js" />
+    <Content Include="BackEnd\Admin\assets\js\data-tables.js" />
+    <Content Include="BackEnd\Admin\assets\js\datamaps.all.min.js" />
+    <Content Include="BackEnd\Admin\assets\js\datatables.min.js" />
+    <Content Include="BackEnd\Admin\assets\js\driver.min.js" />
+    <Content Include="BackEnd\Admin\assets\js\form-wizard.js" />
+    <Content Include="BackEnd\Admin\assets\js\framework.js" />
+    <Content Include="BackEnd\Admin\assets\js\google-maps.js" />
+    <Content Include="BackEnd\Admin\assets\js\ion.rangeSlider.min.js" />
+    <Content Include="BackEnd\Admin\assets\js\jquery-3.3.1.min.js" />
+    <Content Include="BackEnd\Admin\assets\js\jquery-ui.min.js" />
+    <Content Include="BackEnd\Admin\assets\js\jquery.countdown.min.js" />
+    <Content Include="BackEnd\Admin\assets\js\jquery.steps.min.js" />
+    <Content Include="BackEnd\Admin\assets\js\jquery.webticker.min.js" />
+    <Content Include="BackEnd\Admin\assets\js\moment.js" />
+    <Content Include="BackEnd\Admin\assets\js\morris-charts.js" />
+    <Content Include="BackEnd\Admin\assets\js\morris.min.js" />
+    <Content Include="BackEnd\Admin\assets\js\perfect-scrollbar.js" />
+    <Content Include="BackEnd\Admin\assets\js\popper.min.js" />
+    <Content Include="BackEnd\Admin\assets\js\project-management.js" />
+    <Content Include="BackEnd\Admin\assets\js\promise.min.js" />
+    <Content Include="BackEnd\Admin\assets\js\range-slider.js" />
+    <Content Include="BackEnd\Admin\assets\js\raphael.min.js" />
+    <Content Include="BackEnd\Admin\assets\js\Resturant.js" />
+    <Content Include="BackEnd\Admin\assets\js\settings.js" />
+    <Content Include="BackEnd\Admin\assets\js\slick.min.js" />
+    <Content Include="BackEnd\Admin\assets\js\social.js" />
+    <Content Include="BackEnd\Admin\assets\js\sweet-alerts.js" />
+    <Content Include="BackEnd\Admin\assets\js\sweetalert2.min.js" />
+    <Content Include="BackEnd\Admin\assets\js\toast.js" />
+    <Content Include="BackEnd\Admin\assets\js\toastr.min.js" />
+    <Content Include="BackEnd\Admin\assets\js\topojson.v1.min.js" />
+    <Content Include="BackEnd\Admin\assets\js\tour.js" />
+    <Content Include="BackEnd\Admin\assets\js\vector-maps.js" />
+    <Content Include="BackEnd\Admin\assets\js\web-analytics.js" />
+    <Content Include="BackEnd\Admin\assets\js\widgets.js" />
+    <Content Include="BackEnd\Admin\backEndAdminHome.aspx" />
+    <Content Include="BackEnd\Admin\pages\apps\chat.html" />
+    <Content Include="BackEnd\Admin\pages\apps\email.html" />
+    <Content Include="BackEnd\Admin\pages\customer\addcustomer.html" />
+    <Content Include="BackEnd\Admin\pages\customer\customerlist.html" />
+    <Content Include="BackEnd\Admin\pages\customer\customersreview.html" />
+    <Content Include="BackEnd\Admin\pages\invoice\invoicedetail.html" />
+    <Content Include="BackEnd\Admin\pages\invoice\invoicelist.html" />
+    <Content Include="BackEnd\Admin\pages\orders.html" />
+    <Content Include="BackEnd\Admin\pages\product\addproduct.html" />
+    <Content Include="BackEnd\Admin\pages\product\productdetail.html" />
+    <Content Include="BackEnd\Admin\pages\product\productlist.html" />
+    <Content Include="BackEnd\Admin\Products\backEndAdminAddProducts.aspx" />
+    <Content Include="BackEnd\Admin\Products\backEndAdminProducDetail.aspx" />
+    <Content Include="BackEnd\Admin\Products\backEndAdminProductList.aspx" />
+    <Content Include="BackEnd\Admin\vendors\iconic-fonts\cryptocoins\cryptocoins-colors.css" />
+    <Content Include="BackEnd\Admin\vendors\iconic-fonts\cryptocoins\cryptocoins.css" />
+    <Content Include="BackEnd\Admin\vendors\iconic-fonts\flat-icons\flaticon.css" />
+    <Content Include="BackEnd\Admin\vendors\iconic-fonts\flat-icons\Flaticon.svg" />
+    <Content Include="BackEnd\Admin\vendors\iconic-fonts\font-awesome\css\all.min.css" />
+    <Content Include="BackEnd\Admin\vendors\iconic-fonts\font-awesome\webfonts\fa-brands-400.svg" />
+    <Content Include="BackEnd\Admin\vendors\iconic-fonts\font-awesome\webfonts\fa-regular-400.svg" />
+    <Content Include="BackEnd\Admin\vendors\iconic-fonts\font-awesome\webfonts\fa-solid-900.svg" />
     <Content Include="Home\index.aspx" />
     <Content Include="Login\AccountUpdate.aspx" />
     <Content Include="Login\css\style.css" />
@@ -104,6 +250,34 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BackEnd\Admin\backEndAdminHome.aspx.cs">
+      <DependentUpon>backEndAdminHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BackEnd\Admin\backEndAdminHome.aspx.designer.cs">
+      <DependentUpon>backEndAdminHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BackEnd\Admin\Products\backEndAdminAddProducts.aspx.cs">
+      <DependentUpon>backEndAdminAddProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BackEnd\Admin\Products\backEndAdminAddProducts.aspx.designer.cs">
+      <DependentUpon>backEndAdminAddProducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BackEnd\Admin\Products\backEndAdminProducDetail.aspx.cs">
+      <DependentUpon>backEndAdminProducDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BackEnd\Admin\Products\backEndAdminProducDetail.aspx.designer.cs">
+      <DependentUpon>backEndAdminProducDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BackEnd\Admin\Products\backEndAdminProductList.aspx.cs">
+      <DependentUpon>backEndAdminProductList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BackEnd\Admin\Products\backEndAdminProductList.aspx.designer.cs">
+      <DependentUpon>backEndAdminProductList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Classes\FunctionClasses\DBConnections.cs" />
     <Compile Include="Classes\FunctionClasses\EmailSending.cs" />
     <Compile Include="Classes\FunctionClasses\PassEncrypt.cs" />
@@ -250,6 +424,32 @@
     <Content Include="Login\fonts\poppins\roboto-condensed-v16-latin-regular.ttf" />
     <Content Include="Login\fonts\poppins\roboto-condensed-v16-latin-regular.woff" />
     <Content Include="Login\fonts\poppins\roboto-condensed-v16-latin-regular.woff2" />
+    <Content Include="BackEnd\Admin\assets\fonts\Roboto-Bold.ttf" />
+    <Content Include="BackEnd\Admin\assets\fonts\Roboto-Medium.ttf" />
+    <Content Include="BackEnd\Admin\assets\fonts\Roboto-Regular.ttf" />
+    <Content Include="BackEnd\Admin\vendors\iconic-fonts\cryptocoins\cryptocoins.ttf" />
+    <Content Include="BackEnd\Admin\vendors\iconic-fonts\cryptocoins\cryptocoins.woff" />
+    <Content Include="BackEnd\Admin\vendors\iconic-fonts\cryptocoins\cryptocoins.woff2" />
+    <Content Include="BackEnd\Admin\vendors\iconic-fonts\flat-icons\Flaticon.eot" />
+    <Content Include="BackEnd\Admin\vendors\iconic-fonts\flat-icons\Flaticon.ttf" />
+    <Content Include="BackEnd\Admin\vendors\iconic-fonts\flat-icons\Flaticon.woff" />
+    <Content Include="BackEnd\Admin\vendors\iconic-fonts\flat-icons\Flaticon.woff2" />
+    <Content Include="BackEnd\Admin\vendors\iconic-fonts\flat-icons\Flaticond41d.eot" />
+    <Content Include="BackEnd\Admin\vendors\iconic-fonts\font-awesome\webfonts\fa-brands-400.eot" />
+    <Content Include="BackEnd\Admin\vendors\iconic-fonts\font-awesome\webfonts\fa-brands-400.ttf" />
+    <Content Include="BackEnd\Admin\vendors\iconic-fonts\font-awesome\webfonts\fa-brands-400.woff" />
+    <Content Include="BackEnd\Admin\vendors\iconic-fonts\font-awesome\webfonts\fa-brands-400.woff2" />
+    <Content Include="BackEnd\Admin\vendors\iconic-fonts\font-awesome\webfonts\fa-brands-400d41d.eot" />
+    <Content Include="BackEnd\Admin\vendors\iconic-fonts\font-awesome\webfonts\fa-regular-400.eot" />
+    <Content Include="BackEnd\Admin\vendors\iconic-fonts\font-awesome\webfonts\fa-regular-400.ttf" />
+    <Content Include="BackEnd\Admin\vendors\iconic-fonts\font-awesome\webfonts\fa-regular-400.woff" />
+    <Content Include="BackEnd\Admin\vendors\iconic-fonts\font-awesome\webfonts\fa-regular-400.woff2" />
+    <Content Include="BackEnd\Admin\vendors\iconic-fonts\font-awesome\webfonts\fa-regular-400d41d.eot" />
+    <Content Include="BackEnd\Admin\vendors\iconic-fonts\font-awesome\webfonts\fa-solid-900.eot" />
+    <Content Include="BackEnd\Admin\vendors\iconic-fonts\font-awesome\webfonts\fa-solid-900.ttf" />
+    <Content Include="BackEnd\Admin\vendors\iconic-fonts\font-awesome\webfonts\fa-solid-900.woff" />
+    <Content Include="BackEnd\Admin\vendors\iconic-fonts\font-awesome\webfonts\fa-solid-900.woff2" />
+    <Content Include="BackEnd\Admin\vendors\iconic-fonts\font-awesome\webfonts\fa-solid-900d41d.eot" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
