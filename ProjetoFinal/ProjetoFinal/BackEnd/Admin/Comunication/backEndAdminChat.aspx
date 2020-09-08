@@ -1,26 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="backEndAdminChat.aspx.cs" Inherits="ProjetoFinal.BackEnd.Admin.Comunication.backEndAdminChat" %>
 
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Dashboard</title>
   <!-- Iconic Fonts -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="../../vendors/iconic-fonts/flat-icons/flaticon.css">
-  <link href="../../vendors/iconic-fonts/font-awesome/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../vendors/iconic-fonts/flat-icons/flaticon.css">
+  <link href="../vendors/iconic-fonts/font-awesome/css/all.min.css" rel="stylesheet">
   <!-- Bootstrap core CSS -->
-  <link href="../../assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
   <!-- jQuery UI -->
-  <link href="../../assets/css/jquery-ui.min.css" rel="stylesheet">
+  <link href="../assets/css/jquery-ui.min.css" rel="stylesheet">
   <!-- Costic styles -->
-  <link href="../../assets/css/style.css" rel="stylesheet">
+  <link href="../assets/css/style.css" rel="stylesheet">
   <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon.ico">
 </head>
-
-<body class="ms-body ms-aside-left-open ms-primary-theme ms-has-quickbar">
+<body>
+    <form id="form1" runat="server">
+        <div class="ms-body ms-aside-left-open ms-primary-theme ms-has-quickbar">
 
   <!-- Preloader -->
   <div id="preloader-wrap">
@@ -47,7 +50,7 @@
     <!-- Logo -->
     <div class="logo-sn ms-d-block-lg">
       <a class="pl-0 ml-0 text-center" href="../../index.html">
-        <img src="../../assets/img/costic/costic-logo-216x62.png" alt="logo">
+        <img src="../assets/img/costic/costic-logo-216x62.png" alt="logo"/>
       </a>
     </div>
     <!-- Navigation -->
@@ -192,7 +195,7 @@
       </div>
       <div class="logo-sn logo-sm ms-d-block-sm">
         <a class="pl-0 ml-0 text-center navbar-brand mr-0" href="../../index.html">
-          <img src="../../assets/img/costic/costic-logo-84x41.png" alt="logo">
+          <img src="../assets/img/costic/costic-logo-84x41.png" alt="logo">
         </a>
       </div>
       <ul class="ms-nav-list ms-inline mb-0" id="ms-nav-options">
@@ -212,7 +215,7 @@
             <li class="ms-scrollable ms-dropdown-list">
               <a class="media p-2" href="#">
                 <div class="ms-chat-status ms-status-offline ms-chat-img mr-2 align-self-center">
-                  <img src="../../assets/img/costic/customer-1.jpg" class="ms-img-round" alt="people">
+                  <img src="../assets/img/costic/customer-1.jpg" class="ms-img-round" alt="people"/>
                 </div>
                 <div class="media-body"> <span>Hey man, looking forward to your new project.</span>
                   <p class="fs-10 my-1 text-disabled"><i class="material-icons">access_time</i> 30 seconds ago</p>
@@ -220,7 +223,7 @@
               </a>
               <a class="media p-2" href="#">
                 <div class="ms-chat-status ms-status-online ms-chat-img mr-2 align-self-center">
-                  <img src="../../assets/img/costic/customer-2.jpg" class="ms-img-round" alt="people">
+                  <img src="../assets/img/costic/customer-2.jpg" class="ms-img-round" alt="people"/>
                 </div>
                 <div class="media-body"> <span>Dear John, I was told you bought Costic! Send me your feedback</span>
                   <p class="fs-10 my-1 text-disabled"><i class="material-icons">access_time</i> 28 minutes ago</p>
@@ -228,7 +231,7 @@
               </a>
               <a class="media p-2" href="#">
                 <div class="ms-chat-status ms-status-offline ms-chat-img mr-2 align-self-center">
-                  <img src="../../assets/img/costic/customer-3.jpg" class="ms-img-round" alt="people">
+                  <img src="../assets/img/costic/customer-3.jpg" class="ms-img-round" alt="people"/>
                 </div>
                 <div class="media-body"> <span>How many people are we inviting to the dashboard?</span>
                   <p class="fs-10 my-1 text-disabled"><i class="material-icons">access_time</i> 6 hours ago</p>
@@ -276,7 +279,7 @@
 
         <li class="ms-nav-item ms-nav-user dropdown">
           <a href="#" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <img class="ms-user-img ms-img-round float-right" src="../../assets/img/costic/customer-6.jpg" alt="people">
+            <img class="ms-user-img ms-img-round float-right" src="../assets/img/costic/customer-6.jpg" alt="people"/>
           </a>
           <ul class="dropdown-menu dropdown-menu-right user-dropdown" aria-labelledby="userDropdown">
             <li class="dropdown-menu-header">
@@ -319,7 +322,7 @@
                 <div class="ms-chat-header px-3">
                   <div class="ms-chat-user-container media clearfix">
                     <div class="ms-chat-status ms-status-online ms-chat-img mr-3 align-self-center">
-                      <img src="../../assets/img/costic/customer-1.jpg" class="ms-img-round" alt="people">
+                      <img src="../assets/img/costic/customer-1.jpg" class="ms-img-round" alt="people"/>
                     </div>
                     <div class="media-body ms-chat-user-info mt-1">
                       <h6>John Doe</h6>
@@ -355,7 +358,7 @@
                       <ul class="ms-scrollable">
                         <li class="ms-chat-user-container ms-open-chat ms-deletable p-3 media clearfix">
                           <div class="ms-chat-status ms-status-away ms-has-new-msg ms-chat-img mr-3 align-self-center"> <span class="msg-count">3</span>
-                            <img src="../../assets/img/costic/customer-2.jpg" class="ms-img-round" alt="people">
+                            <img src="../assets/img/costic/customer-2.jpg" class="ms-img-round" alt="people"/>
                           </div>
                           <div class="media-body ms-chat-user-info mt-1">
                             <h6>John Doe</h6>  <span class="ms-chat-time">2 Hours ago</span>
@@ -382,7 +385,7 @@
                         </li>
                         <li class="ms-chat-user-container ms-open-chat ms-deletable p-3 media clearfix">
                           <div class="ms-chat-status ms-status-online ms-chat-img mr-3 align-self-center">
-                            <img src="../../assets/img/costic/customer-3.jpg" class="ms-img-round" alt="people">
+                            <img src="../assets/img/costic/customer-3.jpg" class="ms-img-round" alt="people"/>
                           </div>
                           <div class="media-body ms-chat-user-info mt-1">
                             <h6>John Doe</h6>  <span class="ms-chat-time">3 Hours ago</span>
@@ -409,7 +412,7 @@
                         </li>
                         <li class="ms-chat-user-container ms-open-chat selected ms-deletable p-3 media clearfix">
                           <div class="ms-chat-status ms-status-offline ms-chat-img mr-3 align-self-center">
-                            <img src="../../assets/img/costic/customer-4.jpg" class="ms-img-round" alt="people">
+                            <img src="../assets/img/costic/customer-4.jpg" class="ms-img-round" alt="people"/>
                           </div>
                           <div class="media-body ms-chat-user-info mt-1">
                             <h6>John Doe</h6>  <span class="ms-chat-time">12 Hours ago</span>
@@ -436,7 +439,7 @@
                         </li>
                         <li class="ms-chat-user-container ms-open-chat ms-deletable p-3 media clearfix">
                           <div class="ms-chat-status ms-status-busy ms-chat-img mr-3 align-self-center">
-                            <img src="../../assets/img/costic/customer-5.jpg" class="ms-img-round" alt="people">
+                            <img src="../assets/img/costic/customer-5.jpg" class="ms-img-round" alt="people"/>
                           </div>
                           <div class="media-body ms-chat-user-info mt-1">
                             <h6>John Doe</h6>  <span class="ms-chat-time">Yesterday</span>
@@ -463,7 +466,7 @@
                         </li>
                         <li class="ms-chat-user-container ms-open-chat ms-deletable p-3 media clearfix">
                           <div class="ms-chat-status ms-status-online ms-chat-img mr-3 align-self-center">
-                            <img src="../../assets/img/costic/customer-6.jpg" class="ms-img-round" alt="people">
+                            <img src="../assets/img/costic/customer-6.jpg" class="ms-img-round" alt="people"/>
                           </div>
                           <div class="media-body ms-chat-user-info mt-1">
                             <h6>John Doe</h6>  <span class="ms-chat-time">3 Days ago</span>
@@ -490,7 +493,7 @@
                         </li>
                         <li class="ms-chat-user-container ms-open-chat ms-deletable p-3 media clearfix">
                           <div class="ms-chat-status ms-status-online ms-chat-img mr-3 align-self-center">
-                            <img src="../../assets/img/costic/customer-7.jpg" class="ms-img-round" alt="people">
+                            <img src="../assets/img/costic/customer-7.jpg" class="ms-img-round" alt="people"/>
                           </div>
                           <div class="media-body ms-chat-user-info mt-1">
                             <h6>John Doe</h6>  <span class="ms-chat-time">3 Days ago</span>
@@ -517,7 +520,7 @@
                         </li>
                         <li class="ms-chat-user-container ms-open-chat ms-deletable p-3 media clearfix">
                           <div class="ms-chat-status ms-status-online ms-chat-img mr-3 align-self-center">
-                            <img src="../../assets/img/costic/customer-8.jpg" class="ms-img-round" alt="people">
+                            <img src="../assets/img/costic/customer-8.jpg" class="ms-img-round" alt="people"/>
                           </div>
                           <div class="media-body ms-chat-user-info mt-1">
                             <h6>John Doe</h6>  <span class="ms-chat-time">3 Days ago</span>
@@ -548,7 +551,7 @@
                       <ul class="ms-scrollable">
                         <li class="ms-chat-user-container ms-open-chat p-3 media clearfix">
                           <div class="ms-chat-img mr-3 align-self-center">
-                            <img src="../../assets/img/costic/customer-1.jpg" class="ms-img-round" alt="people">
+                            <img src="../assets/img/costic/customer-1.jpg" class="ms-img-round" alt="people"/>
                           </div>
                           <div class="media-body ms-chat-user-info mt-1">
                             <h6>John Doe</h6>
@@ -557,13 +560,13 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in arcu turpis. Nunc</p>
                             <ul class="ms-group-members clearfix mt-3 mb-0">
                               <li>
-                                <img src="../../assets/img/costic/customer-2.jpg" alt="member">
+                                <img src="../assets/img/costic/customer-2.jpg" alt="member"/>
                               </li>
                               <li>
-                                <img src="../../assets/img/costic/customer-3.jpg" alt="member">
+                                <img src="../assets/img/costic/customer-3.jpg" alt="member"/>
                               </li>
                               <li>
-                                <img src="../../assets/img/costic/customer-4.jpg" alt="member">
+                                <img src="../assets/img/costic/customer-4.jpg" alt="member"/>
                               </li>
                               <li class="ms-group-count">+ 12 more</li>
                             </ul>
@@ -571,7 +574,7 @@
                         </li>
                         <li class="ms-chat-user-container ms-open-chat p-3 media clearfix">
                           <div class="ms-chat-img mr-3 align-self-center">
-                            <img src="../../assets/img/costic/customer-7.jpg" class="ms-img-round" alt="people">
+                            <img src="../assets/img/costic/customer-7.jpg" class="ms-img-round" alt="people"/>
                           </div>
                           <div class="media-body ms-chat-user-info mt-1">
                             <h6>John Doe</h6>
@@ -580,17 +583,17 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in arcu turpis. Nunc</p>
                             <ul class="ms-group-members clearfix mt-3 mb-0">
                               <li>
-                                <img src="../../assets/img/costic/customer-8.jpg" alt="member">
+                                <img src="../assets/img/costic/customer-8.jpg" alt="member"/>
                               </li>
                               <li>
-                                <img src="../../assets/img/costic/customer-9.jpg" alt="member">
+                                <img src="../assets/img/costic/customer-9.jpg" alt="member"/>
                               </li>
                             </ul>
                           </div>
                         </li>
                         <li class="ms-chat-user-container ms-open-chat p-3 media clearfix">
                           <div class="ms-chat-img mr-3 align-self-center">
-                            <img src="../../assets/img/costic/customer-10.jpg" class="ms-img-round" alt="people">
+                            <img src="../assets/img/costic/customer-10.jpg" class="ms-img-round" alt="people"/>
                           </div>
                           <div class="media-body ms-chat-user-info mt-1">
                             <h6>John Doe</h6>
@@ -599,13 +602,13 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in arcu turpis. Nunc</p>
                             <ul class="ms-group-members clearfix mt-3 mb-0">
                               <li>
-                                <img src="../../assets/img/costic/customer-1.jpg" alt="member">
+                                <img src="../assets/img/costic/customer-1.jpg" alt="member"/>
                               </li>
                               <li>
-                                <img src="../../assets/img/costic/customer-3.jpg" alt="member">
+                                <img src="../assets/img/costic/customer-3.jpg" alt="member"/>
                               </li>
                               <li>
-                                <img src="../../assets/img/costic/customer-2.jpg" alt="member">
+                                <img src="../assets/img/costic/customer-2.jpg" alt="member"/>
                               </li>
                               <li class="ms-group-count">+ 4 more</li>
                             </ul>
@@ -617,7 +620,7 @@
                       <ul class="ms-scrollable">
                         <li class="ms-chat-user-container ms-open-chat p-3 media clearfix">
                           <div class="ms-chat-img mr-3 align-self-center">
-                            <img src="../../assets/img/costic/customer-10.jpg" class="ms-img-round" alt="people">
+                            <img src="../assets/img/costic/customer-10.jpg" class="ms-img-round" alt="people"/>
                           </div>
                           <div class="media-body ms-chat-user-info mt-1">
                             <h6>John Doe</h6>
@@ -628,7 +631,7 @@
                         </li>
                         <li class="ms-chat-user-container ms-open-chat p-3 media clearfix">
                           <div class="ms-chat-img mr-3 align-self-center">
-                            <img src="../../assets/img/costic/customer-9.jpg" class="ms-img-round" alt="people">
+                            <img src="../assets/img/costic/customer-9.jpg" class="ms-img-round" alt="people"/>
                           </div>
                           <div class="media-body ms-chat-user-info mt-1">
                             <h6>John Doe</h6>
@@ -639,7 +642,7 @@
                         </li>
                         <li class="ms-chat-user-container ms-open-chat p-3 media clearfix">
                           <div class="ms-chat-img mr-3 align-self-center">
-                            <img src="../../assets/img/costic/customer-8.jpg" class="ms-img-round" alt="people">
+                            <img src="../assets/img/costic/customer-8.jpg" class="ms-img-round" alt="people"/>
                           </div>
                           <div class="media-body ms-chat-user-info mt-1">
                             <h6>John Doe</h6>
@@ -650,7 +653,7 @@
                         </li>
                         <li class="ms-chat-user-container ms-open-chat p-3 media clearfix">
                           <div class="ms-chat-img mr-3 align-self-center">
-                            <img src="../../assets/img/costic/customer-7.jpg" class="ms-img-round" alt="people">
+                            <img src="../assets/img/costic/customer-7.jpg" class="ms-img-round" alt="people"/>
                           </div>
                           <div class="media-body ms-chat-user-info mt-1">
                             <h6>John Doe</h6>
@@ -661,7 +664,7 @@
                         </li>
                         <li class="ms-chat-user-container ms-open-chat p-3 media clearfix">
                           <div class="ms-chat-img mr-3 align-self-center">
-                            <img src="../../assets/img/costic/customer-6.jpg" class="ms-img-round" alt="people">
+                            <img src="../assets/img/costic/customer-6.jpg" class="ms-img-round" alt="people"/>
                           </div>
                           <div class="media-body ms-chat-user-info mt-1">
                             <h6>John Doe</h6>
@@ -672,7 +675,7 @@
                         </li>
                         <li class="ms-chat-user-container ms-open-chat p-3 media clearfix">
                           <div class="ms-chat-img mr-3 align-self-center">
-                            <img src="../../assets/img/costic/customer-5.jpg" class="ms-img-round" alt="people">
+                            <img src="../assets/img/costic/customer-5.jpg" class="ms-img-round" alt="people"/>
                           </div>
                           <div class="media-body ms-chat-user-info mt-1">
                             <h6>John Doe</h6>
@@ -696,7 +699,7 @@
               <div class="ms-chat-header justify-content-between">
                 <div class="ms-chat-user-container media clearfix">
                   <div class="ms-chat-status ms-status-online ms-chat-img mr-3 align-self-center">
-                    <img src="../../assets/img/costic/customer-3.jpg" class="ms-img-round" alt="people">
+                    <img src="../assets/img/costic/customer-3.jpg" class="ms-img-round" alt="people"/>
                   </div>
                   <div class="media-body ms-chat-user-info mt-1">
                     <h6>John Doe</h6>
@@ -718,7 +721,7 @@
             <div class="ms-panel-body ms-scrollable">
               <div class="ms-chat-bubble ms-chat-message ms-chat-outgoing media clearfix">
                 <div class="ms-chat-status ms-status-online ms-chat-img">
-                  <img src="../../assets/img/costic/customer-3.jpg" class="ms-img-round" alt="people">
+                  <img src="../assets/img/costic/customer-3.jpg" class="ms-img-round" alt="people"/>
                 </div>
                 <div class="media-body">
                   <div class="ms-chat-text">
@@ -729,7 +732,7 @@
               </div>
               <div class="ms-chat-bubble ms-chat-message media ms-chat-incoming clearfix">
                 <div class="ms-chat-status ms-status-online ms-chat-img">
-                  <img src="../../assets/img/costic/customer-5.jpg" class="ms-img-round" alt="people">
+                  <img src="../assets/img/costic/customer-5.jpg" class="ms-img-round" alt="people"/>
                 </div>
                 <div class="media-body">
                   <div class="ms-chat-text">
@@ -740,7 +743,7 @@
               </div>
               <div class="ms-chat-bubble ms-chat-message ms-chat-outgoing media clearfix">
                 <div class="ms-chat-status ms-status-online ms-chat-img">
-                  <img src="../../assets/img/costic/customer-3.jpg" class="ms-img-round" alt="people">
+                  <img src="../assets/img/costic/customer-3.jpg" class="ms-img-round" alt="people"/>
                 </div>
                 <div class="media-body">
                   <div class="ms-chat-text">
@@ -751,7 +754,7 @@
               </div>
               <div class="ms-chat-bubble ms-chat-message media ms-chat-incoming clearfix">
                 <div class="ms-chat-status ms-status-online ms-chat-img">
-                  <img src="../../assets/img/costic/customer-5.jpg" class="ms-img-round" alt="people">
+                  <img src="../assets/img/costic/customer-5.jpg" class="ms-img-round" alt="people"/>
                 </div>
                 <div class="media-body">
                   <div class="ms-chat-text">
@@ -763,7 +766,7 @@
               </div>
               <div class="ms-chat-bubble ms-chat-message ms-chat-outgoing media clearfix">
                 <div class="ms-chat-status ms-status-online ms-chat-img">
-                  <img src="../../assets/img/costic/customer-3.jpg" class="ms-img-round" alt="people">
+                  <img src="../assets/img/costic/customer-3.jpg" class="ms-img-round" alt="people"/>
                 </div>
                 <div class="media-body">
                   <div class="ms-chat-text">
@@ -774,7 +777,7 @@
               </div>
               <div class="ms-chat-bubble ms-chat-message ms-chat-incoming media clearfix">
                 <div class="ms-chat-status ms-status-online ms-chat-img">
-                  <img src="../../assets/img/costic/customer-5.jpg" class="ms-img-round" alt="people">
+                  <img src="../assets/img/costic/customer-5.jpg" class="ms-img-round" alt="people"/>
                 </div>
                 <div class="media-body">
                   <div class="ms-chat-text">
@@ -790,7 +793,7 @@
                   <li class="ms-chat-vn"><i class="material-icons">mic</i>
                   </li>
                   <li class="ms-chat-input">
-                    <input type="text" name="msg" placeholder="Enter Message" value="">
+                    <input type="text" name="msg" placeholder="Enter Message" value=""/>
                   </li>
                   <li>
                     <ul class="ms-chat-text-controls ms-list-flex">
@@ -823,7 +826,7 @@
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form>
+        <div>
           <div class="modal-body">
             <div class="ms-form-group">
               <label>Remind me about</label>
@@ -831,7 +834,7 @@
             </div>
             <div class="ms-form-group"> <span class="ms-option-name fs-14">Repeat Daily</span>
               <label class="ms-switch float-right">
-                <input type="checkbox"> <span class="ms-switch-slider round"></span>
+                <input type="checkbox"/> <span class="ms-switch-slider round"></span>
               </label>
             </div>
             <div class="row">
@@ -857,7 +860,7 @@
             <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
             <button type="button" class="btn btn-secondary shadow-none" data-dismiss="modal">Add Reminder</button>
           </div>
-        </form>
+        </div>
       </div>
     </div>
   </div>
@@ -870,11 +873,11 @@
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form>
+        <div>
           <div class="modal-body">
             <div class="ms-form-group">
               <label>Note Title</label>
-              <input type="text" class="form-control" name="note-title" value="">
+              <input type="text" class="form-control" name="note-title" value=""/>
             </div>
             <div class="ms-form-group">
               <label>Note Description</label>
@@ -885,23 +888,22 @@
             <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
             <button type="button" class="btn btn-secondary shadow-none" data-dismiss="modal">Add Note</button>
           </div>
-        </form>
+        </div>
       </div>
     </div>
   </div>
-  <!-- SCRIPTS -->
-  <!-- Global Required Scripts Start -->
-  <script src="../../assets/js/jquery-3.3.1.min.js"></script>
-  <script src="../../assets/js/popper.min.js"></script>
-  <script src="../../assets/js/bootstrap.min.js"></script>
-  <script src="../../assets/js/perfect-scrollbar.js">
+    </form>
+    <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/popper.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/perfect-scrollbar.js">
   </script>
-  <script src="../../assets/js/jquery-ui.min.js">
+  <script src="../assets/js/jquery-ui.min.js">
   </script>
   <!-- Global Required Scripts End -->
   <!-- Costic core JavaScript -->
-  <script src="../../assets/js/framework.js"></script>
+  <script src="../assets/js/framework.js"></script>
   <!-- Settings -->
-  <script src="../../assets/js/settings.js"></script>
+  <script src="../assets/js/settings.js"></script>
 </body>
 </html>
