@@ -17,7 +17,21 @@ namespace ProjetoFinal.BackEnd.Admin.Products
 
         protected void btn_AddPdc_Click(object sender, EventArgs e)
         {
+            string retorno = "";
+             utilizador;
 
+            (retorno, utilizador) = DBConnections.verificaLogin(tb_email_user.Value.ToString(), tb_pass.Value.ToString());
+
+            if (retorno == "2")
+            {
+                Session["utilizador"] = utilizador;
+                Response.Write(utilizador.email.ToString());
+                Response.Redirect("../Home/index.aspx");
+            }
+            else
+            {
+                Response.Write(retorno.ToString());
+            }
         }
     }
 }
