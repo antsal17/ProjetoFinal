@@ -504,6 +504,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Imagens\produto\" />
     <Folder Include="Imagens\utilizadores\" />
     <Folder Include="PDF\" />
   </ItemGroup>
