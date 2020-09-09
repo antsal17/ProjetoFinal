@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="backEndAdminAddProducts.aspx.cs" Inherits="ProjetoFinal.BackEnd.Admin.Products.backEndAdminAddProducts" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="backEndAdminInvoiceDetail.aspx.cs" Inherits="ProjetoFinal.BackEnd.Admin.invoice.backEndAdminInvoiceDetail" %>
 
 <!DOCTYPE html>
 
@@ -10,7 +10,7 @@
     <title>Dashboard</title>
     <!-- Iconic Fonts -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-    <link href="../../vendors/iconic-fonts/font-awesome/css/all.min.css" rel="stylesheet" />
+    <link href="../vendors/iconic-fonts/font-awesome/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../vendors/iconic-fonts/flat-icons/flaticon.css" />
     <link rel="stylesheet" href="../vendors/iconic-fonts/cryptocoins/cryptocoins.css" />
     <link rel="stylesheet" href="../vendors/iconic-fonts/cryptocoins/cryptocoins-colors.css" />
@@ -29,8 +29,6 @@
     <form id="form1" runat="server">
         <div class="ms-body ms-aside-left-open ms-primary-theme ms-has-quickbar">
 
-
-
             <!-- Preloader -->
             <div id="preloader-wrap">
                 <div class="spinner spinner-8">
@@ -48,112 +46,98 @@
                     <div class="ms-circle12 ms-child"></div>
                 </div>
             </div>
-
             <!-- Overlays -->
             <div class="ms-aside-overlay ms-overlay-left ms-toggler" data-target="#ms-side-nav" data-toggle="slideLeft"></div>
             <div class="ms-aside-overlay ms-overlay-right ms-toggler" data-target="#ms-recent-activity" data-toggle="slideRight"></div>
-
             <!-- Sidebar Navigation Left -->
             <aside id="ms-side-nav" class="side-nav fixed ms-aside-scrollable ms-aside-left">
-
                 <!-- Logo -->
                 <div class="logo-sn ms-d-block-lg">
-                    <a class="pl-0 ml-0 text-center" href="#">
-                        <img src="../assets/img/costic/costic-logo-216x62.png" alt="logo" />
+                    <a class="pl-0 ml-0 text-center" href="../../index.html">
+                        <img src="../assets/img/costic/costic-logo-216x62.png" alt="logo"/>
                     </a>
                 </div>
-
                 <!-- Navigation -->
                 <ul class="accordion ms-main-aside fs-14" id="side-nav-accordion">
                     <!-- Dashboard -->
                     <li class="menu-item">
-                        <a href="#" data-target="#dashboard" aria-expanded="false" aria-controls="dashboard"><span><i class="material-icons fs-16">dashboard</i>Dashboard </span>
+                        <a href="../../index.html" data-target="#dashboard" aria-expanded="false" aria-controls="dashboard"><span><i class="material-icons fs-16">dashboard</i>Dashboard </span>
                         </a>
                     </li>
                     <!-- /Dashboard -->
                     <!-- product -->
-
                     <li class="menu-item">
-                        <a href="#" class="has-chevron" data-toggle="collapse" data-target="#product" aria-expanded="false" aria-controls="product">
-                            <span><i class="fa fa-archive fs-16"></i>Products </span>
+                        <a href="#" class="has-chevron" data-toggle="collapse" data-target="#product" aria-expanded="false" aria-controls="product"><span><i class="fa fa-archive fs-16"></i>Products </span>
                         </a>
                         <ul id="product" class="collapse" aria-labelledby="product" data-parent="#side-nav-accordion">
-                            <li><a href="productlist.html">Product List</a> </li>
-                            <li><a href="addproduct.html">Add Product</a> </li>
-                            <li><a href="productdetail.html">Product Detail</a> </li>
-
+                            <li><a href="../product/productlist.html">Product List</a>
+                            </li>
+                            <li><a href="../product/addproduct.html">Add Product</a>
+                            </li>
+                            <li><a href="../product/productdetail.html">Product Detail</a>
+                            </li>
                         </ul>
                     </li>
                     <!-- product end -->
-
                     <!-- orders -->
                     <li class="menu-item">
-                        <a href="../orders.html">
-                            <span><i class="fas fa-clipboard-list fs-16"></i>Orders</span>
+                        <a href="../orders.html"><span><i class="fas fa-clipboard-list fs-16"></i>Orders</span>
                         </a>
                     </li>
                     <!-- orders end -->
                     <!-- Invoice -->
-
                     <li class="menu-item">
-                        <a href="#" class="has-chevron" data-toggle="collapse" data-target="#invoice" aria-expanded="false" aria-controls="invoice">
-                            <span><i class="fas fa-file-invoice fs-16"></i>Invoice </span>
+                        <a href="#" class="has-chevron" data-toggle="collapse" data-target="#invoice" aria-expanded="false" aria-controls="invoice"><span><i class="fas fa-file-invoice fs-16"></i>Invoice </span>
                         </a>
                         <ul id="invoice" class="collapse" aria-labelledby="invoice" data-parent="#side-nav-accordion">
-                            <li><a href="../invoice/invoicedetail.html">Invoice Detail</a> </li>
-                            <li><a href="../invoice/invoicelist.html">Invoice List</a> </li>
-
+                            <li><a href="invoicedetail.html">Invoice Detail</a>
+                            </li>
+                            <li><a href="invoicelist.html">Invoice List</a>
+                            </li>
                         </ul>
                     </li>
                     <!-- Invoice end -->
-
-                    <!-- customers-->
-
                     <li class="menu-item">
-                        <a href="#" class="has-chevron" data-toggle="collapse" data-target="#customer" aria-expanded="false" aria-controls="customer">
-                            <span><i class="fas fa-user-friends fs-16"></i>Customers </span>
+                        <a href="#" class="has-chevron" data-toggle="collapse" data-target="#customer" aria-expanded="false" aria-controls="customer"><span><i class="fas fa-user-friends fs-16"></i>Customers </span>
                         </a>
                         <ul id="customer" class="collapse" aria-labelledby="customer" data-parent="#side-nav-accordion">
-                            <li><a href="../customer/customersreview.html">Customers Review</a> </li>
-                            <li><a href="../customer/customerlist.html">Customers List</a> </li>
+                            <li><a href="../customer/customersreview.html">Customers Review</a>
+                            </li>
+                            <li><a href="../customer/customerlist.html">Customers List</a>
+                            </li>
                             <li><a href="../customer/addcustomer.html">Add Customer</a></li>
-
-
-                        </ul>
                     </li>
-                    <!-- Customers  end -->
-                    <!-- Apps -->
-                    <li class="menu-item">
-                        <a href="#" class="has-chevron" data-toggle="collapse" data-target="#apps" aria-expanded="false" aria-controls="apps"><span><i class="material-icons fs-16">mode_comment</i>Chat</span>
-                        </a>
-                        <ul id="apps" class="collapse" aria-labelledby="apps" data-parent="#side-nav-accordion">
-                            <li><a href="../apps/chat.html">Chat</a> </li>
-                            <li><a href="../apps/email.html">Email</a> </li>
-                        </ul>
-                    </li>
-                    <!-- /Apps -->
                 </ul>
-
-
+                </li>
+      <!-- Customers  end -->
+                <!-- Apps -->
+                <li class="menu-item">
+                    <a href="#" class="has-chevron" data-toggle="collapse" data-target="#apps" aria-expanded="false" aria-controls="apps"><span><i class="material-icons fs-16">phone_iphone</i>Apps</span>
+                    </a>
+                    <ul id="apps" class="collapse" aria-labelledby="apps" data-parent="#side-nav-accordion">
+                        <li><a href="../apps/chat.html">Chat</a> </li>
+                        <li><a href="../apps/email.html">Email</a> </li>
+                    </ul>
+                </li>
+                <!-- /Apps -->
+                </ul>
             </aside>
-
-
             <!-- Sidebar Right -->
             <aside id="ms-recent-activity" class="side-nav fixed ms-aside-right ms-scrollable">
-
                 <div class="ms-aside-header">
                     <ul class="nav nav-tabs tabs-bordered d-flex nav-justified mb-3" role="tablist">
-                        <li role="presentation" class="fs-12"><a href="#activityLog" aria-controls="activityLog" class="active" role="tab" data-toggle="tab">Activity Log</a></li>
+                        <li role="presentation" class="fs-12"><a href="#activityLog" aria-controls="activityLog" class="active" role="tab" data-toggle="tab">Activity Log</a>
+                        </li>
 
                         <li>
-                            <button type="button" class="close ms-toggler text-center" data-target="#ms-recent-activity" data-toggle="slideRight"><span aria-hidden="true">&times;</span></button></li>
+                            <button type="button" class="close ms-toggler text-center" data-target="#ms-recent-activity" data-toggle="slideRight">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </li>
                     </ul>
                 </div>
-
                 <div class="ms-aside-body">
-
                     <div class="tab-content">
-
                         <div role="tabpanel" class="tab-pane active fade show" id="activityLog">
                             <ul class="ms-activity-log">
                                 <li>
@@ -208,43 +192,33 @@
                             <a href="#" class="btn btn-primary d-block">View All </a>
                         </div>
 
-
-
                     </div>
-
                 </div>
-
             </aside>
-
             <!-- Main Content -->
             <main class="body-content">
-
                 <!-- Navigation Bar -->
                 <nav class="navbar ms-navbar">
-
                     <div class="ms-aside-toggler ms-toggler pl-0" data-target="#ms-side-nav" data-toggle="slideLeft">
                         <span class="ms-toggler-bar bg-primary"></span>
                         <span class="ms-toggler-bar bg-primary"></span>
                         <span class="ms-toggler-bar bg-primary"></span>
                     </div>
-
                     <div class="logo-sn logo-sm ms-d-block-sm">
                         <a class="pl-0 ml-0 text-center navbar-brand mr-0" href="../../index.html">
-                            <img src="../assets/img/costic/costic-logo-84x41.png" alt="logo" />
+                            <img src="../assets/img/costic/costic-logo-84x41.png" alt="logo"/>
                         </a>
                     </div>
-
                     <ul class="ms-nav-list ms-inline mb-0" id="ms-nav-options">
                         <li class="ms-nav-item ms-search-form pb-0 py-0">
-                            <div class="ms-form">
+                            <div class="ms-form" method="post">
                                 <div class="ms-form-group my-0 mb-0 has-icon fs-14">
-                                    <input type="search" class="ms-form-input" name="search" placeholder="Search here..." value="" />
+                                    <input type="search" class="ms-form-input" name="search" placeholder="Search here..." value=""/>
                                     <i class="flaticon-search text-disabled"></i>
                                 </div>
                             </div>
                         </li>
-                        <li class="ms-nav-item dropdown">
-                            <a href="#" class="text-disabled ms-has-notification" id="mailDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="flaticon-mail"></i></a>
+                        <li class="ms-nav-item dropdown"><a href="#" class="text-disabled ms-has-notification" id="mailDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="flaticon-mail"></i></a>
                             <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="mailDropdown">
                                 <li class="dropdown-menu-header">
                                     <h6 class="dropdown-header ms-inline m-0"><span class="text-disabled">Mail</span></h6>
@@ -254,7 +228,7 @@
                                 <li class="ms-scrollable ms-dropdown-list">
                                     <a class="media p-2" href="#">
                                         <div class="ms-chat-status ms-status-offline ms-chat-img mr-2 align-self-center">
-                                            <img src="../assets/img/costic/customer-1.jpg" class="ms-img-round" alt="people" />
+                                            <img src="../assets/img/costic/customer-1.jpg" class="ms-img-round" alt="people"/>
                                         </div>
                                         <div class="media-body">
                                             <span>Hey man, looking forward to your new project.</span>
@@ -263,7 +237,7 @@
                                     </a>
                                     <a class="media p-2" href="#">
                                         <div class="ms-chat-status ms-status-online ms-chat-img mr-2 align-self-center">
-                                            <img src="../assets/img/costic/customer-2.jpg" class="ms-img-round" alt="people" />
+                                            <img src="../assets/img/costic/customer-2.jpg" class="ms-img-round" alt="people"/>
                                         </div>
                                         <div class="media-body">
                                             <span>Dear John, I was told you bought Costic! Send me your feedback</span>
@@ -272,7 +246,7 @@
                                     </a>
                                     <a class="media p-2" href="#">
                                         <div class="ms-chat-status ms-status-offline ms-chat-img mr-2 align-self-center">
-                                            <img src="../assets/img/costic/customer-3.jpg" class="ms-img-round" alt="people" />
+                                            <img src="../assets/img/costic/customer-3.jpg" class="ms-img-round" alt="people"/>
                                         </div>
                                         <div class="media-body">
                                             <span>How many people are we inviting to the dashboard?</span>
@@ -281,13 +255,11 @@
                                     </a>
                                 </li>
                                 <li class="dropdown-divider"></li>
-                                <li class="dropdown-menu-footer text-center">
-                                    <a href="../apps/email.html">Go to Inbox</a>
+                                <li class="dropdown-menu-footer text-center"><a href="../apps/email.html">Go to Inbox</a>
                                 </li>
                             </ul>
                         </li>
-                        <li class="ms-nav-item dropdown">
-                            <a href="#" class="text-disabled ms-has-notification" id="notificationDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="flaticon-bell"></i></a>
+                        <li class="ms-nav-item dropdown"><a href="#" class="text-disabled ms-has-notification" id="notificationDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="flaticon-bell"></i></a>
                             <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="notificationDropdown">
                                 <li class="dropdown-menu-header">
                                     <h6 class="dropdown-header ms-inline m-0"><span class="text-disabled">Notifications</span></h6>
@@ -321,15 +293,14 @@
                                     </a>
                                 </li>
                                 <li class="dropdown-divider"></li>
-                                <li class="dropdown-menu-footer text-center">
-                                    <a href="#">View all Notifications</a>
+                                <li class="dropdown-menu-footer text-center"><a href="#">View all Notifications</a>
                                 </li>
                             </ul>
                         </li>
 
                         <li class="ms-nav-item ms-nav-user dropdown">
                             <a href="#" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img class="ms-user-img ms-img-round float-right" src="../assets/img/costic/customer-6.jpg" alt="people" />
+                                <img class="ms-user-img ms-img-round float-right" src="../assets/img/costic/customer-6.jpg" alt="people"/>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-right user-dropdown" aria-labelledby="userDropdown">
                                 <li class="dropdown-menu-header">
@@ -337,206 +308,135 @@
                                 </li>
                                 <li class="dropdown-divider"></li>
                                 <li class="ms-dropdown-list">
-                                    <a class="media fs-14 p-2" href="../prebuilt-pages/user-profile.html"><span><i class="flaticon-user mr-2"></i>Profile</span> </a>
-                                    <a class="media fs-14 p-2" href="../apps/email.html"><span><i class="flaticon-mail mr-2"></i>Inbox</span> <span class="badge badge-pill badge-info">3</span> </a>
-                                    <a class="media fs-14 p-2" href="../prebuilt-pages/user-profile.html"><span><i class="flaticon-gear mr-2"></i>Account Settings</span> </a>
+                                    <a class="media fs-14 p-2" href="../prebuilt-pages/user-profile.html"><span><i class="flaticon-user mr-2"></i>Profile</span>
+                                    </a>
+                                    <a class="media fs-14 p-2" href="../apps/email.html"><span><i class="flaticon-mail mr-2"></i>Inbox</span>  <span class="badge badge-pill badge-info">3</span>
+                                    </a>
+                                    <a class="media fs-14 p-2" href="../prebuilt-pages/user-profile.html"><span><i class="flaticon-gear mr-2"></i>Account Settings</span>
+                                    </a>
                                 </li>
                                 <li class="dropdown-divider"></li>
                                 <li class="dropdown-menu-footer">
-                                    <a class="media fs-14 p-2" href="../prebuilt-pages/lock-screen.html"><span><i class="flaticon-security mr-2"></i>Lock</span> </a>
+                                    <a class="media fs-14 p-2" href="../prebuilt-pages/lock-screen.html"><span><i class="flaticon-security mr-2"></i>Lock</span>
+                                    </a>
                                 </li>
                                 <li class="dropdown-menu-footer">
-                                    <a class="media fs-14 p-2" href="../prebuilt-pages/default-login.html"><span><i class="flaticon-shut-down mr-2"></i>Logout</span> </a>
+                                    <a class="media fs-14 p-2" href="../prebuilt-pages/default-login.html"><span><i class="flaticon-shut-down mr-2"></i>Logout</span>
+                                    </a>
                                 </li>
                             </ul>
                         </li>
                     </ul>
-
                     <div class="ms-toggler ms-d-block-sm pr-0 ms-nav-toggler" data-toggle="slideDown" data-target="#ms-nav-options">
                         <span class="ms-toggler-bar bg-primary"></span>
                         <span class="ms-toggler-bar bg-primary"></span>
                         <span class="ms-toggler-bar bg-primary"></span>
                     </div>
-
                 </nav>
-
-
                 <!-- Body Content Wrapper -->
                 <div class="ms-content-wrapper">
                     <div class="row">
-
                         <div class="col-md-12">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb pl-0">
-                                    <li class="breadcrumb-item"><a href="#"><i class="material-icons">home</i> Home</a></li>
-                                    <li class="breadcrumb-item"><a href="#">Products</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Add Product</li>
+                                    <li class="breadcrumb-item"><a href="#"><i class="material-icons">home</i> Home</a>
+                                    </li>
+                                    <li class="breadcrumb-item"><a href="#">Invoice</a>
+                                    </li>
+                                    <li class="breadcrumb-item active" aria-current="page">Invoice Details</li>
                                 </ol>
                             </nav>
-
-                            <div class="alert alert-success" role="alert">
-                                <strong>Well done!</strong> You successfully read this important alert message.
-                            </div>
-                        </div>
-
-
-
-                        <div class="col-xl-6 col-md-12">
-                            <div class="ms-panel ms-panel-fh">
-                                <div class="ms-panel-header">
-                                    <h6>Add Product Form</h6>
+                            <div class="ms-panel">
+                                <div class="ms-panel-header header-mini">
+                                    <div class="d-flex justify-content-between">
+                                        <h6>Invoice</h6>
+                                        <h6>#135178</h6>
+                                    </div>
                                 </div>
                                 <div class="ms-panel-body">
-                                    <div class="needs-validation clearfix">
-                                        <div class="form-row">
-                                            <div class="col-md-12 mb-3">
-                                                <label for="validationCustom18">Product Name</label>
-                                                <div class="input-group">
-                                                    <asp:TextBox type="text" class="form-control" id="validationCustom18" runat="server" placeholder="Product Name"></asp:TextBox>
-                                                    <div class="valid-feedback">
-                                                        Looks good!
-                                                    </div>
-                                                </div>
+                                    <!-- Invoice To -->
+                                    <div class="row align-items-center">
+                                        <div class="col-md-6">
+                                            <div class="invoice-address">
+                                                <h3>Reciever: </h3>
+                                                <h5>Anny Farisha</h5>
+                                                <p>Anny.123@hotmail.com</p>
+                                                <p class="mb-0">1642 Cambridge Drive, Phoenix, 85029 Arizona</p>
+                                                <p class="mb-0">Arizona</p>
+                                                <p>Phoenix</p>
                                             </div>
-
-                                            <div class="col-md-12 mb-3">
-                                                <label for="validationCustom22">Select Catagory</label>
-                                                <div class="input-group">
-                                                    <asp:DropDownList class="form-control" id="validationCustom22" runat="server" DataSourceID="SqlDataSource1" DataTextField="descricao" DataValueField="id">
-                                                    </asp:DropDownList>
-                                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ProjetoFinalConnectionString %>" SelectCommand="SELECT * FROM [categoria]"></asp:SqlDataSource>
-                                                    <div class="invalid-feedback">
-                                                        Please select a Catagory.
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 mb-3">
-                                                <label for="validationCustom24">Quantity</label>
-                                                <div class="input-group">
-                                                    <asp:TextBox type="number" class="form-control" id="validationCustom24" placeholder="1" required="required" runat="server"></asp:TextBox>
-                                                    <div class="invalid-feedback">
-                                                        Quantity
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 mb-3">
-                                                <label for="validationCustom25">Price</label>
-                                                <div class="input-group">
-                                                    <asp:TextBox type="text" class="form-control" id="validationCustom25" placeholder="10€" required="required" runat="server"></asp:TextBox>
-                                                    <div class="invalid-feedback">
-                                                        Price
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12 mb-3">
-                                                <label for="validationCustom12">Description</label>
-                                                <div class="input-group">
-                                                    <textarea rows="5" id="validationCustom12" class="form-control" placeholder="Message" required="required" runat="server"></textarea>
-                                                    <div class="invalid-feedback">
-                                                        Please provide a message.
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12 mb-3">
-                                                <label for="validationCustom12">Product Image - Main Image</label>
-                                                <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" runat="server" id="validatedCustomFile" multiple accept='image/*'/>
-                                                    <label class="custom-file-label" for="validatedCustomFile">Upload Images...</label>
-                                                    <div class="invalid-feedback">Example invalid custom file feedback</div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12 mb-3">
-                                                <label for="validationCustom12">Product Image - Image 1</label>
-                                                <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" runat="server" id="validatedCustomFile1"/>
-                                                    <label class="custom-file-label" for="validatedCustomFile">Upload Images...</label>
-                                                    <div class="invalid-feedback">Example invalid custom file feedback</div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12 mb-3">
-                                                <label for="validationCustom12">Product Image - Image 2</label>
-                                                <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" runat="server" id="validatedCustomFile2">
-                                                    <label class="custom-file-label" for="validatedCustomFile">Upload Images...</label>
-                                                    <div class="invalid-feedback">Example invalid custom file feedback</div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12 mb-3">
-                                                <label for="validationCustom12">Product Image - Image 3</label>
-                                                <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" runat="server" id="validatedCustomFile3">
-                                                    <label class="custom-file-label" for="validatedCustomFile">Upload Images...</label>
-                                                    <div class="invalid-feedback">Example invalid custom file feedback</div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 mb-3">
-                                                <label for="validationCustom24">Utilizador</label>
-                                                <div class="input-group">
-                                                   <asp:DropDownList ID="DropDownList2" AutoPostBack="true" class="form-control"  runat="server" DataSourceID="SqlDataSource3" DataTextField="username" DataValueField="id">
-            </asp:DropDownList>
-            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ProjetoFinalConnectionString %>" SelectCommand="SELECT * FROM [utilizador] INNER JOIN [tipoUtilizador] ON tipoUtilizador.id = utilizador.id_tipoUtilizador WHERE tipoUtilizador.id = 3"></asp:SqlDataSource>
-
-                                                    <div class="invalid-feedback">
-                                                        Quantity
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 mb-3">
-                                                <label for="validationCustom22">Select Address</label>
-                                                <div class="input-group">
-                                                    <asp:DropDownList class="form-control"  ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" DataTextField="rua" DataValueField="id">
-                                        </asp:DropDownList>
-             <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ProjetoFinalConnectionString %>" SelectCommand="select * from utilizador INNER JOIN utilizador_morada ON utilizador_morada.id_utilizador = utilizador.id INNER JOIN morada ON  morada.idMorada = utilizador_morada.id_morada where utilizador.id = @id">
-                                        <SelectParameters>
-                                        <asp:ControlParameter ControlID="DropDownList2" Name="id" PropertyName="SelectedValue" Type="Int32" />
-                                        </SelectParameters>
-                                        </asp:SqlDataSource>
-
-                                                <div class="invalid-feedback">
-                                                        Please select a Address.
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="ms-panel-header new">
-                                                <p class="medium">Status Available</p>
-                                                <div>
-                                                    <label class="ms-switch">
-                                                        <asp:CheckBox ID="ckbEstado" runat="server" />
-                                                        <span class="ms-switch-slider round"></span>
-                                                    </label>
-                                                </div>
-                                            </div>
-
                                         </div>
-                                        <div class="ms-panel-header new">
-                                            <asp:Button ID="btn_AddPdc" OnClick="btn_AddPdc_Click" class="btn btn-secondary d-block" type="submit" runat="server" Text="Save" />
+                                        <div class="col-md-6 text-md-right">
+                                            <ul class="invoice-date">
+                                                <li>Invoice Date : Saturday, April 07 2019</li>
+                                                <li>Due Date : Sunday, April 19 2019</li>
+                                            </ul>
                                         </div>
                                     </div>
-
+                                    <!-- Invoice Table -->
+                                    <div class="ms-invoice-table table-responsive mt-5">
+                                        <table class="table table-hover text-right thead-light">
+                                            <thead>
+                                                <tr class="text-capitalize">
+                                                    <th class="text-center w-5">id</th>
+                                                    <th class="text-left">description</th>
+                                                    <th>qty</th>
+                                                    <th>Unit Cost</th>
+                                                    <th>total</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-center">1</td>
+                                                    <td class="text-left">Grilled Sandwich</td>
+                                                    <td>1</td>
+                                                    <td>$30</td>
+                                                    <td>$30</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">2</td>
+                                                    <td class="text-left">Fried Egg Sandwich</td>
+                                                    <td>1</td>
+                                                    <td>$69</td>
+                                                    <td>$69</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">2</td>
+                                                    <td class="text-left">Spicy Grilled Burger</td>
+                                                    <td>2</td>
+                                                    <td>$19</td>
+                                                    <td>$38</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">2</td>
+                                                    <td class="text-left">Peri Peri Fries</td>
+                                                    <td>2</td>
+                                                    <td>$9</td>
+                                                    <td>$18</td>
+                                                </tr>
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <td colspan="4">Total Cost:</td>
+                                                    <td>$155</td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                    <div class="invoice-buttons text-right">
+                                        <a href="#" class="btn btn-primary mr-2">Print Invoice</a>
+                                        <a href="#" class="btn btn-primary">Send Invoice</a>
+                                    </div>
                                 </div>
                             </div>
-
                         </div>
-
-                        <div class="col-xl-6 col-md-12">
-                            <div class="row">
-                            </div>
-                        </div>
-
                     </div>
                 </div>
-
-
             </main>
 
-
-
             <!-- MODALS -->
-
             <!-- Quick bar -->
             <!-- Quick bar -->
-
 
             <!-- Quick bar Content -->
             <div class="ms-quick-bar-content">
@@ -551,7 +451,7 @@
 
                             <div class="ms-add-task-block">
                                 <div class="form-group mx-3 mt-0  fs-14 clearfix">
-                                    <input type="text" class="form-control fs-14 float-left" id="task-block" name="todo-block" placeholder="Add Task Block" value="" />
+                                    <input type="text" class="form-control fs-14 float-left" id="task-block" name="todo-block" placeholder="Add Task Block" value=""/>
                                     <button type="submit" class="ms-btn-icon bg-primary float-right"><i class="material-icons text-disabled">add</i></button>
                                 </div>
                             </div>
@@ -568,15 +468,15 @@
                                         <ul class="ms-list ms-task-block">
                                             <li class="ms-list-item ms-to-do-task ms-deletable">
                                                 <label class="ms-checkbox-wrap ms-todo-complete">
-                                                    <input type="checkbox" value="" />
+                                                    <input type="checkbox" value=""/>
                                                     <i class="ms-checkbox-check"></i>
                                                 </label>
                                                 <span>Task to do </span>
                                                 <button type="submit" class="close"><i class="flaticon-trash ms-delete-trigger"></i></button>
                                             </li>
                                             <li class="ms-list-item ms-to-do-task ms-deletable">
-                                                <label class="ms-checkbox-wrap ms-todo-complete">
-                                                    <input type="checkbox" value="" />
+                                                <label class="ms-checkbox-wrap ms-todo-complete"/>
+                                                    <input type="checkbox" value=""/>
                                                     <i class="ms-checkbox-check"></i>
                                                 </label>
                                                 <span>Task to do</span>
@@ -659,10 +559,10 @@
                                     </p>
                                     <ul class="ms-note-members clearfix mb-0">
                                         <li class="ms-deletable">
-                                            <img src="../../assets/img/people/people-3.jpg" alt="member" />
+                                            <img src="../assets/img/people/people-3.jpg" alt="member"/>
                                         </li>
                                         <li class="ms-deletable">
-                                            <img src="../../assets/img/people/people-5.jpg" alt="member" />
+                                            <img src="../assets/img/people/people-5.jpg" alt="member"/>
                                         </li>
                                     </ul>
                                 </div>
@@ -680,7 +580,7 @@
                                             <li class="ms-scrollable ms-dropdown-list ms-members-list">
                                                 <a class="media p-2" href="#">
                                                     <div class="mr-2 align-self-center">
-                                                        <img src="../assets/img/people/people-10.jpg" class="ms-img-round" alt="people" />
+                                                        <img src="../assets/img/people/people-10.jpg" class="ms-img-round" alt="people"/>
                                                     </div>
                                                     <div class="media-body">
                                                         <span>John Doe</span>
@@ -688,7 +588,7 @@
                                                 </a>
                                                 <a class="media p-2" href="#">
                                                     <div class="mr-2 align-self-center">
-                                                        <img src="../assets/img/people/people-9.jpg" class="ms-img-round" alt="people" />
+                                                        <img src="../assets/img/people/people-9.jpg" class="ms-img-round" alt="people"/>
                                                     </div>
                                                     <div class="media-body">
                                                         <span>Raymart Sandiago</span>
@@ -696,7 +596,7 @@
                                                 </a>
                                                 <a class="media p-2" href="#">
                                                     <div class="mr-2 align-self-center">
-                                                        <img src="../assets/img/people/people-7.jpg" class="ms-img-round" alt="people" />
+                                                        <img src="../assets/img/people/people-7.jpg" class="ms-img-round" alt="people"/>
                                                     </div>
                                                     <div class="media-body">
                                                         <span>Heather Brown</span>
@@ -724,7 +624,7 @@
                                     </p>
                                     <ul class="ms-note-members clearfix mb-0">
                                         <li class="ms-deletable">
-                                            <img src="../assets/img/people/people-9.jpg" alt="member" />
+                                            <img src="../assets/img/people/people-9.jpg" alt="member"/>
                                         </li>
                                     </ul>
                                 </div>
@@ -742,7 +642,7 @@
                                             <li class="ms-scrollable ms-dropdown-list ms-members-list">
                                                 <a class="media p-2" href="#">
                                                     <div class="mr-2 align-self-center">
-                                                        <img src="../assets/img/people/people-10.jpg" class="ms-img-round" alt="people" />
+                                                        <img src="../assets/img/people/people-10.jpg" class="ms-img-round" alt="people"/>
                                                     </div>
                                                     <div class="media-body">
                                                         <span>John Doe</span>
@@ -750,7 +650,7 @@
                                                 </a>
                                                 <a class="media p-2" href="#">
                                                     <div class="mr-2 align-self-center">
-                                                        <img src="../assets/img/people/people-9.jpg" class="ms-img-round" alt="people" />
+                                                        <img src="../assets/img/people/people-9.jpg" class="ms-img-round" alt="people"/>
                                                     </div>
                                                     <div class="media-body">
                                                         <span>Raymart Sandiago</span>
@@ -758,7 +658,7 @@
                                                 </a>
                                                 <a class="media p-2" href="#">
                                                     <div class="mr-2 align-self-center">
-                                                        <img src="../assets/img/people/people-7.jpg" class="ms-img-round" alt="people" />
+                                                        <img src="../assets/img/people/people-7.jpg" class="ms-img-round" alt="people"/>
                                                     </div>
                                                     <div class="media-body">
                                                         <span>Heather Brown</span>
@@ -786,7 +686,7 @@
                             <p>Invite Team Members</p>
                             <div>
                                 <div class="ms-form-group">
-                                    <input type="text" placeholder="Member Email" class="form-control" name="invite-email" value="" />
+                                    <input type="text" placeholder="Member Email" class="form-control" name="invite-email" value=""/>
                                 </div>
                                 <div class="ms-form-group">
                                     <button type="submit" name="invite-member" class="btn btn-primary w-100">Invite</button>
@@ -804,14 +704,14 @@
                                     <h4 class="section-title bold">Customize</h4>
                                     <div>
                                         <label class="ms-switch">
-                                            <input type="checkbox" id="dark-mode" />
+                                            <input type="checkbox" id="dark-mode"/>
                                             <span class="ms-switch-slider round"></span>
                                         </label>
                                         <span>Dark Mode </span>
                                     </div>
                                     <div>
                                         <label class="ms-switch">
-                                            <input type="checkbox" id="remove-quickbar" />
+                                            <input type="checkbox" id="remove-quickbar"/>
                                             <span class="ms-switch-slider round"></span>
                                         </label>
                                         <span>Remove Quickbar </span>
@@ -832,35 +732,30 @@
                 </div>
 
             </div>
-
-
-            <!-- Reminder Modal -->
+            </aside>
+  <!-- Reminder Modal -->
             <div class="modal fade" id="reminder-modal" tabindex="-1" role="dialog" aria-labelledby="reminder-modal">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
-
                         <div class="modal-header bg-secondary">
                             <h5 class="modal-title has-icon text-white">New Reminder</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
-
                         <div>
-
                             <div class="modal-body">
-
                                 <div class="ms-form-group">
                                     <label>Remind me about</label>
                                     <textarea class="form-control" name="reminder"></textarea>
                                 </div>
-
                                 <div class="ms-form-group">
                                     <span class="ms-option-name fs-14">Repeat Daily</span>
                                     <label class="ms-switch float-right">
-                                        <input type="checkbox" />
+                                        <input type="checkbox"/>
                                         <span class="ms-switch-slider round"></span>
                                     </label>
                                 </div>
-
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="ms-form-group">
@@ -879,79 +774,69 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
-
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
                                 <button type="button" class="btn btn-secondary shadow-none" data-dismiss="modal">Add Reminder</button>
                             </div>
-
                         </div>
-
                     </div>
                 </div>
             </div>
-
             <!-- Notes Modal -->
             <div class="modal fade" id="notes-modal" tabindex="-1" role="dialog" aria-labelledby="notes-modal">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
-
                         <div class="modal-header bg-secondary">
                             <h5 class="modal-title has-icon text-white" id="NoteModal">New Note</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
-
                         <div>
-
                             <div class="modal-body">
-
                                 <div class="ms-form-group">
                                     <label>Note Title</label>
                                     <input type="text" class="form-control" name="note-title" value=""/>
                                 </div>
-
                                 <div class="ms-form-group">
                                     <label>Note Description</label>
                                     <textarea class="form-control" name="note-description"></textarea>
                                 </div>
-
                             </div>
-
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
                                 <button type="button" class="btn btn-secondary shadow-none" data-dismiss="modal">Add Note</button>
                             </div>
-
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
     </form>
-    <!-- SCRIPTS -->
-    <!-- Global Required Scripts Start -->
+
     <script src="../assets/js/jquery-3.3.1.min.js"></script>
     <script src="../assets/js/popper.min.js"></script>
     <script src="../assets/js/bootstrap.min.js"></script>
-    <script src="../assets/js/perfect-scrollbar.js"> </script>
-    <script src="../assets/js/jquery-ui.min.js"> </script>
+    <script src="../assets/js/perfect-scrollbar.js">
+    </script>
+    <script src="../assets/js/jquery-ui.min.js">
+    </script>
     <!-- Global Required Scripts End -->
-
     <!-- Page Specific Scripts Start -->
-    <script src="../assets/js/slick.min.js"> </script>
-    <script src="../assets/js/moment.js"> </script>
-    <script src="../assets/js/jquery.webticker.min.js"> </script>
-    <script src="../assets/js/Chart.bundle.min.js"> </script>
-    <script src="../assets/js/Chart.Financial.js"> </script>
-
+    <script src="../assets/js/slick.min.js">
+    </script>
+    <script src="../assets/js/moment.js">
+    </script>
+    <script src="../assets/js/jquery.webticker.min.js">
+    </script>
+    <script src="../assets/js/Chart.bundle.min.js">
+    </script>
+    <script src="../assets/js/Chart.Financial.js">
+    </script>
     <!-- Page Specific Scripts Finish -->
-
     <!-- Costic core JavaScript -->
     <script src="../assets/js/framework.js"></script>
-
     <!-- Settings -->
     <script src="../assets/js/settings.js"></script>
 </body>

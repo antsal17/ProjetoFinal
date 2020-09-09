@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="notas.aspx.cs" Inherits="ProjetoFinal.notas" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="backEndAdminEmail.aspx.cs" Inherits="ProjetoFinal.BackEnd.Admin.Comunication.backEndAdminEmail" %>
 
 <!DOCTYPE html>
 
@@ -9,7 +9,6 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            dfffg
         </div>
     </form>
 </body>

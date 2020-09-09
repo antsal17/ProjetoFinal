@@ -5,12 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace ProjetoFinal.BackEnd.Admin
+namespace ProjetoFinal.BackEnd.Admin.customers
 {
-    public partial class backEndAdminHome : System.Web.UI.Page
+    public partial class backEndAdminCustomersList : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
         }
     }
 }

@@ -191,17 +191,13 @@
     <Content Include="BackEnd\Admin\assets\js\web-analytics.js" />
     <Content Include="BackEnd\Admin\assets\js\widgets.js" />
     <Content Include="BackEnd\Admin\backEndAdminHome.aspx" />
-    <Content Include="BackEnd\Admin\pages\apps\chat.html" />
-    <Content Include="BackEnd\Admin\pages\apps\email.html" />
-    <Content Include="BackEnd\Admin\pages\customer\addcustomer.html" />
-    <Content Include="BackEnd\Admin\pages\customer\customerlist.html" />
-    <Content Include="BackEnd\Admin\pages\customer\customersreview.html" />
-    <Content Include="BackEnd\Admin\pages\invoice\invoicedetail.html" />
-    <Content Include="BackEnd\Admin\pages\invoice\invoicelist.html" />
-    <Content Include="BackEnd\Admin\pages\orders.html" />
-    <Content Include="BackEnd\Admin\pages\product\addproduct.html" />
-    <Content Include="BackEnd\Admin\pages\product\productdetail.html" />
-    <Content Include="BackEnd\Admin\pages\product\productlist.html" />
+    <Content Include="BackEnd\Admin\Comunication\backEndAdminChat.aspx" />
+    <Content Include="BackEnd\Admin\Comunication\backEndAdminEmail.aspx" />
+    <Content Include="BackEnd\Admin\Customers\backEndAdminAddCustomers.aspx" />
+    <Content Include="BackEnd\Admin\Customers\backEndAdminCustomersList.aspx" />
+    <Content Include="BackEnd\Admin\Customers\backEndAdminCustomersReview.aspx" />
+    <Content Include="BackEnd\Admin\Invoice\backEndAdminInvoice.aspx" />
+    <Content Include="BackEnd\Admin\Invoice\backEndAdminInvoiceDetail.aspx" />
     <Content Include="BackEnd\Admin\Products\backEndAdminAddProducts.aspx" />
     <Content Include="BackEnd\Admin\Products\backEndAdminProducDetail.aspx" />
     <Content Include="BackEnd\Admin\Products\backEndAdminProductList.aspx" />
@@ -256,6 +252,55 @@
     </Compile>
     <Compile Include="BackEnd\Admin\backEndAdminHome.aspx.designer.cs">
       <DependentUpon>backEndAdminHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BackEnd\Admin\Comunication\backEndAdminChat.aspx.cs">
+      <DependentUpon>backEndAdminChat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BackEnd\Admin\Comunication\backEndAdminChat.aspx.designer.cs">
+      <DependentUpon>backEndAdminChat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BackEnd\Admin\Comunication\backEndAdminEmail.aspx.cs">
+      <DependentUpon>backEndAdminEmail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BackEnd\Admin\Comunication\backEndAdminEmail.aspx.designer.cs">
+      <DependentUpon>backEndAdminEmail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BackEnd\Admin\Customers\backEndAdminAddCustomers.aspx.cs">
+      <DependentUpon>backEndAdminAddCustomers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BackEnd\Admin\Customers\backEndAdminAddCustomers.aspx.designer.cs">
+      <DependentUpon>backEndAdminAddCustomers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BackEnd\Admin\Customers\backEndAdminCustomersList.aspx.cs">
+      <DependentUpon>backEndAdminCustomersList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BackEnd\Admin\Customers\backEndAdminCustomersList.aspx.designer.cs">
+      <DependentUpon>backEndAdminCustomersList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BackEnd\Admin\Customers\backEndAdminCustomersReview.aspx.cs">
+      <DependentUpon>backEndAdminCustomersReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BackEnd\Admin\Customers\backEndAdminCustomersReview.aspx.designer.cs">
+      <DependentUpon>backEndAdminCustomersReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BackEnd\Admin\Invoice\backEndAdminInvoice.aspx.cs">
+      <DependentUpon>backEndAdminInvoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BackEnd\Admin\Invoice\backEndAdminInvoice.aspx.designer.cs">
+      <DependentUpon>backEndAdminInvoice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BackEnd\Admin\Invoice\backEndAdminInvoiceDetail.aspx.cs">
+      <DependentUpon>backEndAdminInvoiceDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BackEnd\Admin\Invoice\backEndAdminInvoiceDetail.aspx.designer.cs">
+      <DependentUpon>backEndAdminInvoiceDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="BackEnd\Admin\Products\backEndAdminAddProducts.aspx.cs">
       <DependentUpon>backEndAdminAddProducts.aspx</DependentUpon>
