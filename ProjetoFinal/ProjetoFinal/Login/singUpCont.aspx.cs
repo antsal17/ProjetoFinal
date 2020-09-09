@@ -24,7 +24,7 @@ namespace ProjetoFinal.Login
             utilizador.apelido = surname.Value;
             utilizador.nif = nif.Value;
             utilizador.telefone = phone.Value;
-            utilizador.id_tipoUtilizador = (agree.Checked) ? "2" : "3";
+            utilizador.id_tipoUtilizador = (agree.Checked) ? "3" : "4";
 
             if (file.PostedFile != null && file.PostedFile.ContentLength > 4000)
             {
@@ -35,7 +35,7 @@ namespace ProjetoFinal.Login
             else
                 return; // Deverá colocar-se uma mensagem ao utilizador caso ele não coloque a foto?????
             
-            string resposta = DBConnections.insereRegisto(utilizador.username, utilizador.nome, utilizador.apelido, utilizador.telefone, utilizador.nif, utilizador.foto, utilizador.pass, utilizador.email, utilizador.id_tipoUtilizador);
+            string resposta = DBConnections.insereRegisto(utilizador.username, utilizador.nome, utilizador.apelido, utilizador.telefone, utilizador.nif, utilizador.foto, utilizador.pass, utilizador.email, utilizador.id_tipoUtilizador,false);
 
             utilizador.id = Convert.ToInt32(resposta);
 

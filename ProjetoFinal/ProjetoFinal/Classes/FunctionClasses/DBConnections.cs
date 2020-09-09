@@ -13,7 +13,7 @@ namespace ProjetoFinal.FunctionClasses
     public class DBConnections
     {
         //Inserir Registo
-        public static string insereRegisto(string username, string nome, string apelido, string telefone, string nif, string foto, string pass, string email, string id_tipoUtilizador)
+        public static string insereRegisto(string username, string nome, string apelido, string telefone, string nif, string foto, string pass, string email, string id_tipoUtilizador, bool ativo)
         {
             SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["ProjetoFinalConnectionString"].ConnectionString);
 
@@ -28,6 +28,7 @@ namespace ProjetoFinal.FunctionClasses
             myCommand.Parameters.AddWithValue("@pass", PassEncrypt.EncryptString(pass));
             myCommand.Parameters.AddWithValue("@email", email);
             myCommand.Parameters.AddWithValue("@idTipoUtilizador", id_tipoUtilizador);
+            myCommand.Parameters.AddWithValue("@ativo", ativo);
 
 
             myCommand.CommandType = CommandType.StoredProcedure;

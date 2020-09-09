@@ -41,5 +41,10 @@ namespace ProjetoFinal
 
             //EmailSending.enviaEmailRecuperaPW(tb_email.Value.ToString(), id, nome);
         }
+
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+            Response.Write(ddl_clientState.Value);
+        }
     }
 }

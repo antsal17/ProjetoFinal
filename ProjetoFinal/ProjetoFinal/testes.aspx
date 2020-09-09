@@ -32,6 +32,14 @@
             <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
             <br />
             <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Button" />
+
+
+            <select class="form-control" id="ddl_clientState" runat="server" required="required">
+                                                        <option value="true">Activate</option>
+                                                        <option value="false">Deactivate</option>
+                                                    </select>
+            <asp:Button ID="Button5" runat="server" OnClick="Button5_Click" Text="Button" />
+
         </div>
     </form>
 </body>

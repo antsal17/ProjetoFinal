@@ -376,7 +376,7 @@
                                             <div class="col-md-6 mb-3">
                                                 <label for="validationCustom18">First name</label>
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control" id="validationCustom18" placeholder="First name" required="required"/>
+                                                    <input type="text" class="form-control" id="tb_firstName" runat="server" placeholder="First name" required="required"/>
                                                     <div class="valid-feedback">
                                                         Looks good!
                                                     </div>
@@ -385,7 +385,7 @@
                                             <div class="col-md-6 mb-3">
                                                 <label for="validationCustom19">Last name</label>
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control" id="validationCustom19" placeholder="Last name" required="required"/>
+                                                    <input type="text" class="form-control" id="tb_lastName" runat="server" placeholder="Last name" required="required"/>
                                                     <div class="valid-feedback">
                                                         Looks good!
                                                     </div>
@@ -396,7 +396,7 @@
                                             <div class="col-md-6 mb-3">
                                                 <label for="validationCustom20">Email Address</label>
                                                 <div class="input-group">
-                                                    <input type="email" class="form-control" id="validationCustom20" placeholder="Email Address" required="required"/>
+                                                    <input type="email" class="form-control" id="tb_email" runat="server" placeholder="Email Address" required="required"/>
                                                     <div class="invalid-feedback">
                                                         Please provide a valid email.
                                                     </div>
@@ -405,7 +405,7 @@
                                             <div class="col-md-6 mb-3">
                                                 <label for="validationCustom19">Username</label>
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control" id="validationCustom19" placeholder="Username" required="required"/>
+                                                    <input type="text" class="form-control" id="tb_userName" runat="server" placeholder="Username" required="required"/>
                                                     <div class="valid-feedback">
                                                         Looks good!
                                                     </div>
@@ -414,7 +414,7 @@
                                             <div class="col-md-6 mb-3">
                                                 <label for="validationCustom04">Password</label>
                                                 <div class="input-group">
-                                                    <input type="password" class="form-control" id="validationCustom04" placeholder="Password" required="required"/>
+                                                    <input type="password" class="form-control" id="tb_pass" runat="server" placeholder="Password" required="required"/>
                                                     <div class="invalid-feedback">
                                                         Please provide a password.
                                                     </div>
@@ -423,7 +423,7 @@
                                             <div class="col-md-6 mb-3">
                                                 <label for="validationCustom04">Retype Password </label>
                                                 <div class="input-group">
-                                                    <input type="password" class="form-control" id="validationCustom04" placeholder="Password" required="required"/>
+                                                    <input type="password" class="form-control" id="tb_rePass" runat="server" placeholder="Password" required="required"/>
                                                     <div class="invalid-feedback">
                                                         Please provide a password.
                                                     </div>
@@ -432,7 +432,7 @@
                                             <div class="col-md-6 mb-3">
                                                 <label for="validationCustom21">Phone Number</label>
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control" id="validationCustom21" placeholder="Phone Number" required="required"/>
+                                                    <input type="text" class="form-control" id="tb_phone" runat="server" placeholder="Phone Number" required="required"/>
                                                     <div class="invalid-feedback">
                                                         Please provide a number.
                                                     </div>
@@ -441,7 +441,7 @@
                                             <div class="col-md-6 mb-3">
                                                 <label for="validationCustom19">NIF</label>
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control" id="validationCustom19" placeholder="Last name" required="required"/>
+                                                    <input type="text" class="form-control" id="tb_nif" runat="server" placeholder="NIF" required="required"/>
                                                     <div class="valid-feedback">
                                                         Looks good!
                                                     </div>
@@ -450,32 +450,31 @@
                                             <div class="col-md-6 mb-3">
                                                 <label for="validationCustom22">UserType</label>
                                                 <div class="input-group">
-                                                    <select class="form-control" id="validationCustom22" required="required">
-                                                        <option value="1">Admin</option>
-                                                        <option value="2">Seller</option>
-                                                        <option value="3">Client</option>
-                                                    </select>
+                                                    <asp:DropDownList class="form-control" ID="ddl_usertype" runat="server" required="required" DataSourceID="SqlDataSource1" DataTextField="tipo" DataValueField="id"></asp:DropDownList>
+
+                                                    <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:ProjetoFinalConnectionString %>' SelectCommand="SELECT * FROM [tipoUtilizador]"></asp:SqlDataSource>
                                                     <div class="invalid-feedback">
-                                                        Please select a Country.
+                                                        Please select a UserType.
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 mb-3">
                                                 <label for="validationCustom23">Status</label>
                                                 <div class="input-group">
-                                                    <select class="form-control" id="validationCustom23" required="required">
-                                                        <option value="1">Activate</option>
-                                                        <option value="0">Deactivate</option>
+
+                                                    <select class="form-control" id="ddl_clientState" runat="server" required="required">
+                                                        <option value="true">Activate</option>
+                                                        <option value="false">Deactivate</option>
                                                     </select>
                                                     <div class="invalid-feedback">
-                                                        Please select a State
+                                                        Please select a Status
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 mb-3">
                                                 <label for="validationCustom24">City</label>
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control" id="validationCustom24" placeholder="City" required="required"/>
+                                                    <input type="text" class="form-control" id="tb_city" runat="server" placeholder="City" required="required"/>
                                                     <div class="invalid-feedback">
                                                         Please provide a city.
                                                     </div>
@@ -484,7 +483,7 @@
                                             <div class="col-md-6 mb-3">
                                                 <label for="validationCustom25">Zip code</label>
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control" id="validationCustom25" placeholder="Zip code" required="required"/>
+                                                    <input type="text" class="form-control" id="tb_zipCode" runat="server" placeholder="Zip code" pattern="^\d{4}-\d{3}?$" title="Insert Válid Zip Code 0000-000" required="required"/>
                                                     <div class="invalid-feedback">
                                                         Please provide a ZIP.
                                                     </div>
@@ -493,7 +492,7 @@
                                             <div class="col-md-12 mb-3">
                                                 <label for="validationCustom26">Address</label>
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control" id="validationCustom26" placeholder="Address" required="required"/>
+                                                    <input type="text" class="form-control" id="tb_address" runat="server" placeholder="Address" required="required"/>
                                                     <div class="invalid-feedback">
                                                         Please provide an Address.
                                                     </div>
@@ -502,13 +501,14 @@
                                             <div class="col-md-12 mb-3">
                                                 <label for="validationCustom12">Profile Picture</label>
                                                 <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" id="validatedCustomFile"/>
+                                                    <input type="file" class="custom-file-input" id="fu_foto" runat="server" />
                                                     <label class="custom-file-label" for="validatedCustomFile">Upload Images...</label>
                                                     <div class="invalid-feedback">Example invalid custom file feedback</div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <button class="btn btn-primary d-block float-right" type="submit">Save and Continue</button>
+                                        <asp:Button id="btn_insert" class="btn btn-primary d-block float-right" type="submit" runat="server" Text="Save and Continue" OnClick="btn_insert_Click"/>
+                                        
                                     </div>
                                 </div>
                             </div>
