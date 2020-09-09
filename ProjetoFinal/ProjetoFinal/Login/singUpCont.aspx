@@ -67,13 +67,7 @@
                                     <label for="your_pass"><i class="zmdi zmdi-label"></i></label>
                                     <input type="text" name="your_name" id="nif" placeholder="Your Nif" runat="server" required="required" />
                                 </div>
-                                <div class="form-group">
-                                    <!-- Continuar aqui -->
-                                    <label for="file" class="custom-file-upload"><i class="zmdi zmdi-camera"></i>Profile Picture</label>
-                                    <input id="file" runat="server" type="file" required="required" />
-
-                                </div>
-
+                                
                                 <div class="form-group" style="margin-top: -70px; float: right;">
                                     <input type="checkbox" name="agree" id="agree" runat="server" class="agree-term" />
                                     <label for="agree" class="label-agree-term"><span></span><u>Become a seller</u></label>
