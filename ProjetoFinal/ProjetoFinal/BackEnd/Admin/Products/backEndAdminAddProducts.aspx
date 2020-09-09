@@ -369,7 +369,7 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb pl-0">
                                     <li class="breadcrumb-item"><a href="#"><i class="material-icons">home</i> Home</a></li>
-                                    <li class="breadcrumb-item"><a href="#">Menu</a></li>
+                                    <li class="breadcrumb-item"><a href="#">Products</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">Add Product</li>
                                 </ol>
                             </nav>
@@ -394,37 +394,28 @@
                                             <div class="col-md-12 mb-3">
                                                 <label for="validationCustom18">Product Name</label>
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control" id="validationCustom18" placeholder="Product Name" value="Pizza" required="required" />
+                                                    <asp:TextBox type="text" class="form-control" id="validationCustom18" runat="server" placeholder="Product Name"></asp:TextBox>
                                                     <div class="valid-feedback">
                                                         Looks good!
                                                     </div>
                                                 </div>
                                             </div>
 
-                                            <div class="col-md-6 mb-3">
+                                            <div class="col-md-12 mb-3">
                                                 <label for="validationCustom22">Select Catagory</label>
                                                 <div class="input-group">
-                                                    <select class="form-control" id="validationCustom22" required="required">
-                                                        <option value="">Catagory 1</option>
-                                                        <option value="">Catagory 2</option>
-                                                        <option value="">Catagory 3</option>
-                                                        <option value="">Catagory 4</option>
-
-                                                    </select>
+                                                    <asp:DropDownList class="form-control" id="validationCustom22" runat="server" DataSourceID="SqlDataSource1" DataTextField="descricao" DataValueField="id">
+                                                    </asp:DropDownList>
+                                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ProjetoFinalConnectionString %>" SelectCommand="SELECT * FROM [categoria]"></asp:SqlDataSource>
                                                     <div class="invalid-feedback">
                                                         Please select a Catagory.
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 mb-3">
-
-                                                <div class="input-group">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 mb-3">
                                                 <label for="validationCustom24">Quantity</label>
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control" id="validationCustom24" placeholder="01" required="required"/>
+                                                    <asp:TextBox type="number" class="form-control" id="validationCustom24" placeholder="1" required="required" runat="server"></asp:TextBox>
                                                     <div class="invalid-feedback">
                                                         Quantity
                                                     </div>
@@ -433,7 +424,7 @@
                                             <div class="col-md-6 mb-3">
                                                 <label for="validationCustom25">Price</label>
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control" id="validationCustom25" placeholder="$10" required="required"/>
+                                                    <asp:TextBox type="text" class="form-control" id="validationCustom25" placeholder="10€" required="required" runat="server"></asp:TextBox>
                                                     <div class="invalid-feedback">
                                                         Price
                                                     </div>
@@ -442,7 +433,7 @@
                                             <div class="col-md-12 mb-3">
                                                 <label for="validationCustom12">Description</label>
                                                 <div class="input-group">
-                                                    <textarea rows="5" id="validationCustom12" class="form-control" placeholder="Message" required="required"></textarea>
+                                                    <textarea rows="5" id="validationCustom12" class="form-control" placeholder="Message" required="required" runat="server"></textarea>
                                                     <div class="invalid-feedback">
                                                         Please provide a message.
                                                     </div>
@@ -451,7 +442,7 @@
                                             <div class="col-md-12 mb-3">
                                                 <label for="validationCustom12">Product Image - Main Image</label>
                                                 <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" id="validatedCustomFile"/>
+                                                    <input type="file" class="custom-file-input" runat="server" id="validatedCustomFile" multiple accept='image/*'/>
                                                     <label class="custom-file-label" for="validatedCustomFile">Upload Images...</label>
                                                     <div class="invalid-feedback">Example invalid custom file feedback</div>
                                                 </div>
@@ -459,7 +450,7 @@
                                             <div class="col-md-12 mb-3">
                                                 <label for="validationCustom12">Product Image - Image 1</label>
                                                 <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" id="validatedCustomFile"/>
+                                                    <input type="file" class="custom-file-input" runat="server" id="validatedCustomFile1"/>
                                                     <label class="custom-file-label" for="validatedCustomFile">Upload Images...</label>
                                                     <div class="invalid-feedback">Example invalid custom file feedback</div>
                                                 </div>
@@ -467,7 +458,7 @@
                                             <div class="col-md-12 mb-3">
                                                 <label for="validationCustom12">Product Image - Image 2</label>
                                                 <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" id="validatedCustomFile">
+                                                    <input type="file" class="custom-file-input" runat="server" id="validatedCustomFile2">
                                                     <label class="custom-file-label" for="validatedCustomFile">Upload Images...</label>
                                                     <div class="invalid-feedback">Example invalid custom file feedback</div>
                                                 </div>
@@ -475,16 +466,45 @@
                                             <div class="col-md-12 mb-3">
                                                 <label for="validationCustom12">Product Image - Image 3</label>
                                                 <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" id="validatedCustomFile">
+                                                    <input type="file" class="custom-file-input" runat="server" id="validatedCustomFile3">
                                                     <label class="custom-file-label" for="validatedCustomFile">Upload Images...</label>
                                                     <div class="invalid-feedback">Example invalid custom file feedback</div>
                                                 </div>
                                             </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="validationCustom24">Utilizador</label>
+                                                <div class="input-group">
+                                                   <asp:DropDownList ID="DropDownList2" AutoPostBack="true" class="form-control"  runat="server" DataSourceID="SqlDataSource3" DataTextField="username" DataValueField="id">
+            </asp:DropDownList>
+            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ProjetoFinalConnectionString %>" SelectCommand="SELECT * FROM [utilizador] INNER JOIN [tipoUtilizador] ON tipoUtilizador.id = utilizador.id_tipoUtilizador WHERE tipoUtilizador.id = 3"></asp:SqlDataSource>
+
+                                                    <div class="invalid-feedback">
+                                                        Quantity
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="validationCustom22">Select Address</label>
+                                                <div class="input-group">
+                                                    <asp:DropDownList class="form-control"  ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" DataTextField="rua" DataValueField="id">
+                                        </asp:DropDownList>
+             <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ProjetoFinalConnectionString %>" SelectCommand="select * from utilizador INNER JOIN utilizador_morada ON utilizador_morada.id_utilizador = utilizador.id INNER JOIN morada ON  morada.idMorada = utilizador_morada.id_morada where utilizador.id = @id">
+                                        <SelectParameters>
+                                        <asp:ControlParameter ControlID="DropDownList2" Name="id" PropertyName="SelectedValue" Type="Int32" />
+                                        </SelectParameters>
+                                        </asp:SqlDataSource>
+
+                                                <div class="invalid-feedback">
+                                                        Please select a Address.
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                             <div class="ms-panel-header new">
                                                 <p class="medium">Status Available</p>
                                                 <div>
                                                     <label class="ms-switch">
-                                                        <input type="checkbox" />
+                                                        <asp:CheckBox ID="ckbEstado" runat="server" />
                                                         <span class="ms-switch-slider round"></span>
                                                     </label>
                                                 </div>
@@ -492,13 +512,8 @@
 
                                         </div>
                                         <div class="ms-panel-header new">
-                                            <button class="btn btn-secondary d-block" type="submit">Save</button>
-                                            <button class="btn btn-primary d-block" type="submit">Save and Add</button>
+                                            <asp:Button ID="btn_AddPdc" OnClick="btn_AddPdc_Click" class="btn btn-secondary d-block" type="submit" runat="server" Text="Save" />
                                         </div>
-
-
-
-
                                     </div>
 
                                 </div>
