@@ -12,6 +12,7 @@ namespace ProjetoFinal.FunctionClasses
 {
     public class DBConnections
     {
+        //-------------------------------------------Login -----------------------------------------------
         //Inserir Registo
         public static string insereRegisto(string username, string nome, string apelido, string telefone, string nif, string foto, string pass, string email, string id_tipoUtilizador, bool ativo)
         {
@@ -322,6 +323,9 @@ namespace ProjetoFinal.FunctionClasses
             }
         }
 
+
+
+        //--------------------------Produtos ----------------------------------------------------------------------
         //inserir produto
         public static string insereProduto(string nome, string descricao, bool status, int qtd, double preco, int id_categoria, string fotoMain, string foto1, string foto2, string foto3, int idUser, int idMorada)
         {
@@ -345,6 +349,49 @@ namespace ProjetoFinal.FunctionClasses
 
             myCommand.CommandType = CommandType.StoredProcedure;
             myCommand.CommandText = "usp_addProduto";
+
+            SqlParameter valor = new SqlParameter();
+            valor.ParameterName = "@retorno";
+            valor.Direction = ParameterDirection.Output;
+            valor.SqlDbType = SqlDbType.Int;
+            valor.Size = 1;
+
+
+            myCommand.Parameters.Add(valor);
+            myCommand.Connection = myConn;
+            try
+            {
+                myConn.Open();
+
+                myCommand.ExecuteNonQuery();
+
+                string resposta = myCommand.Parameters["@retorno"].Value.ToString();
+
+                return resposta;
+
+            }
+            catch (Exception m)
+            {
+                return m.ToString();
+            }
+            finally
+            {
+                myConn.Close();
+            }
+        }
+
+
+        //-------------------------------------- Clientes --------------------------------------------------------
+        public static string eliminaClienteAdmin(string id)
+        {
+            SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["ProjetoFinalConnectionString"].ConnectionString);
+
+            SqlCommand myCommand = new SqlCommand();
+
+            myCommand.Parameters.AddWithValue("@id", Convert.ToInt32(id) );
+            
+            myCommand.CommandType = CommandType.StoredProcedure;
+            myCommand.CommandText = "usp_elimina_clientes_admim";
 
             SqlParameter valor = new SqlParameter();
             valor.ParameterName = "@retorno";

@@ -299,7 +299,7 @@
 
                         <li class="ms-nav-item ms-nav-user dropdown">
                             <a href="#" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img class="ms-user-img ms-img-round float-right" src="assets/img/costic/customer-6.jpg" alt="people" />
+                                <asp:Image ID="img_avatar" runat="server" class="ms-user-img ms-img-round float-right" ImageUrl="" alt="people"/>
                             </a>
                         </li>
                     </ul>

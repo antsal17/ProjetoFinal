@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjetoFinal.FunctionClasses;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -24,16 +25,37 @@ namespace ProjetoFinal.BackEnd.Admin.customers
                 ((Label)e.Item.FindControl("lbl_name")).Text = dr["nome"].ToString();
                 ((Label)e.Item.FindControl("tb_email")).Text = dr["email"].ToString();
                 ((Label)e.Item.FindControl("tb_phone")).Text = dr["telefone"].ToString();
-
-                //((Button)e.Item.FindControl("btn_grava")).CommandArgument = dr["id"].ToString();
-                //((Button)e.Item.FindControl("btn_apaga")).CommandArgument = dr["id"].ToString();
-
+                ((Label)e.Item.FindControl("tb_user")).Text = dr["tipo"].ToString();
+                ((CheckBox)e.Item.FindControl("cb_ativo")).Checked = Convert.ToBoolean(dr["ativo"].ToString());
+                ((LinkButton)e.Item.FindControl("btnImg_edit")).CommandArgument = dr["id"].ToString();
+                ((LinkButton)e.Item.FindControl("btn_delete")).CommandArgument = dr["id"].ToString();
             }
         }
 
         protected void rp_utilizadores_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
 
+            if (e.CommandName.Equals("btn_delete"))
+            {
+
+                string id = ((LinkButton)e.Item.FindControl("btn_delete")).CommandArgument;
+
+                string retorno = DBConnections.eliminaClienteAdmin(id);
+                Response.Write(retorno);
+                if (retorno == "1")
+                {
+                    Response.Write("<script>alert('Cliente apagado com sucesso!')</script>");
+                }
+                else
+                {
+                    Response.Write(retorno);
+                }
+            }
+            rp_utilizadores.DataBind();
+            if (e.CommandName.Equals("btnImg_edit"))
+            {
+                Response.Redirect("");
+            }
         }
     }
 }

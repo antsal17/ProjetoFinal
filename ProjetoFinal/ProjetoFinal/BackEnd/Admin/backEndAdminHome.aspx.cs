@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjetoFinal.Classes.ObjectClasses;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +12,18 @@ namespace ProjetoFinal.BackEnd.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["utilizador"] != null)
+            {
+                Utilizador utilizador = (Utilizador)Session["utilizador"];
+                if (utilizador.id_tipoUtilizador == "1")
+                {
+                    img_avatar.ImageUrl = "~/Imagens/utilizadores/" + utilizador.foto;
+                }
+            }
+            else
+            {
+                Response.Redirect("../../Login/Login.aspx");
+            }
         }
     }
 }

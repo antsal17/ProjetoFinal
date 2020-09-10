@@ -210,6 +210,9 @@
     <Content Include="BackEnd\Admin\vendors\iconic-fonts\font-awesome\webfonts\fa-regular-400.svg" />
     <Content Include="BackEnd\Admin\vendors\iconic-fonts\font-awesome\webfonts\fa-solid-900.svg" />
     <Content Include="Home\index.aspx" />
+    <Content Include="Imagens\utilizadores\123546789foto.png" />
+    <Content Include="Imagens\utilizadores\243635982foto.png" />
+    <Content Include="Imagens\utilizadores\987654321.png" />
     <Content Include="Imagens\utilizadores\avatar.jpg" />
     <Content Include="Login\AccountUpdate.aspx" />
     <Content Include="Login\css\style.css" />

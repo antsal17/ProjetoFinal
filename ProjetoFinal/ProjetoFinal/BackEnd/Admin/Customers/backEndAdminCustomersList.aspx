@@ -366,6 +366,8 @@
                                                             <th class="">Email</th>
                                                             <th class="">Phone</th>
                                                             <th class="">User</th>
+                                                            <th class="">Active</th>
+                                                            <th class=""></th>
                                                             <th class=""></th>
                                                         </tr>
                                                     </thead>
@@ -375,13 +377,25 @@
                                                     <tr>
                                                         <td class="">
                                                             <asp:Image ID="img" runat="server" Style='width: 50px; height: 30px;' />
-                                                            <%--<img id="" src='../assets/img/costic/customer-3.jpg' >--%><asp:Label ID="lbl_name" class="colunas" Text="Dum sum" runat="server"></asp:Label>
+                                                            <asp:Label ID="lbl_name" class="colunas" Text="Dum sum" runat="server"></asp:Label>
                                                         </td>
                                                         <td class="">
-                                                            <asp:Label ID="tb_email" class="colunas" Text="bbc@gfail.com" runat="server"></asp:Label>
+                                                            <asp:Label ID="tb_email" class="colunas" Text="" runat="server"></asp:Label>
                                                         </td>
                                                         <td class="">
-                                                            <asp:Label ID="tb_phone" class="colunas" Text="963821330" runat="server"></asp:Label>
+                                                            <asp:Label ID="tb_phone" class="colunas" Text="" runat="server"></asp:Label>
+                                                        </td>
+                                                        <td class="">
+                                                            <asp:Label ID="tb_user" class="colunas" Text="" runat="server"></asp:Label>
+                                                        </td>
+                                                        <td class="">
+                                                            <asp:CheckBox ID="cb_ativo" runat="server" Enabled="false" />
+                                                        </td>
+                                                        <td class="">
+                                                            <asp:LinkButton ID="btnImg_edit" runat="server" CommandName="btnImg_edit"><i class="fas fa-user-edit"></i></asp:LinkButton>
+                                                        </td>
+                                                        <td class="">
+                                                            <asp:LinkButton ID="btn_delete" runat="server" CommandName="btn_delete"><i class="fas fa-trash-alt"></i></asp:LinkButton>
                                                         </td>
                                                     </tr>
                                                 </ItemTemplate>
@@ -390,9 +404,25 @@
                                                 </FooterTemplate>
                                             </asp:Repeater>
 
-                                            <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:ProjetoFinalConnectionString %>' SelectCommand="SELECT * FROM [utilizador]"></asp:SqlDataSource>
+                                            <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:ProjetoFinalConnectionString %>' SelectCommand="usp_lista_clientes_admim" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
                                         </table>
-
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-5">
+                                                <div class="dataTables_info" id="data-table-4_info" role="status" aria-live="polite">Showing 1 to 10 of 36 entries</div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-7">
+                                                <div class="dataTables_paginate paging_simple_numbers" id="data-table-4_paginate">
+                                                    <ul class="pagination has-gap">
+                                                        <li class="paginate_button page-item previous disabled" id="data-table-4_previous"><a href="#" aria-controls="data-table-4" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li>
+                                                        <li class="paginate_button page-item active"><a href="#" aria-controls="data-table-4" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
+                                                        <li class="paginate_button page-item "><a href="#" aria-controls="data-table-4" data-dt-idx="2" tabindex="0" class="page-link">2</a></li>
+                                                        <li class="paginate_button page-item "><a href="#" aria-controls="data-table-4" data-dt-idx="3" tabindex="0" class="page-link">3</a></li>
+                                                        <li class="paginate_button page-item "><a href="#" aria-controls="data-table-4" data-dt-idx="4" tabindex="0" class="page-link">4</a></li>
+                                                        <li class="paginate_button page-item next" id="data-table-4_next"><a href="#" aria-controls="data-table-4" data-dt-idx="5" tabindex="0" class="page-link">Next</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 

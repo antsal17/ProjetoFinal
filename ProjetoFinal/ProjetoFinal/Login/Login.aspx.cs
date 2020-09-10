@@ -26,8 +26,8 @@ namespace ProjetoFinal.Login
             if (retorno == "2")
             {
                 Session["utilizador"] = utilizador;
-                //if(utilizador.id_tipoUtilizador=="1" || utilizador.id_tipoUtilizador == "2") { }
-                Response.Redirect("../Home/index.aspx");
+                if(utilizador.id_tipoUtilizador=="1" || utilizador.id_tipoUtilizador == "2") {Response.Redirect("../BackEnd/Admin/backEndAdminHome.aspx"); }
+                
             }
             else if (retorno == "1")
             {
