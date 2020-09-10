@@ -14,7 +14,7 @@ namespace ProjetoFinal.Login
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Response.Write(((Utilizador)Session["novoUtilizador"]).username);
+            
         }
 
         protected void btn_register_Click(object sender, EventArgs e)
@@ -31,16 +31,17 @@ namespace ProjetoFinal.Login
             
             string resposta = DBConnections.insereRegisto(utilizador.username, utilizador.nome, utilizador.apelido, utilizador.telefone, utilizador.nif, utilizador.foto, utilizador.pass, utilizador.email, utilizador.id_tipoUtilizador,false);
 
-            utilizador.id = Convert.ToInt32(resposta);
+            
             Session["novoUtilizador"] = utilizador;
 
             if (Convert.ToInt32(resposta) >= 0)
             {
+                utilizador.id = Convert.ToInt32(resposta);
                 Response.Write("Utilizador Registado Com Sucesso!");
 
                 //Envia email ao utilizador para agradecer o registo e envia link para ativar a conta
 
-                EmailSending.enviaEmailNovoUtilizador(utilizador.email, utilizador.id.ToString(), utilizador.nome);
+                EmailSending.enviaEmailNovoUtilizador(utilizador.email, utilizador.id.ToString(), utilizador.nome, Convert.ToInt32(utilizador.id_tipoUtilizador),utilizador.pass,true,false);
                 Session["novoUtilizador"] = null;
                 Session["mensagem"] = null;
                 Response.Write("<script>alert('Verifique o seu email para ativar a sua conta')</script>");
@@ -58,8 +59,8 @@ namespace ProjetoFinal.Login
             }
             else if (Convert.ToInt32(resposta) == -3)
             {
-                Session["mensagem"]= "<script>alert('Já existe um Utilizador com o mesmo NIF')</script>";
-                Response.Redirect("singUp.aspx");
+                Response.Write("<script>alert('Já existe um Utilizador com o mesmo NIF')</script>");
+                nif.Attributes.Add("style","color: red;");
             }
 
         }

@@ -48,7 +48,7 @@ namespace ProjetoFinal.Login
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword pass;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText pass;
 
         /// <summary>
         /// re_pass control.
@@ -58,6 +58,15 @@ namespace ProjetoFinal.Login
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputPassword re_pass;
+
+        /// <summary>
+        /// lblmensagem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblmensagem;
 
         /// <summary>
         /// btn_signup control.

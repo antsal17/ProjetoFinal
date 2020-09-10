@@ -34,14 +34,15 @@
                                 <div class="form-group">
                                     <label for="pass"><i class="zmdi zmdi-lock"></i></label>
                                     <%--REGEX A FUNCIONAR^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$--%>
-                                    <input type="password" name="pass" id="pass" placeholder="Password" runat="server" required="required"  pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" />
+                                    <input name="pass" id="pass" placeholder="Password" runat="server" required="required"  pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" />
                                 </div>
                                 <div class="form-group">
-                                    <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
+                                    <label><i class="zmdi zmdi-lock-outline"></i></label>
                                     <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password" runat="server" required="required"/>
+                                    <asp:Label ID="lblmensagem" runat="server" ForeColor="Red" Visible="false" Text="As Palavras Passe tem que ser Iguais"></asp:Label>
                                 </div>
                                 <div class="form-group">
-                                    <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                                    <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" required="required"/>
                                     <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
                                 </div>
                                 <div class="form-group form-button">
@@ -63,13 +64,13 @@
     </form>
     <script>
         function myFunction() {
-            if (document.getElementById("email").style.color == "red") {
-                document.getElementById("email").value = "";
-                document.getElementById("email").style.color = "black";
+            if (document.getElementById("tb_email").style.color == "red") {
+                document.getElementById("tb_email").value = "";
+                document.getElementById("tb_email").style.color = "black";
             }
-            else if (document.getElementById("username").style.color == "red") {
-                document.getElementById("username").value = "";
-                document.getElementById("username").style.color = "black";
+            else if (document.getElementById("tb_username").style.color == "red") {
+                document.getElementById("tb_username").value = "";
+                document.getElementById("tb_username").style.color = "black";
             }
         }
     </script>

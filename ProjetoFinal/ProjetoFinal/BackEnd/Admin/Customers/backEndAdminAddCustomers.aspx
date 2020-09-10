@@ -411,24 +411,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6 mb-3">
-                                                <label for="validationCustom04">Password</label>
-                                                <div class="input-group">
-                                                    <input type="password" class="form-control" id="tb_pass" runat="server" placeholder="Password" required="required"/>
-                                                    <div class="invalid-feedback">
-                                                        Please provide a password.
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 mb-3">
-                                                <label for="validationCustom04">Retype Password </label>
-                                                <div class="input-group">
-                                                    <input type="password" class="form-control" id="tb_rePass" runat="server" placeholder="Password" required="required"/>
-                                                    <div class="invalid-feedback">
-                                                        Please provide a password.
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            
                                             <div class="col-md-6 mb-3">
                                                 <label for="validationCustom21">Phone Number</label>
                                                 <div class="input-group">
@@ -447,7 +430,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6 mb-3">
+                                            <div class="col-md-4 mb-3">
                                                 <label for="validationCustom22">UserType</label>
                                                 <div class="input-group">
                                                     <asp:DropDownList class="form-control" ID="ddl_usertype" runat="server" required="required" DataSourceID="SqlDataSource1" DataTextField="tipo" DataValueField="id"></asp:DropDownList>
@@ -458,20 +441,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6 mb-3">
-                                                <label for="validationCustom23">Status</label>
-                                                <div class="input-group">
-
-                                                    <select class="form-control" id="ddl_clientState" runat="server" required="required">
-                                                        <option value="true">Activate</option>
-                                                        <option value="false">Deactivate</option>
-                                                    </select>
-                                                    <div class="invalid-feedback">
-                                                        Please select a Status
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 mb-3">
+                                            
+                                            <div class="col-md-4 mb-3">
                                                 <label for="validationCustom24">City</label>
                                                 <div class="input-group">
                                                     <input type="text" class="form-control" id="tb_city" runat="server" placeholder="City" required="required"/>
@@ -480,7 +451,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6 mb-3">
+                                            <div class="col-md-4 mb-3">
                                                 <label for="validationCustom25">Zip code</label>
                                                 <div class="input-group">
                                                     <input type="text" class="form-control" id="tb_zipCode" runat="server" placeholder="Zip code" pattern="^\d{4}-\d{3}?$" title="Insert Válid Zip Code 0000-000" required="required"/>
@@ -498,14 +469,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-12 mb-3">
-                                                <label for="validationCustom12">Profile Picture</label>
-                                                <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" id="fu_foto" runat="server" />
-                                                    <label class="custom-file-label" for="validatedCustomFile">Upload Images...</label>
-                                                    <div class="invalid-feedback">Example invalid custom file feedback</div>
-                                                </div>
-                                            </div>
+                                            
                                         </div>
                                         <asp:Button id="btn_insert" class="btn btn-primary d-block float-right" type="submit" runat="server" Text="Save and Continue" OnClick="btn_insert_Click"/>
                                         

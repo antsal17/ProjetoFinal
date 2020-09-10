@@ -57,17 +57,17 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
-                                    <input type="text" name="your_name" id="surname" placeholder="Your Surname" runat="server" required="required" />
+                                    <input type="text" name="surname" id="surname" placeholder="Your Surname" runat="server" required="required" />
                                 </div>
                                 <div class="form-group">
                                     <label for="your_name"><i class="zmdi zmdi-phone"></i></label>
-                                    <input type="text" name="your_name" id="phone" placeholder="Your Phone" runat="server" required="required" />
+                                    <input type="text" name="phone" id="phone" placeholder="Your Phone" runat="server" required="required" />
                                 </div>
                                 <div class="form-group">
                                     <label for="your_pass"><i class="zmdi zmdi-label"></i></label>
-                                    <input type="text" name="your_name" id="nif" placeholder="Your Nif" runat="server" required="required" />
+                                    <input type="text" name="nif" id="nif" placeholder="Your Nif" runat="server" title="Introduza um NIF Válido" pattern="^[0-9]\d{8}$" onclick="myFunction()" required="required" />
                                 </div>
-                                
+
                                 <div class="form-group" style="margin-top: -70px; float: right;">
                                     <input type="checkbox" name="agree" id="agree" runat="server" class="agree-term" />
                                     <label for="agree" class="label-agree-term"><span></span><u>Become a seller</u></label>
@@ -83,6 +83,12 @@
 
         </div>
     </form>
+    <script>
+        function myFunction() {
+            document.getElementById("nif").value = "";
+            document.getElementById("nif").style.color = "black";
+        }
+    </script>
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="js/main.js"></script>
 </body>

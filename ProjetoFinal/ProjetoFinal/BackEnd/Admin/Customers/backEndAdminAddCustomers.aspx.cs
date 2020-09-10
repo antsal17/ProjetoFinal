@@ -1,4 +1,5 @@
-﻿using ProjetoFinal.Classes.ObjectClasses;
+﻿using ProjetoFinal.Classes.FunctionClasses;
+using ProjetoFinal.Classes.ObjectClasses;
 using ProjetoFinal.FunctionClasses;
 using System;
 using System.Collections.Generic;
@@ -14,25 +15,42 @@ namespace ProjetoFinal.BackEnd.Admin.customers
         protected void Page_Load(object sender, EventArgs e)
         {
             //Utilizador utilizador;
-            //if (Session["utilizador"] == null || (utilizador = (Utilizador)Session["utilizador"]).id_tipoUtilizador!="1")
+            //if (Session["utilizador"] == null || (utilizador = (Utilizador)Session["utilizador"]).id_tipoUtilizador != "1")
             //{
             //    Response.Redirect("../../../Login/Login.aspx");
             //}
         }
 
-        //protected void btn_insert_Click(object sender, EventArgs e)
-        //{
-        //    string nomeFicheiro="";
-        //    if (fu_foto.PostedFile != null && fu_foto.PostedFile.ContentLength > 4000)
-        //    {
-        //        string fileType = fu_foto.PostedFile.ContentType.ToString();
-        //        nomeFicheiro = tb_nif.Value.ToString() + "." +fileType.Substring(fileType.IndexOf("/")+1);
-        //        fu_foto.PostedFile.SaveAs(Server.MapPath("..//..//..//Imagens//utilizadores//" + nomeFicheiro));
+        protected void btn_insert_Click(object sender, EventArgs e)
+        {
+            string randomPassWord = PassEncrypt.GenerateRandomString(8, 15, 2, 2, 2, 1);
+            
+            string id_utilizador = DBConnections.insereRegisto(tb_userName.Value, tb_firstName.Value, tb_lastName.Value, tb_phone.Value, tb_nif.Value, "avatar.png", randomPassWord, tb_email.Value, ddl_usertype.SelectedValue, true);
+            Response.Write(id_utilizador);
+            if (Convert.ToInt32(id_utilizador) >= 0)
+            {
+               
+                Response.Write("Utilizador Registado Com Sucesso!");
+
+                //Envia email ao utilizador para agradecer o registo e envia link para ativar a conta
+
+                EmailSending.enviaEmailNovoUtilizador(tb_email.Value, id_utilizador, tb_firstName.Value, Convert.ToInt32(id_utilizador), randomPassWord, false,true);
+            }
+            else if (Convert.ToInt32(id_utilizador) == -1)
+            {
+                Response.Write("<script>alert('Já existe um Utilizador com o mesmo User Name')</script>");
                 
-        //    }
-        //    else
-        //        return; // Deverá colocar-se uma mensagem ao utilizador caso ele não coloque a foto?????
-        //    string retorno = DBConnections.insereRegisto(tb_userName.Value, tb_firstName.Value, tb_lastName.Value, tb_phone.Value, tb_nif.Value, nomeFicheiro, tb_pass.Value, tb_email.Value, ddl_usertype.SelectedValue,Convert.ToBoolean(ddl_clientState.Value));
-        //}
+            }
+            else if (Convert.ToInt32(id_utilizador) == -2)
+            {
+                Response.Write("<script>alert('Já existe um Utilizador com o mesmo Email')</script>");
+                
+            }
+            else if (Convert.ToInt32(id_utilizador) == -3)
+            {
+                Response.Write("<script>alert('Já existe um Utilizador com o mesmo NIF')</script>");
+                
+            }
+        }
     }
 }

@@ -60,24 +60,6 @@ namespace ProjetoFinal.BackEnd.Admin.customers
         protected global::System.Web.UI.HtmlControls.HtmlInputText tb_userName;
 
         /// <summary>
-        /// tb_pass control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword tb_pass;
-
-        /// <summary>
-        /// tb_rePass control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword tb_rePass;
-
-        /// <summary>
         /// tb_phone control.
         /// </summary>
         /// <remarks>
@@ -114,15 +96,6 @@ namespace ProjetoFinal.BackEnd.Admin.customers
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
 
         /// <summary>
-        /// ddl_clientState control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect ddl_clientState;
-
-        /// <summary>
         /// tb_city control.
         /// </summary>
         /// <remarks>
@@ -148,15 +121,6 @@ namespace ProjetoFinal.BackEnd.Admin.customers
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText tb_address;
-
-        /// <summary>
-        /// fu_foto control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputFile fu_foto;
 
         /// <summary>
         /// btn_insert control.

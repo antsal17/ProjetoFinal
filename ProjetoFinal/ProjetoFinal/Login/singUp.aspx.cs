@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -15,6 +16,7 @@ namespace ProjetoFinal.Login
         {
             if (!IsPostBack)
             {
+                pass.Attributes["type"] = "password";
                 if (Session["novoUtilizador"] != null)
                 {
                     Response.Write("Page load");
@@ -37,6 +39,11 @@ namespace ProjetoFinal.Login
 
         protected void btn_signup_Click(object sender, EventArgs e)
         {
+            if (verificarPassWord() == false) {
+                lblmensagem.Visible = true;
+              
+            }
+            else { 
             Utilizador utilizador2 = new Utilizador();
             utilizador2.username = tb_username.Text;
             utilizador2.pass = pass.Value.ToString();
@@ -44,7 +51,17 @@ namespace ProjetoFinal.Login
             Session["novoUtilizador"] = null;
             Session["novoUtilizador"] = utilizador2;
             Response.Redirect("singUpCont.aspx");
-
+            lblmensagem.Visible = false;
+            }
         }
+
+        protected bool verificarPassWord()
+        {
+           return (pass.Value != re_pass.Value) ? false : true;
+        }
+            
+            
+            
+            
     }
 }
