@@ -41,7 +41,6 @@ namespace ProjetoFinal.Login
         {
             if (verificarPassWord() == false) {
                 lblmensagem.Visible = true;
-              
             }
             else { 
             Utilizador utilizador2 = new Utilizador();

@@ -4,28 +4,28 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Dashboard</title>
     <!-- Iconic Fonts -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-    <link href="../vendors/iconic-fonts/font-awesome/css/all.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="../vendors/iconic-fonts/flat-icons/flaticon.css"/>
-    <link rel="stylesheet" href="../vendors/iconic-fonts/cryptocoins/cryptocoins.css"/>
-    <link rel="stylesheet" href="../vendors/iconic-fonts/cryptocoins/cryptocoins-colors.css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="../vendors/iconic-fonts/font-awesome/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../vendors/iconic-fonts/flat-icons/flaticon.css" />
+    <link rel="stylesheet" href="../vendors/iconic-fonts/cryptocoins/cryptocoins.css" />
+    <link rel="stylesheet" href="../vendors/iconic-fonts/cryptocoins/cryptocoins-colors.css" />
     <!-- Bootstrap core CSS -->
-    <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
     <!-- Page Specific Css (Datatables.css) -->
-    <link href="../assets/css/datatables.min.css" rel="stylesheet"/>
+    <link href="../assets/css/datatables.min.css" rel="stylesheet" />
     <!-- jQuery UI -->
-    <link href="../assets/css/jquery-ui.min.css" rel="stylesheet"/>
+    <link href="../assets/css/jquery-ui.min.css" rel="stylesheet" />
     <!-- Page Specific CSS (Slick Slider.css) -->
-    <link href="../assets/css/slick.css" rel="stylesheet"/>
+    <link href="../assets/css/slick.css" rel="stylesheet" />
     <!-- Costic styles -->
-    <link href="../assets/css/style.css" rel="stylesheet"/>
+    <link href="../assets/css/style.css" rel="stylesheet" />
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="../favicon.ico"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon.ico" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -56,7 +56,7 @@
                 <!-- Logo -->
                 <div class="logo-sn ms-d-block-lg">
                     <a class="pl-0 ml-0 text-center" href="../../index.html">
-                        <img src="../assets/img/costic/costic-logo-216x62.png" alt="logo"/>
+                        <img src="../assets/img/costic/costic-logo-216x62.png" alt="logo" />
                     </a>
                 </div>
                 <!-- Navigation -->
@@ -211,14 +211,14 @@
                     </div>
                     <div class="logo-sn logo-sm ms-d-block-sm">
                         <a class="pl-0 ml-0 text-center navbar-brand mr-0" href="../../index.html">
-                            <img src="../assets/img/costic/costic-logo-84x41.png" alt="logo"/>
+                            <img src="../assets/img/costic/costic-logo-84x41.png" alt="logo" />
                         </a>
                     </div>
                     <ul class="ms-nav-list ms-inline mb-0" id="ms-nav-options">
                         <li class="ms-nav-item ms-search-form pb-0 py-0">
                             <div class="ms-form" method="post">
                                 <div class="ms-form-group my-0 mb-0 has-icon fs-14">
-                                    <input type="search" class="ms-form-input" name="search" placeholder="Search here..." value=""/>
+                                    <input type="search" class="ms-form-input" name="search" placeholder="Search here..." value="" />
                                     <i class="flaticon-search text-disabled"></i>
                                 </div>
                             </div>
@@ -233,7 +233,7 @@
                                 <li class="ms-scrollable ms-dropdown-list">
                                     <a class="media p-2" href="#">
                                         <div class="ms-chat-status ms-status-offline ms-chat-img mr-2 align-self-center">
-                                            <img src="../assets/img/costic/customer-1.jpg" class="ms-img-round" alt="people"/>
+                                            <img src="../assets/img/costic/customer-1.jpg" class="ms-img-round" alt="people" />
                                         </div>
                                         <div class="media-body">
                                             <span>Hey man, looking forward to your new project.</span>
@@ -242,7 +242,7 @@
                                     </a>
                                     <a class="media p-2" href="#">
                                         <div class="ms-chat-status ms-status-online ms-chat-img mr-2 align-self-center">
-                                            <img src="../assets/img/costic/customer-2.jpg" class="ms-img-round" alt="people"/>
+                                            <img src="../assets/img/costic/customer-2.jpg" class="ms-img-round" alt="people" />
                                         </div>
                                         <div class="media-body">
                                             <span>Dear John, I was told you bought Costic! Send me your feedback</span>
@@ -251,7 +251,7 @@
                                     </a>
                                     <a class="media p-2" href="#">
                                         <div class="ms-chat-status ms-status-offline ms-chat-img mr-2 align-self-center">
-                                            <img src="../assets/img/costic/customer-3.jpg" class="ms-img-round" alt="people"/>
+                                            <img src="../assets/img/costic/customer-3.jpg" class="ms-img-round" alt="people" />
                                         </div>
                                         <div class="media-body">
                                             <span>How many people are we inviting to the dashboard?</span>
@@ -305,7 +305,7 @@
 
                         <li class="ms-nav-item ms-nav-user dropdown">
                             <a href="#" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img class="ms-user-img ms-img-round float-right" src="../assets/img/costic/customer-6.jpg" alt="people"/>
+                                <img class="ms-user-img ms-img-round float-right" src="../assets/img/costic/customer-6.jpg" alt="people" />
                             </a>
                             <ul class="dropdown-menu dropdown-menu-right user-dropdown" aria-labelledby="userDropdown">
                                 <li class="dropdown-menu-header">
@@ -350,17 +350,56 @@
                                     <li class="breadcrumb-item active" aria-current="page">Customer List</li>
                                 </ol>
                             </nav>
+
                             <div class="ms-panel">
                                 <div class="ms-panel-header">
                                     <h6>Customer List</h6>
                                 </div>
                                 <div class="ms-panel-body">
                                     <div class="table-responsive">
-                                        <table id="data-table-4" class="table w-100 thead-primary"></table>
+                                        <table id="" class="table w-100 thead-primary">
+                                            <asp:Repeater ID="rp_utilizadores" runat="server" DataSourceID="SqlDataSource1" OnItemDataBound="rp_utilizadores_ItemDataBound" OnItemCommand="rp_utilizadores_ItemCommand">
+                                                <HeaderTemplate>
+                                                    <thead class="">
+                                                        <tr>
+                                                            <th class="">Name</th>
+                                                            <th class="">Email</th>
+                                                            <th class="">Phone</th>
+                                                            <th class="">User</th>
+                                                            <th class=""></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                </HeaderTemplate>
+                                                <ItemTemplate>
+                                                    <tr>
+                                                        <td class="">
+                                                            <asp:Image ID="img" runat="server" Style='width: 50px; height: 30px;' />
+                                                            <%--<img id="" src='../assets/img/costic/customer-3.jpg' >--%><asp:Label ID="lbl_name" class="colunas" Text="Dum sum" runat="server"></asp:Label>
+                                                        </td>
+                                                        <td class="">
+                                                            <asp:Label ID="tb_email" class="colunas" Text="bbc@gfail.com" runat="server"></asp:Label>
+                                                        </td>
+                                                        <td class="">
+                                                            <asp:Label ID="tb_phone" class="colunas" Text="963821330" runat="server"></asp:Label>
+                                                        </td>
+                                                    </tr>
+                                                </ItemTemplate>
+                                                <FooterTemplate>
+                                                    </tbody>
+                                                </FooterTemplate>
+                                            </asp:Repeater>
+
+                                            <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:ProjetoFinalConnectionString %>' SelectCommand="SELECT * FROM [utilizador]"></asp:SqlDataSource>
+                                        </table>
+
                                     </div>
                                 </div>
+
                             </div>
+
                         </div>
+
                     </div>
                 </div>
             </main>
@@ -382,7 +421,7 @@
 
                             <div class="ms-add-task-block">
                                 <div class="form-group mx-3 mt-0  fs-14 clearfix">
-                                    <input type="text" class="form-control fs-14 float-left" id="task-block" name="todo-block" placeholder="Add Task Block" value=""/>
+                                    <input type="text" class="form-control fs-14 float-left" id="task-block" name="todo-block" placeholder="Add Task Block" value="" />
                                     <button type="submit" class="ms-btn-icon bg-primary float-right"><i class="material-icons text-disabled">add</i></button>
                                 </div>
                             </div>
@@ -399,7 +438,7 @@
                                         <ul class="ms-list ms-task-block">
                                             <li class="ms-list-item ms-to-do-task ms-deletable">
                                                 <label class="ms-checkbox-wrap ms-todo-complete">
-                                                    <input type="checkbox" value=""/>
+                                                    <input type="checkbox" value="" />
                                                     <i class="ms-checkbox-check"></i>
                                                 </label>
                                                 <span>Task to do </span>
@@ -407,7 +446,7 @@
                                             </li>
                                             <li class="ms-list-item ms-to-do-task ms-deletable">
                                                 <label class="ms-checkbox-wrap ms-todo-complete">
-                                                    <input type="checkbox" value=""/>
+                                                    <input type="checkbox" value="" />
                                                     <i class="ms-checkbox-check"></i>
                                                 </label>
                                                 <span>Task to do</span>
@@ -490,10 +529,10 @@
                                     </p>
                                     <ul class="ms-note-members clearfix mb-0">
                                         <li class="ms-deletable">
-                                            <img src="../assets/img/people/people-3.jpg" alt="member"/>
+                                            <img src="../assets/img/people/people-3.jpg" alt="member" />
                                         </li>
                                         <li class="ms-deletable">
-                                            <img src="../assets/img/people/people-5.jpg" alt="member"/>
+                                            <img src="../assets/img/people/people-5.jpg" alt="member" />
                                         </li>
                                     </ul>
                                 </div>
@@ -511,7 +550,7 @@
                                             <li class="ms-scrollable ms-dropdown-list ms-members-list">
                                                 <a class="media p-2" href="#">
                                                     <div class="mr-2 align-self-center">
-                                                        <img src="../assets/img/people/people-10.jpg" class="ms-img-round" alt="people"/>
+                                                        <img src="../assets/img/people/people-10.jpg" class="ms-img-round" alt="people" />
                                                     </div>
                                                     <div class="media-body">
                                                         <span>John Doe</span>
@@ -519,7 +558,7 @@
                                                 </a>
                                                 <a class="media p-2" href="#">
                                                     <div class="mr-2 align-self-center">
-                                                        <img src="../assets/img/people/people-9.jpg" class="ms-img-round" alt="people"/>
+                                                        <img src="../assets/img/people/people-9.jpg" class="ms-img-round" alt="people" />
                                                     </div>
                                                     <div class="media-body">
                                                         <span>Raymart Sandiago</span>
@@ -527,7 +566,7 @@
                                                 </a>
                                                 <a class="media p-2" href="#">
                                                     <div class="mr-2 align-self-center">
-                                                        <img src="../assets/img/people/people-7.jpg" class="ms-img-round" alt="people"/>
+                                                        <img src="../assets/img/people/people-7.jpg" class="ms-img-round" alt="people" />
                                                     </div>
                                                     <div class="media-body">
                                                         <span>Heather Brown</span>
@@ -555,7 +594,7 @@
                                     </p>
                                     <ul class="ms-note-members clearfix mb-0">
                                         <li class="ms-deletable">
-                                            <img src="../assets/img/people/people-9.jpg" alt="member"/>
+                                            <img src="../assets/img/people/people-9.jpg" alt="member" />
                                         </li>
                                     </ul>
                                 </div>
@@ -573,7 +612,7 @@
                                             <li class="ms-scrollable ms-dropdown-list ms-members-list">
                                                 <a class="media p-2" href="#">
                                                     <div class="mr-2 align-self-center">
-                                                        <img src="../assets/img/people/people-10.jpg" class="ms-img-round" alt="people"/>
+                                                        <img src="../assets/img/people/people-10.jpg" class="ms-img-round" alt="people" />
                                                     </div>
                                                     <div class="media-body">
                                                         <span>John Doe</span>
@@ -581,7 +620,7 @@
                                                 </a>
                                                 <a class="media p-2" href="#">
                                                     <div class="mr-2 align-self-center">
-                                                        <img src="../assets/img/people/people-9.jpg" class="ms-img-round" alt="people"/>
+                                                        <img src="../assets/img/people/people-9.jpg" class="ms-img-round" alt="people" />
                                                     </div>
                                                     <div class="media-body">
                                                         <span>Raymart Sandiago</span>
@@ -589,7 +628,7 @@
                                                 </a>
                                                 <a class="media p-2" href="#">
                                                     <div class="mr-2 align-self-center">
-                                                        <img src="../assets/img/people/people-7.jpg" class="ms-img-round" alt="people"/>
+                                                        <img src="../assets/img/people/people-7.jpg" class="ms-img-round" alt="people" />
                                                     </div>
                                                     <div class="media-body">
                                                         <span>Heather Brown</span>
@@ -617,7 +656,7 @@
                             <p>Invite Team Members</p>
                             <div>
                                 <div class="ms-form-group">
-                                    <input type="text" placeholder="Member Email" class="form-control" name="invite-email" value=""/>
+                                    <input type="text" placeholder="Member Email" class="form-control" name="invite-email" value="" />
                                 </div>
                                 <div class="ms-form-group">
                                     <button type="submit" name="invite-member" class="btn btn-primary w-100">Invite</button>
@@ -635,14 +674,14 @@
                                     <h4 class="section-title bold">Customize</h4>
                                     <div>
                                         <label class="ms-switch">
-                                            <input type="checkbox" id="dark-mode"/>
+                                            <input type="checkbox" id="dark-mode" />
                                             <span class="ms-switch-slider round"></span>
                                         </label>
                                         <span>Dark Mode </span>
                                     </div>
                                     <div>
                                         <label class="ms-switch">
-                                            <input type="checkbox" id="remove-quickbar"/>
+                                            <input type="checkbox" id="remove-quickbar" />
                                             <span class="ms-switch-slider round"></span>
                                         </label>
                                         <span>Remove Quickbar </span>
@@ -683,7 +722,7 @@
                                 <div class="ms-form-group">
                                     <span class="ms-option-name fs-14">Repeat Daily</span>
                                     <label class="ms-switch float-right">
-                                        <input type="checkbox"/>
+                                        <input type="checkbox" />
                                         <span class="ms-switch-slider round"></span>
                                     </label>
                                 </div>
@@ -728,7 +767,7 @@
                             <div class="modal-body">
                                 <div class="ms-form-group">
                                     <label>Note Title</label>
-                                    <input type="text" class="form-control" name="note-title" value=""/>
+                                    <input type="text" class="form-control" name="note-title" value="" />
                                 </div>
                                 <div class="ms-form-group">
                                     <label>Note Description</label>
@@ -746,33 +785,33 @@
         </div>
     </form>
     <script src="../assets/js/jquery-3.3.1.min.js"></script>
-  <script src="../assets/js/popper.min.js"></script>
-  <script src="../assets/js/bootstrap.min.js"></script>
-  <script src="../assets/js/perfect-scrollbar.js">
-  </script>
-  <script src="../assets/js/jquery-ui.min.js">
-  </script>
-  <!-- Global Required Scripts End -->
-  <!-- Page Specific Scripts Start -->
-  <script src="../assets/js/slick.min.js">
-  </script>
-  <script src="../assets/js/moment.js">
-  </script>
-  <script src="../assets/js/jquery.webticker.min.js">
-  </script>
-  <script src="../assets/js/Chart.bundle.min.js">
-  </script>
-  <script src="../assets/js/Chart.Financial.js">
-  </script>
-  <!-- Page Specific Scripts Finish -->
-  <!-- Page Specific Scripts Finish -->
-  <script src="../assets/js/datatables.min.js">
-  </script>
-  <script src="../assets/js/data-tables.js">
-  </script>
-  <!-- Costic core JavaScript -->
-  <script src="../assets/js/framework.js"></script>
-  <!-- Settings -->
-  <script src="../assets/js/settings.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/perfect-scrollbar.js">
+    </script>
+    <script src="../assets/js/jquery-ui.min.js">
+    </script>
+    <!-- Global Required Scripts End -->
+    <!-- Page Specific Scripts Start -->
+    <script src="../assets/js/slick.min.js">
+    </script>
+    <script src="../assets/js/moment.js">
+    </script>
+    <script src="../assets/js/jquery.webticker.min.js">
+    </script>
+    <script src="../assets/js/Chart.bundle.min.js">
+    </script>
+    <script src="../assets/js/Chart.Financial.js">
+    </script>
+    <!-- Page Specific Scripts Finish -->
+    <!-- Page Specific Scripts Finish -->
+    <script src="../assets/js/datatables.min.js">
+    </script>
+    <script src="../assets/js/data-tables.js">
+    </script>
+    <!-- Costic core JavaScript -->
+    <script src="../assets/js/framework.js"></script>
+    <!-- Settings -->
+    <script src="../assets/js/settings.js"></script>
 </body>
 </html>

@@ -34,7 +34,7 @@
                                 <div class="form-group">
                                     <label for="pass"><i class="zmdi zmdi-lock"></i></label>
                                     <%--REGEX A FUNCIONAR^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$--%>
-                                    <input name="pass" id="pass" placeholder="Password" runat="server" required="required"  pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" />
+                                    <input name="pass" id="pass" placeholder="Password" runat="server" required="required"  title="A Palavra Passe Não é Forte" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" />
                                 </div>
                                 <div class="form-group">
                                     <label><i class="zmdi zmdi-lock-outline"></i></label>

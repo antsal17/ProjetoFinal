@@ -13,18 +13,29 @@ namespace ProjetoFinal.Login
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //if (Request.QueryString["id"] == null || Request.QueryString["id"].ToString() == "")
+            //{
+            //    Response.Redirect("Login.aspx");
+            //}
         }
 
         protected void btn_recuperar_Click(object sender, EventArgs e)
         {
-            if (Request.QueryString["id"].ToString() == "" || Request.QueryString["id"] == null) {
-                Response.Redirect("Login.aspx");
-            }
-            string id = Request.QueryString["id"].ToString();
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
 
-            DBConnections.recuperacaoPWInsercao(id, PassEncrypt.EncryptString(pass.Value.ToString()));
+            //if (pass.Value != re_pass.Value)
+            //{
+            //    lblmensagem.Visible = true;
+            //}
+            //else
+            //{
+            //    string id = Request.QueryString["id"].ToString();
+            //    DBConnections.recuperacaoPWInsercao(id, PassEncrypt.EncryptString(pass.Value.ToString()));
+            //    lblmensagem.Visible = false;
+            //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
+                
 
+            //}
         }
     }
 }

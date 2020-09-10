@@ -210,6 +210,7 @@
     <Content Include="BackEnd\Admin\vendors\iconic-fonts\font-awesome\webfonts\fa-regular-400.svg" />
     <Content Include="BackEnd\Admin\vendors\iconic-fonts\font-awesome\webfonts\fa-solid-900.svg" />
     <Content Include="Home\index.aspx" />
+    <Content Include="Imagens\utilizadores\avatar.jpg" />
     <Content Include="Login\AccountUpdate.aspx" />
     <Content Include="Login\css\style.css" />
     <Content Include="Login\fonts\material-icon\css\material-design-iconic-font.css" />
@@ -243,6 +244,7 @@
     <Content Include="Login\singUpCont.aspx" />
     <Content Include="notas.aspx" />
     <Content Include="testes.aspx" />
+    <Content Include="testes2.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -398,6 +400,13 @@
     <Compile Include="testes.aspx.designer.cs">
       <DependentUpon>testes.aspx</DependentUpon>
     </Compile>
+    <Compile Include="testes2.aspx.cs">
+      <DependentUpon>testes2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="testes2.aspx.designer.cs">
+      <DependentUpon>testes2.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Login\css\style.css.map" />
@@ -504,7 +513,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Imagens\utilizadores\" />
     <Folder Include="PDF\" />
   </ItemGroup>
   <PropertyGroup>

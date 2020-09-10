@@ -320,7 +320,7 @@
 
                         <li class="ms-nav-item ms-nav-user dropdown">
                             <a href="#" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img class="ms-user-img ms-img-round float-right" src="../assets/img/costic/customer-6.jpg" alt="people"/>
+                                <img class="ms-user-img ms-img-round float-right" src="../../../Imagens/utilizadores/avatar.jpg" alt="people"/>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-right user-dropdown" aria-labelledby="userDropdown">
                                 <li class="dropdown-menu-header">
