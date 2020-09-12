@@ -1,36 +1,40 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="backEndAdminHome.aspx.cs" Inherits="ProjetoFinal.BackEnd.Admin.backEndAdminHome" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="backEndCustomerDetail.aspx.cs" Inherits="ProjetoFinal.BackEnd.Admin.Customers.backEndCustomerDetail" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Dashboard</title>
     <!-- Iconic Fonts -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-    <link href="vendors/iconic-fonts/font-awesome/css/all.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="vendors/iconic-fonts/flat-icons/flaticon.css" />
-    <link rel="stylesheet" href="vendors/iconic-fonts/cryptocoins/cryptocoins.css" />
-    <link rel="stylesheet" href="vendors/iconic-fonts/cryptocoins/cryptocoins-colors.css" />
-    <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-    <!-- jQuery UI -->
-    <link href="assets/css/jquery-ui.min.css" rel="stylesheet" />
-    <!-- Page Specific CSS (Slick Slider.css) -->
-    <link href="assets/css/slick.css" rel="stylesheet" />
-    <link href="assets/css/datatables.min.css" rel="stylesheet" />
-    <!-- Costic styles -->
-    <link href="assets/css/style.css" rel="stylesheet" />
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico" />
 
+    <link href="../vendors/iconic-fonts/font-awesome/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../vendors/iconic-fonts/flat-icons/flaticon.css" />
+    <link rel="stylesheet" href="../vendors/iconic-fonts/cryptocoins/cryptocoins.css" />
+    <link rel="stylesheet" href="../vendors/iconic-fonts/cryptocoins/cryptocoins-colors.css" />
+    <!-- Bootstrap core CSS -->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- jQuery UI -->
+    <link href="../assets/css/jquery-ui.min.css" rel="stylesheet" />
+    <!-- Page Specific CSS (Slick Slider.css) -->
+    <link href="../assets/css/slick.css" rel="stylesheet" />
+    <!-- Costic styles -->
+    <link href="../assets/css/style.css" rel="stylesheet" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon.ico" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
 </head>
 <body>
     <form id="form1" runat="server">
         <div class="ms-body ms-aside-left-open ms-primary-theme ms-has-quickbar">
+
             <!-- Preloader -->
             <div id="preloader-wrap">
                 <div class="spinner spinner-8">
@@ -55,15 +59,15 @@
             <aside id="ms-side-nav" class="side-nav fixed ms-aside-scrollable ms-aside-left">
                 <!-- Logo -->
                 <div class="logo-sn ms-d-block-lg">
-                    <a class="pl-0 ml-0 text-center" href="index.html">
-                        <img src="assets/img/costic/costic-logo-216x62.png" alt="logo" />
+                    <a class="pl-0 ml-0 text-center" href="../../index.html">
+                        <img src="../assets/img/costic/costic-logo-216x62.png" alt="logo" />
                     </a>
                 </div>
                 <!-- Navigation -->
                 <ul class="accordion ms-main-aside fs-14" id="side-nav-accordion">
                     <!-- Dashboard -->
                     <li class="menu-item">
-                        <a href="backEndAdminHome.aspx" data-target="#dashboard" aria-expanded="false" aria-controls="dashboard"><span style="color: #73253c !important;"><i class="material-icons fs-16" style="color: #73253c !important;">dashboard</i>Dashboard </span>
+                        <a href="../../index.html" data-target="#dashboard" aria-expanded="false" aria-controls="dashboard"><span><i class="material-icons fs-16">dashboard</i>Dashboard </span>
                         </a>
                     </li>
                     <!-- /Dashboard -->
@@ -72,71 +76,71 @@
                         <a href="#" class="has-chevron" data-toggle="collapse" data-target="#product" aria-expanded="false" aria-controls="product"><span><i class="fa fa-archive fs-16"></i>Products </span>
                         </a>
                         <ul id="product" class="collapse" aria-labelledby="product" data-parent="#side-nav-accordion">
-                            <li><a href="Products/backEndAdminProductList.aspx">Product List</a>
+                            <li><a href="../product/productlist.html">Product List</a>
                             </li>
-                            <li><a href="Products/backEndAdminAddProducts.aspx">Add Product</a>
+                            <li><a href="../product/addproduct.html">Add Product</a>
                             </li>
-                            <li><a href="Products/backEndAdminProducDetail.aspx"> Product Detail</a>
+                            <li><a href="../product/productdetail.html">Product Detail</a>
                             </li>
                         </ul>
                     </li>
                     <!-- product end -->
                     <!-- orders -->
                     <li class="menu-item">
-                        <a href="pages/orders.html"><span><i class="fas fa-clipboard-list fs-16"></i>Orders</span>
+                        <a href="../orders.html"><span><i class="fas fa-clipboard-list fs-16"></i>Orders</span>
                         </a>
                     </li>
                     <!-- orders end -->
-                    <!-- restaurants -->
-                    <!-- restaurants end -->
                     <!-- Invoice -->
                     <li class="menu-item">
                         <a href="#" class="has-chevron" data-toggle="collapse" data-target="#invoice" aria-expanded="false" aria-controls="invoice"><span><i class="fas fa-file-invoice fs-16"></i>Invoice </span>
                         </a>
                         <ul id="invoice" class="collapse" aria-labelledby="invoice" data-parent="#side-nav-accordion">
-                            <li><a href="Invoice/backEndAdminInvoiceDetail.aspx">Invoice Detail</a>
+                            <li><a href="../invoice/invoicedetail.html">Invoice Detail</a>
                             </li>
-                            <li><a href="Invoice/backEndAdminInvoice.aspx">Invoice List</a>
+                            <li><a href="../invoice/invoicelist.html">Invoice List</a>
                             </li>
                         </ul>
                     </li>
                     <!-- Invoice end -->
                     <!-- customers-->
+                    <!-- customers-->
+
                     <li class="menu-item">
-                        <a href="#" class="has-chevron" data-toggle="collapse" data-target="#customer" aria-expanded="false" aria-controls="customer"><span><i class="fas fa-user-friends fs-16"></i>Customers </span>
+                        <a href="#" class="has-chevron" data-toggle="collapse" data-target="#customer" aria-expanded="false" aria-controls="customer">
+                            <span><i class="fas fa-user-friends fs-16"></i>Customers </span>
                         </a>
                         <ul id="customer" class="collapse" aria-labelledby="customer" data-parent="#side-nav-accordion">
-                            <li><a href="Customers/backEndAdminCustomersReview.aspx">Customers Review</a>
-                            </li>
-                            <li><a href="Customers/backEndAdminCustomersList.aspx">Customers List</a>
-                            </li>
-                            <li><a href="Customers/backEndAdminAddCustomers.aspx">Add Customer</a>
-                            </li>
+                            <li><a href="../customer/customersreview.html">Customers Review</a> </li>
+                            <li><a href="../customer/customerlist.html">Customers List</a> </li>
+                            <li><a href="../customer/addcustomer.html">Add Customer</a></li>
+
+
                         </ul>
                     </li>
                     <!-- Customers  end -->
-                    <!-- Form Elements -->
-                    <!-- /Charts -->
                     <!-- Apps -->
                     <li class="menu-item">
                         <a href="#" class="has-chevron" data-toggle="collapse" data-target="#apps" aria-expanded="false" aria-controls="apps"><span><i class="material-icons fs-16">mode_comment</i>Chat</span>
                         </a>
                         <ul id="apps" class="collapse" aria-labelledby="apps" data-parent="#side-nav-accordion">
-                            <li><a href="Comunication/backEndAdminChat.aspx">Chat</a>
-                            </li>
-                            <li><a href="Comunication/backEndAdminEmail.aspx">Email</a>
-                            </li>
+                            <li><a href="../apps/chat.html">Chat</a> </li>
+                            <li><a href="../apps/email.html">Email</a> </li>
                         </ul>
                     </li>
                     <!-- /Apps -->
                 </ul>
+
+
             </aside>
+
             <!-- Sidebar Right -->
             <aside id="ms-recent-activity" class="side-nav fixed ms-aside-right ms-scrollable">
                 <div class="ms-aside-header">
                     <ul class="nav nav-tabs tabs-bordered d-flex nav-justified mb-3" role="tablist">
                         <li role="presentation" class="fs-12"><a href="#activityLog" aria-controls="activityLog" class="active" role="tab" data-toggle="tab">Activity Log</a>
                         </li>
+
                         <li>
                             <button type="button" class="close ms-toggler text-center" data-target="#ms-recent-activity" data-toggle="slideRight">
                                 <span aria-hidden="true">&times;</span>
@@ -199,6 +203,7 @@
                             </ul>
                             <a href="#" class="btn btn-primary d-block">View All </a>
                         </div>
+
                     </div>
                 </div>
             </aside>
@@ -212,11 +217,19 @@
                         <span class="ms-toggler-bar bg-primary"></span>
                     </div>
                     <div class="logo-sn logo-sm ms-d-block-sm">
-                        <a class="pl-0 ml-0 text-center navbar-brand mr-0" href="index.html">
-                            <img src="assets/img/costic/costic-logo-84x41.png" alt="logo" />
+                        <a class="pl-0 ml-0 text-center navbar-brand mr-0" href="../../index.html">
+                            <img src="../assets/img/costic/costic-logo-84x41.png" alt="logo" />
                         </a>
                     </div>
                     <ul class="ms-nav-list ms-inline mb-0" id="ms-nav-options">
+                        <li class="ms-nav-item ms-search-form pb-0 py-0">
+                            <div class="ms-form" method="post">
+                                <div class="ms-form-group my-0 mb-0 has-icon fs-14">
+                                    <input type="search" class="ms-form-input" name="search" placeholder="Search here..." value="" />
+                                    <i class="flaticon-search text-disabled"></i>
+                                </div>
+                            </div>
+                        </li>
                         <li class="ms-nav-item dropdown"><a href="#" class="text-disabled ms-has-notification" id="mailDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="flaticon-mail"></i></a>
                             <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="mailDropdown">
                                 <li class="dropdown-menu-header">
@@ -227,7 +240,7 @@
                                 <li class="ms-scrollable ms-dropdown-list">
                                     <a class="media p-2" href="#">
                                         <div class="ms-chat-status ms-status-offline ms-chat-img mr-2 align-self-center">
-                                            <img src="assets/img/costic/customer-3.jpg" class="ms-img-round" alt="people" />
+                                            <img src="../assets/img/costic/customer-1.jpg" class="ms-img-round" alt="people" />
                                         </div>
                                         <div class="media-body">
                                             <span>Hey man, looking forward to your new project.</span>
@@ -236,7 +249,7 @@
                                     </a>
                                     <a class="media p-2" href="#">
                                         <div class="ms-chat-status ms-status-online ms-chat-img mr-2 align-self-center">
-                                            <img src="assets/img/costic/customer-2.jpg" class="ms-img-round" alt="people" />
+                                            <img src="../assets/img/costic/customer-2.jpg" class="ms-img-round" alt="people" />
                                         </div>
                                         <div class="media-body">
                                             <span>Dear John, I was told you bought Costic! Send me your feedback</span>
@@ -245,7 +258,7 @@
                                     </a>
                                     <a class="media p-2" href="#">
                                         <div class="ms-chat-status ms-status-offline ms-chat-img mr-2 align-self-center">
-                                            <img src="assets/img/costic/customer-1.jpg" class="ms-img-round" alt="people" />
+                                            <img src="../assets/img/costic/customer-3.jpg" class="ms-img-round" alt="people" />
                                         </div>
                                         <div class="media-body">
                                             <span>How many people are we inviting to the dashboard?</span>
@@ -254,7 +267,7 @@
                                     </a>
                                 </li>
                                 <li class="dropdown-divider"></li>
-                                <li class="dropdown-menu-footer text-center"><a href="pages/apps/email.html">Go to Inbox</a>
+                                <li class="dropdown-menu-footer text-center"><a href="../apps/email.html">Go to Inbox</a>
                                 </li>
                             </ul>
                         </li>
@@ -299,8 +312,31 @@
 
                         <li class="ms-nav-item ms-nav-user dropdown">
                             <a href="#" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <asp:Image ID="img_avatar" runat="server" class="ms-user-img ms-img-round float-right" ImageUrl="" alt="people"/>
+                                <img class="ms-user-img ms-img-round float-right" src="../../assets/img/costic/customer-6.jpg" alt="people" />
                             </a>
+                            <ul class="dropdown-menu dropdown-menu-right user-dropdown" aria-labelledby="userDropdown">
+                                <li class="dropdown-menu-header">
+                                    <h6 class="dropdown-header ms-inline m-0"><span class="text-disabled">Welcome, Anny Farisha</span></h6>
+                                </li>
+                                <li class="dropdown-divider"></li>
+                                <li class="ms-dropdown-list">
+                                    <a class="media fs-14 p-2" href="../prebuilt-pages/user-profile.html"><span><i class="flaticon-user mr-2"></i>Profile</span>
+                                    </a>
+                                    <a class="media fs-14 p-2" href="../apps/email.html"><span><i class="flaticon-mail mr-2"></i>Inbox</span>  <span class="badge badge-pill badge-info">3</span>
+                                    </a>
+                                    <a class="media fs-14 p-2" href="../prebuilt-pages/user-profile.html"><span><i class="flaticon-gear mr-2"></i>Account Settings</span>
+                                    </a>
+                                </li>
+                                <li class="dropdown-divider"></li>
+                                <li class="dropdown-menu-footer">
+                                    <a class="media fs-14 p-2" href="../prebuilt-pages/lock-screen.html"><span><i class="flaticon-security mr-2"></i>Lock</span>
+                                    </a>
+                                </li>
+                                <li class="dropdown-menu-footer">
+                                    <a class="media fs-14 p-2" href="../prebuilt-pages/default-login.html"><span><i class="flaticon-shut-down mr-2"></i>Logout</span>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                     <div class="ms-toggler ms-d-block-sm pr-0 ms-nav-toggler" data-toggle="slideDown" data-target="#ms-nav-options">
@@ -309,471 +345,175 @@
                         <span class="ms-toggler-bar bg-primary"></span>
                     </div>
                 </nav>
-                <div class="ms-content-wrapper">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <asp:Label class="db-header-title" ID="lbl_wellcome" runat="server" Text=""></asp:Label>
-                           </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6">
-                            <div class="ms-card ms-widget has-graph-full-width ms-infographics-widget">
-                                <span class="ms-chart-label bg-black"><i class="material-icons">arrow_upward</i> 3.2%</span>
-                                <div class="ms-card-body media">
-                                    <div class="media-body">
-                                        <span class="black-text"><strong>Sells Graph</strong></span>
-                                        <h2>$8,451</h2>
-                                    </div>
+               
+                        <!-- Body Content Wrapper -->
+                        <div class="ms-content-wrapper">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb pl-0">
+                                            <li class="breadcrumb-item"><a href="#"><i class="material-icons">home</i> Home</a></li>
+                                            <li class="breadcrumb-item"><a href="#">Customers</a></li>
+                                            <li class="breadcrumb-item active" aria-current="page">Add Customers</li>
+                                        </ol>
+                                    </nav>
                                 </div>
-                                <canvas id="line-chart"></canvas>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6">
-                            <div class="ms-card ms-widget has-graph-full-width ms-infographics-widget">
-                                <span class="ms-chart-label bg-red"><i class="material-icons">arrow_downward</i> 4.5%</span>
-                                <div class="ms-card-body media">
-                                    <div class="media-body">
-                                        <span class="black-text"><strong>Total Visitors</strong></span>
-                                        <h2>3,973</h2>
-                                    </div>
-                                </div>
-                                <canvas id="line-chart-2"></canvas>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6">
-                            <div class="ms-card ms-widget has-graph-full-width ms-infographics-widget">
-                                <span class="ms-chart-label bg-black"><i class="material-icons">arrow_upward</i> 12.5%</span>
-                                <div class="ms-card-body media">
-                                    <div class="media-body">
-                                        <span class="black-text"><strong>New Users</strong></span>
-                                        <h2>7,333</h2>
-                                    </div>
-                                </div>
-                                <canvas id="line-chart-3"></canvas>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6">
-                            <div class="ms-card ms-widget has-graph-full-width ms-infographics-widget">
-                                <span class="ms-chart-label bg-red"><i class="material-icons">arrow_upward</i> 9.5%</span>
-                                <div class="ms-card-body media">
-                                    <div class="media-body">
-                                        <span class="black-text"><strong>Total Orders</strong></span>
-                                        <h2>48,973</h2>
-                                    </div>
-                                </div>
-                                <canvas id="line-chart-4"></canvas>
-                            </div>
-                        </div>
-                        <!-- Recent Orders Requested -->
-
-
-                        <!-- Food Orders -->
-                        <div class="col-md-12">
-                            <div class="ms-panel">
-                                <div class="ms-panel-header">
-                                    <h6>Trending Orders</h6>
-                                </div>
-                                <div class="ms-panel-body">
-                                    <div class="row">
-
-                                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-                                            <div class="ms-card no-margin">
-                                                <div class="ms-card-img">
-                                                    <img src="assets/img/costic/food-5.jpg" alt="card_img" />
-                                                </div>
-                                                <div class="ms-card-body">
-                                                    <div class="ms-card-heading-title">
-                                                        <h6>Meat Stew</h6>
-                                                        <span class="green-text"><strong>$25.00</strong></span>
-                                                    </div>
-
-                                                    <div class="ms-card-heading-title">
-                                                        <p>Orders <span class="red-text">15</span></p>
-                                                        <p>Income <span class="red-text">$175</span></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-                                            <div class="ms-card no-margin">
-                                                <div class="ms-card-img">
-                                                    <img src="assets/img/costic/food-2.jpg" alt="card_img" />
-                                                </div>
-                                                <div class="ms-card-body">
-                                                    <div class="ms-card-heading-title">
-                                                        <h6>Pancake</h6>
-                                                        <span class="green-text"><strong>$50.00</strong></span>
-                                                    </div>
-
-                                                    <div class="ms-card-heading-title">
-                                                        <p>Orders <span class="red-text">75</span></p>
-                                                        <p>Income <span class="red-text">$275</span></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-                                            <div class="ms-card no-margin">
-                                                <div class="ms-card-img">
-                                                    <img src="assets/img/costic/food-4.jpg" alt="card_img" />
-                                                </div>
-                                                <div class="ms-card-body">
-                                                    <div class="ms-card-heading-title">
-                                                        <h6>Burger</h6>
-                                                        <span class="green-text"><strong>$45.00</strong></span>
-                                                    </div>
-
-                                                    <div class="ms-card-heading-title">
-                                                        <p>Orders <span class="red-text">85</span></p>
-                                                        <p>Income <span class="red-text">$575</span></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-                                            <div class="ms-card no-margin">
-                                                <div class="ms-card-img">
-                                                    <img src="assets/img/costic/food-3.jpg" alt="card_img" />
-                                                </div>
-                                                <div class="ms-card-body">
-                                                    <div class="ms-card-heading-title">
-                                                        <h6>Saled</h6>
-                                                        <span class="green-text"><strong>$85.00</strong></span>
-                                                    </div>
-                                                    <div class="ms-card-heading-title">
-                                                        <p>Orders <span class="red-text">175</span></p>
-                                                        <p>Income <span class="red-text">$775</span></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- END/Food Orders -->
-                        <!-- Recent Orders Requested -->
-                        <div class="col-xl-7 col-md-12">
+                    
+                        <div class="col-xl-6 col-md-12">
                             <div class="ms-panel ms-panel-fh">
                                 <div class="ms-panel-header">
-                                    <div class="d-flex justify-content-between">
-                                        <div class="ms-header-text">
-                                            <h6>Order Timing Chart</h6>
+                                    <h6>Customer Detail</h6>
+                                </div>
+                                <div class="ms-panel-body">
+                                    <div class="needs-validation clearfix">
+                                        <div class="form-row">
+                                            <div class="col-md-2 mb-3">
+                                                <asp:ImageButton ID="imgBtn_foto" CausesValidation="false" runat="server" BorderStyle="Solid" BackColor="#990033" class="w-100 h-auto border-1" ImageUrl="~/Imagens/utilizadores/123546789foto.png"/>
+                                                <asp:FileUpload ID="fu_image"  runat="server" Visible="false"/>
+                                            </div>
+                                            <div class="col-md-10 mb-3">
+                                                <div class="form-row">
+                                                    <div class="col-md-6 mb-3">
+                                                        <label for="validationCustom18">First name</label>
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" id="tb_firstName" runat="server" placeholder="First name" required="required" />
+                                                            <div class="valid-feedback">
+                                                                Looks good!
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 mb-3">
+                                                        <label for="validationCustom19">Last name</label>
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" id="tb_lastName" runat="server" placeholder="Last name" required="required" />
+                                                            <div class="valid-feedback">
+                                                                Looks good!
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col-md-6 mb-3">
+                                                        <label for="validationCustom20">Email Address</label>
+                                                        <div class="input-group">
+                                                            <input type="email" class="form-control" id="tb_email" runat="server" placeholder="Email Address" required="required" />
+                                                            <div class="invalid-feedback">
+                                                                Please provide a valid email.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 mb-3">
+                                                        <label for="validationCustom19">Username</label>
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" id="tb_userName" runat="server" placeholder="Username" required="required" />
+                                                            <div class="valid-feedback">
+                                                                Looks good!
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
 
-                                </div>
-                                <div class="ms-panel-body pt-0">
-                                    <div class="d-flex justify-content-between ms-graph-meta">
-                                        <ul class="ms-list-flex mt-3 mb-5">
-                                            <li>
-                                                <span>Total Orders</span>
-                                                <h3 class="ms-count">703,49</h3>
-                                            </li>
-                                            <li>
-                                                <span>New Orders</span>
-                                                <h3 class="ms-count">95,038</h3>
-                                            </li>
-                                            <li>
-                                                <span>Repeat Orders</span>
-                                                <h3 class="ms-count">28,387</h3>
-                                            </li>
-                                            <li>
-                                                <span>Cancel Orders</span>
-                                                <h3 class="ms-count">260</h3>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <canvas id="youtube-subscribers"></canvas>
-                                </div>
-                            </div>
-                        </div>
+                                        <div class="form-row">
 
-                        <!-- Favourite Products -->
-                        <div class="col-xl-5 col-md-12">
-                            <div class="ms-panel ms-widget ms-crypto-widget">
-                                <div class="ms-panel-header">
-                                    <h6>Favourite charts</h6>
-                                </div>
-                                <div class="ms-panel-body p-0">
-                                    <ul class="nav nav-tabs nav-justified has-gap px-4 pt-4" role="tablist">
-                                        <li role="presentation" class="fs-12"><a href="#btc" aria-controls="btc" class="active show" role="tab" data-toggle="tab">Mon </a></li>
-                                        <li role="presentation" class="fs-12"><a href="#xrp" aria-controls="xrp" role="tab" data-toggle="tab">Tue </a></li>
-                                        <li role="presentation" class="fs-12"><a href="#ltc" aria-controls="ltc" role="tab" data-toggle="tab">Wed </a></li>
-                                        <li role="presentation" class="fs-12"><a href="#eth" aria-controls="eth" role="tab" data-toggle="tab">Thu </a></li>
-                                        <li role="presentation" class="fs-12"><a href="#zec" aria-controls="zec" role="tab" data-toggle="tab">Fri </a></li>
-                                    </ul>
-                                    <div class="tab-content">
-                                        <div role="tabpanel" class="tab-pane active show fade in" id="btc">
-                                            <div class="table-responsive">
-                                                <table class="table table-hover thead-light">
-                                                    <thead>
-                                                        <tr>
-                                                            <th scope="col">Restaurant Names</th>
-                                                            <th scope="col">Qty</th>
-                                                            <th scope="col">Orders</th>
-                                                            <th scope="col">Profit</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>Hunger House</td>
-                                                            <td>8528</td>
-                                                            <td class="ms-text-success">+17.24%</td>
-                                                            <td>7.65%</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Food Lounge</td>
-                                                            <td>4867</td>
-                                                            <td class="ms-text-danger">-12.24%</td>
-                                                            <td>9.12%</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Delizious</td>
-                                                            <td>7538</td>
-                                                            <td class="ms-text-success">+32.04%</td>
-                                                            <td>14.29%</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Netherfood</td>
-                                                            <td>1614</td>
-                                                            <td class="ms-text-danger">-20.75%</td>
-                                                            <td>12.25%</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Rusmiz</td>
-                                                            <td>7538</td>
-                                                            <td class="ms-text-success">+32.04%</td>
-                                                            <td>14.29%</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
+                                            <div class="col-md-2 mb-3">
+                                                <label for="validationCustom21">Phone Number</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="tb_phone" runat="server" placeholder="Phone Number" required="required" />
+                                                    <div class="invalid-feedback">
+                                                        Please provide a number.
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div role="tabpanel" class="tab-pane fade" id="xrp">
-                                            <div class="table-responsive">
-                                                <table class="table table-hover thead-light">
-                                                    <thead>
-                                                        <tr>
-                                                            <th scope="col">Restaurant Name</th>
-                                                            <th scope="col">Qty</th>
-                                                            <th scope="col">Orders</th>
-                                                            <th scope="col">Profit</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>Hunger House</td>
-                                                            <td>8528</td>
-                                                            <td class="ms-text-success">+17.24%</td>
-                                                            <td>7.65%</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Food Lounge</td>
-                                                            <td>4867</td>
-                                                            <td class="ms-text-danger">-12.24%</td>
-                                                            <td>9.12%</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Delizious</td>
-                                                            <td>7538</td>
-                                                            <td class="ms-text-success">+32.04%</td>
-                                                            <td>14.29%</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Netherfood</td>
-                                                            <td>1614</td>
-                                                            <td class="ms-text-danger">-20.75%</td>
-                                                            <td>12.25%</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Rusmiz</td>
-                                                            <td>7538</td>
-                                                            <td class="ms-text-success">+32.04%</td>
-                                                            <td>14.29%</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
+                                            <div class="col-md-2 mb-3">
+                                                <label for="validationCustom19">NIF</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="tb_nif" runat="server" placeholder="NIF" required="required" />
+                                                    <div class="valid-feedback">
+                                                        Looks good!
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div role="tabpanel" class="tab-pane fade" id="ltc">
-                                            <div class="table-responsive">
-                                                <table class="table table-hover thead-light">
-                                                    <thead>
-                                                        <tr>
-                                                            <th scope="col">Restaurant Name</th>
-                                                            <th scope="col">Qty</th>
-                                                            <th scope="col">Orders</th>
-                                                            <th scope="col">Profit</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>Hunger House</td>
-                                                            <td>8528</td>
-                                                            <td class="ms-text-success">+17.24%</td>
-                                                            <td>7.65%</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Food Lounge</td>
-                                                            <td>4867</td>
-                                                            <td class="ms-text-danger">-12.24%</td>
-                                                            <td>9.12%</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Delizious</td>
-                                                            <td>7538</td>
-                                                            <td class="ms-text-success">+32.04%</td>
-                                                            <td>14.29%</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Netherfood</td>
-                                                            <td>1614</td>
-                                                            <td class="ms-text-danger">-20.75%</td>
-                                                            <td>12.25%</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Rusmiz</td>
-                                                            <td>7538</td>
-                                                            <td class="ms-text-success">+32.04%</td>
-                                                            <td>14.29%</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
+                                            <div class="col-md-2 mb-3">
+                                                <label for="validationCustom22">User State</label>
+                                                <div class="input-group">
+                                                    <asp:DropDownList class="form-control" ID="ddl_state" runat="server" required="required" DataTextField="tipo" DataValueField="id">
+                                                        <asp:ListItem Value="1">Ative</asp:ListItem>
+                                                        <asp:ListItem Value="0">Inactive</asp:ListItem>
+                                                    </asp:DropDownList>
+                                                    <div class="invalid-feedback">
+                                                        Please select a UserType.
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div role="tabpanel" class="tab-pane fade" id="eth">
-                                            <div class="table-responsive">
-                                                <table class="table table-hover thead-light">
-                                                    <thead>
-                                                        <tr>
-                                                            <th scope="col">Restaurant Name</th>
-                                                            <th scope="col">Qty</th>
-                                                            <th scope="col">Orders</th>
-                                                            <th scope="col">Profit</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>Hunger House</td>
-                                                            <td>8528</td>
-                                                            <td class="ms-text-success">+17.24%</td>
-                                                            <td>7.65%</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Food Lounge</td>
-                                                            <td>4867</td>
-                                                            <td class="ms-text-danger">-12.24%</td>
-                                                            <td>9.12%</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Delizious</td>
-                                                            <td>7538</td>
-                                                            <td class="ms-text-success">+32.04%</td>
-                                                            <td>14.29%</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Netherfood</td>
-                                                            <td>1614</td>
-                                                            <td class="ms-text-danger">-20.75%</td>
-                                                            <td>12.25%</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Rusmiz</td>
-                                                            <td>7538</td>
-                                                            <td class="ms-text-success">+32.04%</td>
-                                                            <td>14.29%</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
+                                            <div class="col-md-2 mb-3">
+                                                <label for="validationCustom19">NIF</label>
+                                                <div class="input-group">
+                                                    <input type="datetime" class="form-control" id="tb_date" runat="server" placeholder="NIF" required="required" />
+                                                    <div class="valid-feedback">
+                                                        Looks good!
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div role="tabpanel" class="tab-pane fade" id="zec">
-                                            <div class="table-responsive">
-                                                <table class="table table-hover thead-light">
-                                                    <thead>
-                                                        <tr>
-                                                            <th scope="col">Restaurant Name</th>
-                                                            <th scope="col">Qty</th>
-                                                            <th scope="col">Orders</th>
-                                                            <th scope="col">Profit</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>Hunger House</td>
-                                                            <td>8528</td>
-                                                            <td class="ms-text-success">+17.24%</td>
-                                                            <td>7.65%</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Food Lounge</td>
-                                                            <td>4867</td>
-                                                            <td class="ms-text-danger">-12.24%</td>
-                                                            <td>9.12%</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Delizious</td>
-                                                            <td>7538</td>
-                                                            <td class="ms-text-success">+32.04%</td>
-                                                            <td>14.29%</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Netherfood</td>
-                                                            <td>1614</td>
-                                                            <td class="ms-text-danger">-20.75%</td>
-                                                            <td>12.25%</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Rusmiz</td>
-                                                            <td>7538</td>
-                                                            <td class="ms-text-success">+32.04%</td>
-                                                            <td>14.29%</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
+                                            <div class="col-md-2 mb-3">
+                                                <label for="validationCustom22">UserType</label>
+                                                <div class="input-group">
+                                                    <asp:DropDownList class="form-control" ID="ddl_usertype" runat="server" required="required" DataSourceID="SqlDataSource1" DataTextField="tipo" DataValueField="id"></asp:DropDownList>
 
-                                </div>
-                            </div>
-                            <!-- Favourite Products -->
-                            <!-- Total Earnings -->
-                            <div class="ms-panel">
-                                <div class="ms-panel-header">
-                                    <h6>Total Earnings</h6>
-                                </div>
-                                <div class="ms-panel-body p-0">
-                                    <div class="ms-quick-stats">
-                                        <div class="ms-stats-grid">
-                                            <i class="fa fa-star"></i>
-                                            <p class="ms-text-dark">$8,033</p>
-                                            <span>Today</span>
+                                                    <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:ProjetoFinalConnectionString %>' SelectCommand="SELECT * FROM [tipoUtilizador]"></asp:SqlDataSource>
+                                                    <div class="invalid-feedback">
+                                                        Please select a UserType.
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <hr />
+
+                                            <div class="col-md-4 mb-3">
+                                                <label for="validationCustom24">City</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="tb_city" runat="server" placeholder="City" required="required" />
+                                                    <div class="invalid-feedback">
+                                                        Please provide a city.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <label for="validationCustom25">Zip code</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="tb_zipCode" runat="server" placeholder="Zip code" pattern="^\d{4}-\d{3}?$" title="Insert Válid Zip Code 0000-000" required="required" />
+                                                    <div class="invalid-feedback">
+                                                        Please provide a ZIP.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 mb-3">
+                                                <label for="validationCustom26">Address</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="tb_address" runat="server" placeholder="Address" required="required" />
+                                                    <div class="invalid-feedback">
+                                                        Please provide an Address.
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                         </div>
-                                        <div class="ms-stats-grid">
-                                            <i class="fa fa-university"></i>
-                                            <p class="ms-text-dark">$3,039</p>
-                                            <span>Yesterday</span>
-                                        </div>
+                                        <asp:Button ID="btn_insert" class="btn btn-primary d-block float-right" type="submit" runat="server" OnClick="btn_insert_Click" Text="Save and Continue" />
+
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- Total Earnings -->
-                        <!-- Recent Placed Orders< -->
-                        <!-- Recent Orders< -->
-
-                        <!-- Recent Support Tickets -->
-
-                        <!-- Recent Support Tickets -->
-                        <!-- client chat -->
-
-                        <!-- client chat -->
+             
+                        </div>
                     </div>
-                </div>
+
             </main>
             <!-- MODALS -->
             <!-- Quick bar -->
+            <!-- Quick bar -->
+
 
             <!-- Quick bar Content -->
             <div class="ms-quick-bar-content">
@@ -896,10 +636,10 @@
                                     </p>
                                     <ul class="ms-note-members clearfix mb-0">
                                         <li class="ms-deletable">
-                                            <img src="assets/img/people/people-3.jpg" alt="member" />
+                                            <img src="../assets/img/people/people-3.jpg" alt="member" />
                                         </li>
                                         <li class="ms-deletable">
-                                            <img src="assets/img/people/people-5.jpg" alt="member" />
+                                            <img src="../assets/img/people/people-5.jpg" alt="member" />
                                         </li>
                                     </ul>
                                 </div>
@@ -917,7 +657,7 @@
                                             <li class="ms-scrollable ms-dropdown-list ms-members-list">
                                                 <a class="media p-2" href="#">
                                                     <div class="mr-2 align-self-center">
-                                                        <img src="assets/img/people/people-10.jpg" class="ms-img-round" alt="people" />
+                                                        <img src="../assets/img/people/people-10.jpg" class="ms-img-round" alt="people" />
                                                     </div>
                                                     <div class="media-body">
                                                         <span>John Doe</span>
@@ -925,7 +665,7 @@
                                                 </a>
                                                 <a class="media p-2" href="#">
                                                     <div class="mr-2 align-self-center">
-                                                        <img src="assets/img/people/people-9.jpg" class="ms-img-round" alt="people" />
+                                                        <img src="../assets/img/people/people-9.jpg" class="ms-img-round" alt="people" />
                                                     </div>
                                                     <div class="media-body">
                                                         <span>Raymart Sandiago</span>
@@ -933,7 +673,7 @@
                                                 </a>
                                                 <a class="media p-2" href="#">
                                                     <div class="mr-2 align-self-center">
-                                                        <img src="assets/img/people/people-7.jpg" class="ms-img-round" alt="people" />
+                                                        <img src="../assets/img/people/people-7.jpg" class="ms-img-round" alt="people" />
                                                     </div>
                                                     <div class="media-body">
                                                         <span>Heather Brown</span>
@@ -961,7 +701,7 @@
                                     </p>
                                     <ul class="ms-note-members clearfix mb-0">
                                         <li class="ms-deletable">
-                                            <img src="assets/img/people/people-9.jpg" alt="member" />
+                                            <img src="../assets/img/people/people-9.jpg" alt="member" />
                                         </li>
                                     </ul>
                                 </div>
@@ -979,7 +719,7 @@
                                             <li class="ms-scrollable ms-dropdown-list ms-members-list">
                                                 <a class="media p-2" href="#">
                                                     <div class="mr-2 align-self-center">
-                                                        <img src="assets/img/people/people-10.jpg" class="ms-img-round" alt="people" />
+                                                        <img src="../assets/img/people/people-10.jpg" class="ms-img-round" alt="people" />
                                                     </div>
                                                     <div class="media-body">
                                                         <span>John Doe</span>
@@ -987,7 +727,7 @@
                                                 </a>
                                                 <a class="media p-2" href="#">
                                                     <div class="mr-2 align-self-center">
-                                                        <img src="assets/img/people/people-9.jpg" class="ms-img-round" alt="people" />
+                                                        <img src="../assets/img/people/people-9.jpg" class="ms-img-round" alt="people" />
                                                     </div>
                                                     <div class="media-body">
                                                         <span>Raymart Sandiago</span>
@@ -995,7 +735,7 @@
                                                 </a>
                                                 <a class="media p-2" href="#">
                                                     <div class="mr-2 align-self-center">
-                                                        <img src="assets/img/people/people-7.jpg" class="ms-img-round" alt="people" />
+                                                        <img src="../assets/img/people/people-7.jpg" class="ms-img-round" alt="people" />
                                                     </div>
                                                     <div class="media-body">
                                                         <span>Heather Brown</span>
@@ -1069,8 +809,8 @@
                 </div>
 
             </div>
-
-            <!-- Reminder Modal -->
+            </aside>
+  <!-- Reminder Modal -->
             <div class="modal fade" id="reminder-modal" tabindex="-1" role="dialog" aria-labelledby="reminder-modal">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
@@ -1151,33 +891,29 @@
             </div>
         </div>
     </form>
-    <script src="assets/js/jquery-3.3.1.min.js"></script>
-  <script src="assets/js/popper.min.js"></script>
-  <script src="assets/js/bootstrap.min.js"></script>
-  <script src="assets/js/perfect-scrollbar.js">
-  </script>
-  <script src="assets/js/jquery-ui.min.js">
-  </script>
-  <!-- Global Required Scripts End -->
-  <!-- Page Specific Scripts Start -->
-
-  <script src="assets/js/Chart.bundle.min.js">
-  </script>
-  <script src="assets/js/widgets.js"> </script>
-  <script src="assets/js/clients.js"> </script>
-  <script src="assets/js/Chart.Financial.js"> </script>
-  <script src="assets/js/d3.v3.min.js">
-  </script>
-  <script src="assets/js/topojson.v1.min.js">
-  </script>
-  <script src="assets/js/datatables.min.js">
-  </script>
-  <script src="assets/js/data-tables.js">
-  </script>
-  <!-- Page Specific Scripts Finish -->
-  <!-- Costic core JavaScript -->
-  <script src="assets/js/framework.js"></script>
-  <!-- Settings -->
-  <script src="assets/js/settings.js"></script>
+    <script src="../assets/js/jquery-3.3.1.min.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/perfect-scrollbar.js">
+    </script>
+    <script src="../assets/js/jquery-ui.min.js">
+    </script>
+    <!-- Global Required Scripts End -->
+    <!-- Page Specific Scripts Start -->
+    <script src="../assets/js/slick.min.js">
+    </script>
+    <script src="../assets/js/moment.js">
+    </script>
+    <script src="../assets/js/jquery.webticker.min.js">
+    </script>
+    <script src="../assets/js/Chart.bundle.min.js">
+    </script>
+    <script src="../assets/js/Chart.Financial.js">
+    </script>
+    <!-- Page Specific Scripts Finish -->
+    <!-- Costic core JavaScript -->
+    <script src="../assets/js/framework.js"></script>
+    <!-- Settings -->
+    <script src="../assets/js/settings.js"></script>
 </body>
 </html>

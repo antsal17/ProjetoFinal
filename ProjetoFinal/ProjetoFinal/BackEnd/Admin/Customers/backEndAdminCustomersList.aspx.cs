@@ -1,4 +1,5 @@
-﻿using ProjetoFinal.FunctionClasses;
+﻿using ProjetoFinal.Classes.FunctionClasses;
+using ProjetoFinal.FunctionClasses;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -54,7 +55,8 @@ namespace ProjetoFinal.BackEnd.Admin.customers
             rp_utilizadores.DataBind();
             if (e.CommandName.Equals("btnImg_edit"))
             {
-                Response.Redirect("");
+                string id = ((LinkButton)e.Item.FindControl("btnImg_edit")).CommandArgument;
+                Response.Redirect("backEndCustomerDetail.aspx?id=" + PassEncrypt.EncryptString(id));
             }
         }
     }

@@ -196,6 +196,7 @@
     <Content Include="BackEnd\Admin\Customers\backEndAdminAddCustomers.aspx" />
     <Content Include="BackEnd\Admin\Customers\backEndAdminCustomersList.aspx" />
     <Content Include="BackEnd\Admin\Customers\backEndAdminCustomersReview.aspx" />
+    <Content Include="BackEnd\Admin\Customers\backEndCustomerDetail.aspx" />
     <Content Include="BackEnd\Admin\Invoice\backEndAdminInvoice.aspx" />
     <Content Include="BackEnd\Admin\Invoice\backEndAdminInvoiceDetail.aspx" />
     <Content Include="BackEnd\Admin\Products\backEndAdminAddProducts.aspx" />
@@ -292,6 +293,13 @@
     </Compile>
     <Compile Include="BackEnd\Admin\Customers\backEndAdminCustomersReview.aspx.designer.cs">
       <DependentUpon>backEndAdminCustomersReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BackEnd\Admin\Customers\backEndCustomerDetail.aspx.cs">
+      <DependentUpon>backEndCustomerDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BackEnd\Admin\Customers\backEndCustomerDetail.aspx.designer.cs">
+      <DependentUpon>backEndCustomerDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="BackEnd\Admin\Invoice\backEndAdminInvoice.aspx.cs">
       <DependentUpon>backEndAdminInvoice.aspx</DependentUpon>

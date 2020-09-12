@@ -18,6 +18,7 @@ namespace ProjetoFinal.BackEnd.Admin
                 if (utilizador.id_tipoUtilizador == "1")
                 {
                     img_avatar.ImageUrl = "~/Imagens/utilizadores/" + utilizador.foto;
+                    lbl_wellcome.Text = "Olá, " + utilizador.nome + " " + utilizador.apelido;
                 }
             }
             else

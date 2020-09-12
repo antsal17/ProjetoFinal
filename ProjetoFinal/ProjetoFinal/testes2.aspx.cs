@@ -17,5 +17,10 @@ namespace ProjetoFinal
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
         }
+
+        protected void OpenImgUpload_Click(object sender, ImageClickEventArgs e)
+        {
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openFu();", true);
+        }
     }
 }

@@ -141,7 +141,7 @@ namespace ProjetoFinal.FunctionClasses
             SqlCommand myCommand = new SqlCommand();
 
             myCommand.Parameters.AddWithValue("@id", id_utilizador);
-            
+
 
 
             myCommand.CommandType = CommandType.StoredProcedure;
@@ -216,12 +216,12 @@ namespace ProjetoFinal.FunctionClasses
                 string id = myCommand.Parameters["@id"].Value.ToString();
                 string nome = myCommand.Parameters["@nome"].Value.ToString();
 
-                return (id,nome);
+                return (id, nome);
 
             }
             catch (Exception m)
             {
-                return (m.ToString(),"");
+                return (m.ToString(), "");
             }
             finally
             {
@@ -231,7 +231,7 @@ namespace ProjetoFinal.FunctionClasses
 
 
         //depois de ser enviado link por email o utilizador pode fazer a recuperacao da pw
-        public static  string recuperacaoPWInsercao(string id, string pass)
+        public static string recuperacaoPWInsercao(string id, string pass)
         {
             SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["ProjetoFinalConnectionString"].ConnectionString);
 
@@ -388,8 +388,8 @@ namespace ProjetoFinal.FunctionClasses
 
             SqlCommand myCommand = new SqlCommand();
 
-            myCommand.Parameters.AddWithValue("@id", Convert.ToInt32(id) );
-            
+            myCommand.Parameters.AddWithValue("@id", Convert.ToInt32(id));
+
             myCommand.CommandType = CommandType.StoredProcedure;
             myCommand.CommandText = "usp_elimina_clientes_admim";
 
@@ -422,5 +422,53 @@ namespace ProjetoFinal.FunctionClasses
                 myConn.Close();
             }
         }
+
+        public static Utilizador DevolveClienteDetailAdmin(string id)
+        {
+            SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["ProjetoFinalConnectionString"].ConnectionString);
+
+            SqlCommand myCommand = new SqlCommand();
+            myCommand.Connection = myConn;
+            myCommand.Parameters.AddWithValue("@id", id);
+
+            myCommand.CommandType = CommandType.StoredProcedure;
+            myCommand.CommandText = "usp_lista_clienteDetail_admim";
+
+            try
+            {
+                myConn.Open();
+                var reader = myCommand.ExecuteReader();
+
+                Utilizador p = new Utilizador();
+
+                while (reader.Read())
+                {
+                    p.id = reader.GetInt32(0);
+                    p.nome = reader.GetString(1);
+                    p.apelido = reader.GetString(2);
+                    p.telefone = reader.GetString(3);
+                    p.nif = reader.GetString(4);
+                    p.ativo = reader.GetBoolean(5);
+                    p.dataRegisto = reader.GetDateTime(6);
+                    p.foto = reader.GetString(7);
+                    p.id_tipoUtilizador = Convert.ToString(reader.GetInt32(8));
+                    p.username = reader.GetString(9);
+                    p.email = reader.GetString(10);
+                }
+                return p;
+
+
+
+            }
+            catch (Exception m)
+            {
+                return null;
+            }
+            finally
+            {
+                myConn.Close();
+            }
+        }
+
     }
 }
