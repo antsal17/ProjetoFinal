@@ -25,11 +25,16 @@
     <link href="../assets/css/style.css" rel="stylesheet" />
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon.ico" />
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    
+    <style>
+        .custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    border: hidden;
+}
+    </style>
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -345,20 +350,20 @@
                         <span class="ms-toggler-bar bg-primary"></span>
                     </div>
                 </nav>
-               
-                        <!-- Body Content Wrapper -->
-                        <div class="ms-content-wrapper">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <nav aria-label="breadcrumb">
-                                        <ol class="breadcrumb pl-0">
-                                            <li class="breadcrumb-item"><a href="#"><i class="material-icons">home</i> Home</a></li>
-                                            <li class="breadcrumb-item"><a href="#">Customers</a></li>
-                                            <li class="breadcrumb-item active" aria-current="page">Add Customers</li>
-                                        </ol>
-                                    </nav>
-                                </div>
-                    
+
+                <!-- Body Content Wrapper -->
+                <div class="ms-content-wrapper">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb pl-0">
+                                    <li class="breadcrumb-item"><a href="#"><i class="material-icons">home</i> Home</a></li>
+                                    <li class="breadcrumb-item"><a href="#">Customers</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Add Customers</li>
+                                </ol>
+                            </nav>
+                        </div>
+
                         <div class="col-xl-6 col-md-12">
                             <div class="ms-panel ms-panel-fh">
                                 <div class="ms-panel-header">
@@ -368,14 +373,24 @@
                                     <div class="needs-validation clearfix">
                                         <div class="form-row">
                                             <div class="col-md-2 mb-3">
-                                                <asp:ImageButton ID="imgBtn_foto" CausesValidation="false" runat="server" BorderStyle="Solid" BackColor="#990033" class="w-100 h-auto border-1" ImageUrl="~/Imagens/utilizadores/123546789foto.png"/>
-                                                <asp:FileUpload ID="fu_image"  runat="server" Visible="false"/>
+                                                <div class="md-form">
+                                                    <div class="file-field">
+                                                        <div class="z-depth-1-half mb-4">
+                                                            <label class="custom-file-upload">
+                                                                <asp:Image ID="imgBtn_foto" CausesValidation="false" runat="server" BorderStyle="Solid" BackColor="#990033" class="w-100 h-auto border-1" ImageUrl="~/Imagens/utilizadores/123546789foto.png" />
+                                                                <input id="fu_img" runat="server" hidden="hidden" type="file" />
+                                                            </label>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="col-md-10 mb-3">
                                                 <div class="form-row">
                                                     <div class="col-md-6 mb-3">
                                                         <label for="validationCustom18">First name</label>
                                                         <div class="input-group">
+
                                                             <input type="text" class="form-control" id="tb_firstName" runat="server" placeholder="First name" required="required" />
                                                             <div class="valid-feedback">
                                                                 Looks good!
@@ -429,7 +444,7 @@
                                             <div class="col-md-2 mb-3">
                                                 <label for="validationCustom19">NIF</label>
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control" id="tb_nif" runat="server" placeholder="NIF" required="required" />
+                                                    <input type="text" class="form-control" id="tb_nif" runat="server" placeholder="NIF" required="required" disabled="disabled" />
                                                     <div class="valid-feedback">
                                                         Looks good!
                                                     </div>
@@ -448,9 +463,9 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-2 mb-3">
-                                                <label for="validationCustom19">NIF</label>
+                                                <label for="validationCustom19">Registration date</label>
                                                 <div class="input-group">
-                                                    <input type="datetime" class="form-control" id="tb_date" runat="server" placeholder="NIF" required="required" />
+                                                    <input type="datetime" class="form-control" id="tb_date" runat="server" placeholder="Registration date" required="required" disabled="disabled" />
                                                     <div class="valid-feedback">
                                                         Looks good!
                                                     </div>
@@ -473,7 +488,7 @@
                                             <div class="col-md-4 mb-3">
                                                 <label for="validationCustom24">City</label>
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control" id="tb_city" runat="server" placeholder="City" required="required" />
+                                                    <input type="text" class="form-control" id="tb_city" runat="server" placeholder="City" />
                                                     <div class="invalid-feedback">
                                                         Please provide a city.
                                                     </div>
@@ -482,7 +497,7 @@
                                             <div class="col-md-4 mb-3">
                                                 <label for="validationCustom25">Zip code</label>
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control" id="tb_zipCode" runat="server" placeholder="Zip code" pattern="^\d{4}-\d{3}?$" title="Insert Válid Zip Code 0000-000" required="required" />
+                                                    <asp:TextBox class="form-control" id="tb_zipCode" runat="server" placeholder="Zip code" pattern="^\d{4}-\d{3}?$" title="Insert Válid Zip Code 0000-000" OnTextChanged="tb_zipCode_TextChanged" ></asp:TextBox>
                                                     <div class="invalid-feedback">
                                                         Please provide a ZIP.
                                                     </div>
@@ -491,7 +506,7 @@
                                             <div class="col-md-12 mb-3">
                                                 <label for="validationCustom26">Address</label>
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control" id="tb_address" runat="server" placeholder="Address" required="required" />
+                                                    <input type="text" class="form-control" id="tb_address" runat="server" placeholder="Address" />
                                                     <div class="invalid-feedback">
                                                         Please provide an Address.
                                                     </div>
@@ -505,9 +520,9 @@
                                 </div>
                             </div>
                         </div>
-             
-                        </div>
+
                     </div>
+                </div>
 
             </main>
             <!-- MODALS -->

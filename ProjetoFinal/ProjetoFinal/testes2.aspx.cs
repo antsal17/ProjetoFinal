@@ -11,16 +11,8 @@ namespace ProjetoFinal
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
-        }
-
-        protected void OpenImgUpload_Click(object sender, ImageClickEventArgs e)
-        {
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openFu();", true);
-        }
+        
     }
 }

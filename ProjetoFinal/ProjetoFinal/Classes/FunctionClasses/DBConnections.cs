@@ -470,5 +470,57 @@ namespace ProjetoFinal.FunctionClasses
             }
         }
 
+        public static string atualizarClienteAdmin(string id, string username, string nome, string apelido, string telefone, string foto, string email, string id_tipoUtilizador, bool ativo)
+        {
+            SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["ProjetoFinalConnectionString"].ConnectionString);
+
+            SqlCommand myCommand = new SqlCommand();
+
+            myCommand.Parameters.AddWithValue("@id", id);
+            myCommand.Parameters.AddWithValue("@username", username);
+            myCommand.Parameters.AddWithValue("@nome", nome);
+            myCommand.Parameters.AddWithValue("@apelido", apelido);
+            myCommand.Parameters.AddWithValue("@telefone", telefone);
+           
+            myCommand.Parameters.AddWithValue("@foto", foto);
+            
+            myCommand.Parameters.AddWithValue("@email", email);
+            myCommand.Parameters.AddWithValue("@idTipoUtilizador", id_tipoUtilizador);
+            myCommand.Parameters.AddWithValue("@ativo", ativo);
+
+
+            myCommand.CommandType = CommandType.StoredProcedure;
+            myCommand.CommandText = "usp_atualiza_utilizador_admin";
+
+            SqlParameter valor = new SqlParameter();
+            valor.ParameterName = "@retorno";
+            valor.Direction = ParameterDirection.Output;
+            valor.SqlDbType = SqlDbType.Int;
+            valor.Size = 1;
+
+
+            myCommand.Parameters.Add(valor);
+            myCommand.Connection = myConn;
+            try
+            {
+                myConn.Open();
+
+                myCommand.ExecuteNonQuery();
+
+                string resposta = myCommand.Parameters["@retorno"].Value.ToString();
+
+                return resposta;
+
+            }
+            catch (Exception m)
+            {
+                return m.ToString();
+            }
+            finally
+            {
+                myConn.Close();
+            }
+        }
+
     }
 }

@@ -336,6 +336,7 @@
     <Compile Include="BackEnd\Admin\Products\backEndAdminProductList.aspx.designer.cs">
       <DependentUpon>backEndAdminProductList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Classes\APIS\zipCode.cs" />
     <Compile Include="Classes\FunctionClasses\DBConnections.cs" />
     <Compile Include="Classes\FunctionClasses\EmailSending.cs" />
     <Compile Include="Classes\FunctionClasses\PassEncrypt.cs" />

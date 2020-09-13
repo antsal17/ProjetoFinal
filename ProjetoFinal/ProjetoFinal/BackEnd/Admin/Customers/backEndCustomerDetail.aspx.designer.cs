@@ -30,16 +30,16 @@ namespace ProjetoFinal.BackEnd.Admin.Customers
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton imgBtn_foto;
+        protected global::System.Web.UI.WebControls.Image imgBtn_foto;
 
         /// <summary>
-        /// fu_image control.
+        /// fu_img control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fu_image;
+        protected global::System.Web.UI.HtmlControls.HtmlInputFile fu_img;
 
         /// <summary>
         /// tb_firstName control.
@@ -147,7 +147,7 @@ namespace ProjetoFinal.BackEnd.Admin.Customers
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText tb_zipCode;
+        protected global::System.Web.UI.WebControls.TextBox tb_zipCode;
 
         /// <summary>
         /// tb_address control.
