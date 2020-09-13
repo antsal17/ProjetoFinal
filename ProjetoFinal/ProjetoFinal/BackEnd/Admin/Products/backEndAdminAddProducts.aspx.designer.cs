@@ -24,6 +24,24 @@ namespace ProjetoFinal.BackEnd.Admin.Products
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// div_insert control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_insert;
+
+        /// <summary>
+        /// lbl_insertMsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_insertMsg;
+
+        /// <summary>
         /// validationCustom18 control.
         /// </summary>
         /// <remarks>

@@ -374,8 +374,9 @@
                                 </ol>
                             </nav>
 
-                            <div class="alert alert-success" role="alert">
-                                <strong>Well done!</strong> You successfully read this important alert message.
+                            <div class="alert alert-success" role="alert" id="div_insert" runat="server">
+
+                                <asp:Label ID="lbl_insertMsg" runat="server" Text="" visible="false"></asp:Label>
                             </div>
                         </div>
 
