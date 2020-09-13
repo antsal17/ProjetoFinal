@@ -24,22 +24,22 @@ namespace ProjetoFinal.Login
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// username control.
+        /// tb_username control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText username;
+        protected global::System.Web.UI.WebControls.TextBox tb_username;
 
         /// <summary>
-        /// email control.
+        /// tb_email control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl email;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl tb_email;
 
         /// <summary>
         /// pass control.

@@ -24,16 +24,17 @@
                             <div class="register-form" id="register-form">
                                 <div class="form-group">
                                     <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                    <input type="text" id="username" placeholder="Your Username" runat="server" required="required"/>
+                                    <asp:TextBox id="tb_username" placeholder="Your Username" runat="server" onclick="myFunction()"  required="required"></asp:TextBox>
+                                    
                                 </div>
                                 <div class="form-group">
                                     <label for="email"><i class="zmdi zmdi-email"></i></label>
-                                    <input type="email" name="email" id="email" placeholder="Your Email" runat="server" required="required"/>
+                                    <input type="email" name="email" id="tb_email" placeholder="Your Email" runat="server" required="required" onclick="myFunction()" />
                                 </div>
                                 <div class="form-group">
                                     <label for="pass"><i class="zmdi zmdi-lock"></i></label>
                                     <%--REGEX A FUNCIONAR^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$--%>
-                                    <input type="password" name="pass" id="pass" placeholder="Password" runat="server" required="required" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" />
+                                    <input type="password" name="pass" id="pass" placeholder="Password" runat="server" required="required"  pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" />
                                 </div>
                                 <div class="form-group">
                                     <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
@@ -60,7 +61,18 @@
 
         </div>
     </form>
-
+    <script>
+        function myFunction() {
+            if (document.getElementById("email").style.color == "red") {
+                document.getElementById("email").value = "";
+                document.getElementById("email").style.color = "black";
+            }
+            else if (document.getElementById("username").style.color == "red") {
+                document.getElementById("username").value = "";
+                document.getElementById("username").style.color = "black";
+            }
+        }
+    </script>
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="js/main.js"></script>
 </body>
