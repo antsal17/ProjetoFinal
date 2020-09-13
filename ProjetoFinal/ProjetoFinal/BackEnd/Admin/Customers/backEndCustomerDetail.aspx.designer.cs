@@ -132,31 +132,49 @@ namespace ProjetoFinal.BackEnd.Admin.Customers
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
 
         /// <summary>
-        /// tb_city control.
+        /// tb_morada1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText tb_city;
+        protected global::System.Web.UI.WebControls.TextBox tb_morada1;
 
         /// <summary>
-        /// tb_zipCode control.
+        /// tb_cidade1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_zipCode;
+        protected global::System.Web.UI.WebControls.TextBox tb_cidade1;
 
         /// <summary>
-        /// tb_address control.
+        /// tb_cod1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText tb_address;
+        protected global::System.Web.UI.WebControls.TextBox tb_cod1;
+
+        /// <summary>
+        /// rp_moradas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rp_moradas;
+
+        /// <summary>
+        /// SqlDataSource2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
 
         /// <summary>
         /// btn_insert control.

@@ -52,8 +52,10 @@
             <asp:Button ID="Button5" runat="server" OnClick="Button5_Click" Text="Random PAssWord" />
             <br />
             <br />
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="http://www.stackoverflow.com">HyperLink</asp:HyperLink>
 
         </div>
+        <asp:Label ID="Label5" runat="server" Text="Label"></asp:Label>
     </form>
 </body>
 </html>

@@ -27,12 +27,12 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon.ico" />
     <style>
         .custom-file-upload {
-    border: 1px solid #ccc;
-    display: inline-block;
-    padding: 6px 12px;
-    cursor: pointer;
-    border: hidden;
-}
+            border: 1px solid #ccc;
+            display: inline-block;
+            padding: 6px 12px;
+            cursor: pointer;
+            border: hidden;
+        }
     </style>
 
 </head>
@@ -482,38 +482,77 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                        </div>
+                                        <hr />
+                                        <div class="form-row">
 
-                                            <hr />
+                                            <div class="table-responsive ">
+                                                <table class="table table-striped">
 
-                                            <div class="col-md-4 mb-3">
-                                                <label for="validationCustom24">City</label>
-                                                <div class="input-group">
-                                                    <input type="text" class="form-control" id="tb_city" runat="server" placeholder="City" />
-                                                    <div class="invalid-feedback">
-                                                        Please provide a city.
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4 mb-3">
-                                                <label for="validationCustom25">Zip code</label>
-                                                <div class="input-group">
-                                                    <asp:TextBox class="form-control" id="tb_zipCode" runat="server" placeholder="Zip code" pattern="^\d{4}-\d{3}?$" title="Insert Válid Zip Code 0000-000" OnTextChanged="tb_zipCode_TextChanged" ></asp:TextBox>
-                                                    <div class="invalid-feedback">
-                                                        Please provide a ZIP.
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12 mb-3">
-                                                <label for="validationCustom26">Address</label>
-                                                <div class="input-group">
-                                                    <input type="text" class="form-control" id="tb_address" runat="server" placeholder="Address" />
-                                                    <div class="invalid-feedback">
-                                                        Please provide an Address.
-                                                    </div>
-                                                </div>
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">Morada</th>
+                                                            <th scope="col">Cidade</th>
+                                                            <th scope="col">Codigo Postal</th>
+                                                            <th scope="col">Por Defeito</th>
+                                                            <th scope="col">Abrir no Mapa</th>
+                                                            <th scope="col"></th>
+                                                            <th scope="col"></th>
+                                                        </tr>
+
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <asp:TextBox ID="tb_morada1" runat="server"></asp:TextBox></td>
+                                                            <td>
+                                                                <asp:TextBox ID="tb_cidade1" runat="server"></asp:TextBox></td>
+                                                            <td>
+                                                                <asp:TextBox ID="tb_cod1" runat="server" OnTextChanged="tb_zipCode_TextChanged"></asp:TextBox></td>
+                                                            <td>Por Defeito</td>
+                                                            <td>Abrir no Mapa</td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <asp:Repeater ID="rp_moradas" runat="server" DataSourceID="SqlDataSource2" OnItemCommand="rp_moradas_ItemCommand" OnItemDataBound="rp_moradas_ItemDataBound">
+                                                            <HeaderTemplate>
+                                                            </HeaderTemplate>
+                                                            <ItemTemplate>
+                                                                <tr>
+                                                                    <td>
+                                                                        <asp:TextBox ID="tb_morada" runat="server"></asp:TextBox></td>
+
+                                                                    <td>
+                                                                        <asp:TextBox ID="tb_cidade" runat="server"></asp:TextBox></td>
+                                                                    <td>
+                                                                        <asp:TextBox ID="tb_cod" runat="server"></asp:TextBox></td>
+                                                                    <td>
+                                                                        <asp:CheckBox ID="cb_pre" runat="server"></asp:CheckBox></td>
+                                                                    <td>
+                                                                        <asp:HyperLink ID="hl_coord" runat="server">HyperLink</asp:HyperLink></td>
+
+
+                                                                    <td>
+                                                                        <asp:LinkButton ID="btn_edit" runat="server" CommandName="btn_edit"><i class="fas fa-user-edit"></i></asp:LinkButton></td>
+                                                                    <td>
+                                                                        <asp:LinkButton ID="btn_delete" runat="server" CommandName="btn_delete"><i class="fas fa-trash-alt"></i></asp:LinkButton></td>
+                                                                </tr>
+
+                                                            </ItemTemplate>
+                                                            <FooterTemplate>
+                                                            </FooterTemplate>
+                                                        </asp:Repeater>
+                                                        <asp:SqlDataSource runat="server" ID="SqlDataSource2" ConnectionString='<%$ ConnectionStrings:ProjetoFinalConnectionString %>' SelectCommand="usp_lista_moradas_utilizador_admin" SelectCommandType="StoredProcedure">
+                                                            <SelectParameters>
+                                                                <asp:FormParameter FormField="id" DefaultValue="8" Name="id" Size="100000000" Type="Int32"></asp:FormParameter>
+                                                            </SelectParameters>
+                                                        </asp:SqlDataSource>
+                                                    </tbody>
+                                                </table>
                                             </div>
 
                                         </div>
+
                                         <asp:Button ID="btn_insert" class="btn btn-primary d-block float-right" type="submit" runat="server" OnClick="btn_insert_Click" Text="Save and Continue" />
 
                                     </div>

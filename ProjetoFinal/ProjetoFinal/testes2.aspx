@@ -5,90 +5,64 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    
-
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link href="BackEnd/Admin/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="BackEnd/Admin/vendors/iconic-fonts/font-awesome/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="BackEnd/Admin/vendors/iconic-fonts/flat-icons/flaticon.css" />
+    <link rel="stylesheet" href="BackEnd/Admin/vendors/iconic-fonts/cryptocoins/cryptocoins.css" />
+    <link rel="stylesheet" href="BackEnd/Admin/vendors/iconic-fonts/cryptocoins/cryptocoins-colors.css" />
 </head>
 <body>
     <form id="form1" runat="server">
 
-      <!-- Card -->
-<div class="card map-card">
+        <asp:Repeater ID="rp_moradas" runat="server" DataSourceID="SqlDataSource1" OnItemCommand="rp_moradas_ItemCommand" OnItemDataBound="rp_moradas_ItemDataBound">
+            <HeaderTemplate>
+                <div class="table-responsive ">
+                    <table class="table table-striped">
 
-  <!--Google map-->
-  <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
-    <iframe src="https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
-      style="border:0" allowfullscreen></iframe>
-  </div>
+                        <thead>
+                            <tr>
+                                <th scope="col">Morada</th>
+                                <th scope="col">Cidade</th>
+                                <th scope="col">Codigo Postal</th>
+                                <th scope="col">Por Defeito</th>
+                                <th scope="col">Abrir no Mapa</th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+            </HeaderTemplate>
+            <ItemTemplate>
+                <tr>
+                    <td><asp:TextBox ID="tb_morada" runat="server"></asp:TextBox></td>
+                    
+                    <td><asp:TextBox ID="tb_cidade" runat="server"></asp:TextBox></td>
+                    <td><asp:TextBox ID="tb_cod" runat="server"></asp:TextBox></td>
+                    <td><asp:CheckBox id="cb_pre" runat="server"></asp:CheckBox></td>
+                    <td><asp:HyperLink ID="hl_coord" runat="server">HyperLink</asp:HyperLink></td>
+                   
+                    
+                    <td><asp:LinkButton ID="btn_edit" runat="server" CommandName="btn_edit"><i class="fas fa-user-edit"></i></asp:LinkButton></td>
+                    <td><asp:LinkButton ID="btn_delete" runat="server" CommandName="btn_delete"><i class="fas fa-trash-alt"></i></asp:LinkButton></td>
+                </tr>
 
-  <!-- Card content -->
-  <div class="card-body closed px-0">
-
-    <div class="button px-2 mt-3">
-      <a class="btn-floating btn-lg living-coral float-right"><i class="fas fa-bicycle"></i></a>
-    </div>
-
-    <div class="white px-4 pb-4 pt-3-5">
-
-      <!-- Title -->
-      <h5 class="card-title h5 living-coral-text">Central Park Zoo</h5>
-
-      <div class="d-flex justify-content-between living-coral-text">
-        <h6 class="card-subtitle font-weight-light">A place to relax</h6>
-        <h6 class="font-small font-weight-light mt-n1">25 min</h6>
-      </div>
-
-      <hr>
-
-      <div class="d-flex justify-content-between pt-2 mt-1 text-center text-uppercase living-coral-text">
-        <div>
-          <i class="fas fa-phone fa-lg mb-3"></i>
-          <p class="mb-0">Call</p>
-        </div>
-        <div>
-          <i class="fas fa-cat fa-lg mb-3"></i>
-          <p class="mb-0">Love</p>
-        </div>
-        <div>
-          <i class="far fa-grin-beam-sweat fa-lg mb-3"></i>
-          <p class="mb-0">Smile</p>
-        </div>
-      </div>
-
-      <hr>
-
-      <table class="table table-borderless">
-        <tbody>
-          <tr>
-            <th scope="row" class="px-0 pb-3 pt-2">
-                <i class="fas fa-map-marker-alt living-coral-text"></i>
-            </th>
-            <td class="pb-3 pt-2">East 64th Street, New York, NY 10021, US</td>
-          </tr>
-          <tr class="mt-2">
-            <th scope="row" class="px-0 pb-3 pt-2">
-              <i class="far fa-clock living-coral-text"></i>
-            </th>
-            <td class="pb-3 pt-2"><span class="deep-purple-text mr-2"> Closed</span> Opens 10 AM</td>
-          </tr>
-          <tr class="mt-2">
-            <th scope="row" class="px-0 pb-3 pt-2">
-              <i class="fas fa-cloud-moon living-coral-text"></i>
-            </th>
-            <td class="pb-3 pt-2">Sunny weather tomorrow</td>
-          </tr>
-        </tbody>
-      </table>
-
-    </div>
-
-  </div>
-
+            </ItemTemplate>
+            <FooterTemplate>
+                </tbody>
+  </table>
 </div>
-<!-- Card -->
+            </FooterTemplate>
+        </asp:Repeater>
+        <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:ProjetoFinalConnectionString %>' SelectCommand="usp_lista_moradas_utilizador_admin" SelectCommandType="StoredProcedure">
+            <SelectParameters>
+                <asp:FormParameter FormField="id" DefaultValue="8" Name="id" Size="100000000" Type="Int32"></asp:FormParameter>
+            </SelectParameters>
+        </asp:SqlDataSource>
     </form>
 </body>
-   
+
 </html>
