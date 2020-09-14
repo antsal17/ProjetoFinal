@@ -25,6 +25,11 @@
     <link href="../assets/css/style.css" rel="stylesheet" />
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon.ico" />
+    <!-- Bootstrap -->
+    <%--        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />--%>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <style>
         .custom-file-upload {
             border: 1px solid #ccc;
@@ -34,10 +39,17 @@
             border: hidden;
         }
     </style>
+    <script type="text/javascript">
+        function openModal() {
+            $('#myModal').modal('show');
+        }
+
+    </script>
 
 </head>
 <body>
     <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <div class="ms-body ms-aside-left-open ms-primary-theme ms-has-quickbar">
 
             <!-- Preloader -->
@@ -484,11 +496,12 @@
                                             </div>
                                         </div>
                                         <hr />
-                                        <div class="form-row">
 
-                                            <div class="table-responsive ">
-                                                <table class="table table-striped">
 
+                                        <div class="table-responsive ">
+
+                                            <table class="table table-striped">
+                                                <div class="form-row">
                                                     <thead>
                                                         <tr>
                                                             <th scope="col">Morada</th>
@@ -509,9 +522,11 @@
                                                                 <asp:TextBox ID="tb_cidade1" runat="server"></asp:TextBox></td>
                                                             <td>
                                                                 <asp:TextBox ID="tb_cod1" runat="server" OnTextChanged="tb_zipCode_TextChanged"></asp:TextBox></td>
-                                                            <td>Por Defeito</td>
-                                                            <td>Abrir no Mapa</td>
+                                                            <td>
+                                                                <asp:CheckBox ID="cb_pre1" runat="server" /></td>
                                                             <td></td>
+                                                            <td>
+                                                                <asp:LinkButton ID="btn_addAdress" runat="server" OnClick="btn_addAdress_Click" ><i class="fas fa-plus"></i></asp:LinkButton></td>
                                                             <td></td>
                                                         </tr>
                                                         <asp:Repeater ID="rp_moradas" runat="server" DataSourceID="SqlDataSource2" OnItemCommand="rp_moradas_ItemCommand" OnItemDataBound="rp_moradas_ItemDataBound">
@@ -548,8 +563,8 @@
                                                             </SelectParameters>
                                                         </asp:SqlDataSource>
                                                     </tbody>
-                                                </table>
-                                            </div>
+                                                </div>
+                                            </table>
 
                                         </div>
 
@@ -563,6 +578,101 @@
                     </div>
                 </div>
 
+                <!-- Modal -->
+                <div class="modal fade bd-example-modal-xl" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h6 class="modal-title" id="exampleModalLongTitle">Adicionar Morada</h6>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-row">
+                                    <div class="col-md-10 mb-3">
+                                        <label for="validationCustom20">Description</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="tb_description" runat="server" placeholder="Description" required="required" />
+                                            <div class="invalid-feedback">
+                                                Please provide a valid Description.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 mb-3">
+                                        <label for="validationCustom20">By Default</label>
+                                        <div class="input-group">
+                                            <asp:CheckBox ID="cb_byDefault" runat="server" Width="10px" />
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="validationCustom19">City</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="tb_city" runat="server" placeholder="City" required="required" />
+                                            <div class="valid-feedback">
+                                                Looks good!
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="validationCustom19">Street</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="tb_street" runat="server" placeholder="Street" required="required" />
+                                            <div class="valid-feedback">
+                                                Looks good!
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="validationCustom20">Zip Code</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="tb_zipCode" runat="server" placeholder="Zip Code" required="required" />
+                                            <div class="invalid-feedback">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="validationCustom19">Locality</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="tb_localidade" runat="server" placeholder="Locality" required="required" />
+                                            <div class="valid-feedback">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="validationCustom20">Latitude</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="tb_latitude" runat="server" placeholder="Latitude" required="required" />
+                                            <div class="invalid-feedback">
+                                                Please provide a valid email.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="validationCustom19">Longitude</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="tb_longitude" runat="server" placeholder="Longitude" required="required" />
+                                            <div class="valid-feedback">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <asp:Button ID="btn_adicionar" class="btn btn-primary" runat="server" Text="Button" OnClick="btn_adicionar_Click" />
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </main>
             <!-- MODALS -->
             <!-- Quick bar -->

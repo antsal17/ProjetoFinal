@@ -174,3 +174,4 @@ C:\Users\utilizador\Source\Repos\ProjetoFinal\ProjetoFinal\ProjetoFinal\obj\Debu
 C:\Users\utilizador\Source\Repos\ProjetoFinal\ProjetoFinal\ProjetoFinal\obj\Debug\ProjetoFinal.csproj.CopyComplete
 C:\Users\utilizador\Source\Repos\ProjetoFinal\ProjetoFinal\ProjetoFinal\obj\Debug\ProjetoFinal.dll
 C:\Users\utilizador\Source\Repos\ProjetoFinal\ProjetoFinal\ProjetoFinal\obj\Debug\ProjetoFinal.pdb
+C:\Users\Daniel Coelho\Desktop\ProjFinal\cSharp\ProjetoFinal\ProjetoFinal\obj\Debug\ProjetoFinal.csprojAssemblyReference.cache

@@ -119,8 +119,20 @@ namespace ProjetoFinal.BackEnd.Admin.Customers
             Response.Write(rua);
             tb_morada1.Text = rua;
             tb_cidade1.Text = cidade;
+            tb_street.Value = rua;
+            tb_localidade.Value = cidade;
 
 
+        }
+
+        protected void btn_addAdress_Click(object sender, EventArgs e)
+        {
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
+        }
+
+        protected void btn_adicionar_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }
