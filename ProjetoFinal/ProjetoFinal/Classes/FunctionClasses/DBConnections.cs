@@ -456,9 +456,6 @@ namespace ProjetoFinal.FunctionClasses
                     p.email = reader.GetString(10);
                 }
                 return p;
-
-
-
             }
             catch (Exception m)
             {
@@ -521,6 +518,148 @@ namespace ProjetoFinal.FunctionClasses
                 myConn.Close();
             }
         }
+
+
+        public static string insereMoradaClienteAdmin(string id, string city, bool defa, string zipCode, string locality, string adress, string description, string lat, string lon)
+        {
+            SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["ProjetoFinalConnectionString"].ConnectionString);
+
+            SqlCommand myCommand = new SqlCommand();
+
+            myCommand.Parameters.AddWithValue("@id", id);
+            myCommand.Parameters.AddWithValue("@city", city);
+            myCommand.Parameters.AddWithValue("@default", defa);
+            myCommand.Parameters.AddWithValue("@zipCode", zipCode);
+            myCommand.Parameters.AddWithValue("@locality", locality);
+
+            myCommand.Parameters.AddWithValue("@adress", adress);
+
+            myCommand.Parameters.AddWithValue("@description", description);
+            myCommand.Parameters.AddWithValue("@lat", lat);
+            myCommand.Parameters.AddWithValue("@lon", lon);
+
+
+            myCommand.CommandType = CommandType.StoredProcedure;
+            myCommand.CommandText = "usp_adiciona_morada_utilizador_admin";
+
+            SqlParameter valor = new SqlParameter();
+            valor.ParameterName = "@retorno";
+            valor.Direction = ParameterDirection.Output;
+            valor.SqlDbType = SqlDbType.Int;
+            valor.Size = 100000;
+
+
+            myCommand.Parameters.Add(valor);
+            myCommand.Connection = myConn;
+            try
+            {
+                myConn.Open();
+
+                myCommand.ExecuteNonQuery();
+
+                string resposta = myCommand.Parameters["@retorno"].Value.ToString();
+
+                return resposta;
+
+            }
+            catch (Exception m)
+            {
+                return m.ToString();
+            }
+            finally
+            {
+                myConn.Close();
+            }
+        }
+
+        public static string eliminaMoradaClienteAdmin(string idCliente, string idMorada)
+        {
+            SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["ProjetoFinalConnectionString"].ConnectionString);
+
+            SqlCommand myCommand = new SqlCommand();
+
+            myCommand.Parameters.AddWithValue("@idUtilizador", idCliente);
+            myCommand.Parameters.AddWithValue("@idMorada", idMorada);
+
+
+
+            myCommand.CommandType = CommandType.StoredProcedure;
+            myCommand.CommandText = "usp_elimina_morada_utilizador_admin";
+
+            SqlParameter valor = new SqlParameter();
+            valor.ParameterName = "@retorno";
+            valor.Direction = ParameterDirection.Output;
+            valor.SqlDbType = SqlDbType.Int;
+            valor.Size = 100000;
+
+
+            myCommand.Parameters.Add(valor);
+            myCommand.Connection = myConn;
+            try
+            {
+                myConn.Open();
+
+                myCommand.ExecuteNonQuery();
+
+                string resposta = myCommand.Parameters["@retorno"].Value.ToString();
+
+                return resposta;
+
+            }
+            catch (Exception m)
+            {
+                return m.ToString();
+            }
+            finally
+            {
+                myConn.Close();
+            }
+        }
+
+        public static (string, Morada) listaMoradaClienteAdmin(string idCliente, string idMorada)
+        {
+            SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["ProjetoFinalConnectionString"].ConnectionString);
+            
+            SqlCommand myCommand = new SqlCommand();
+            myCommand.Connection = myConn;
+            myCommand.Parameters.AddWithValue("@idUtilizador", idCliente.ToString());
+            myCommand.Parameters.AddWithValue("@idMorada", idMorada.ToString());
+
+
+
+            myCommand.CommandType = CommandType.StoredProcedure;
+            myCommand.CommandText = "usp_lista_morada_utilizador_admin";
+
+            try
+            {
+                myConn.Open();
+                var reader = myCommand.ExecuteReader();
+
+                Morada m = new Morada();
+
+                while (reader.Read())
+                {
+                    m.cidade = reader.GetString(0);
+                    m.rua = reader.GetString(1);
+                    m.def = reader.GetBoolean(2);
+                    m.descricao = reader.GetString(3);
+                    m.lon = reader.GetString(4);
+                    m.lat = reader.GetString(5);
+                    m.zip = reader.GetString(6);
+                    m.localidade = reader.GetString(7);
+                }
+                return ("ok",m);
+            }
+            catch (Exception m)
+            {
+                return (m.ToString(),null);
+            }
+            finally
+            {
+                myConn.Close();
+            }
+        }
+
 
     }
 }

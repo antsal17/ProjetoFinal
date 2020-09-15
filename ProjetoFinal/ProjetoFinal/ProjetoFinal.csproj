@@ -340,6 +340,7 @@
     <Compile Include="Classes\FunctionClasses\DBConnections.cs" />
     <Compile Include="Classes\FunctionClasses\EmailSending.cs" />
     <Compile Include="Classes\FunctionClasses\PassEncrypt.cs" />
+    <Compile Include="Classes\ObjectClasses\Morada.cs" />
     <Compile Include="Classes\ObjectClasses\Utilizador.cs" />
     <Compile Include="Home\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>

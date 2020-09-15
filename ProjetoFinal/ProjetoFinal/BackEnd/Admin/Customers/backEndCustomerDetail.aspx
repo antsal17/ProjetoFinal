@@ -43,6 +43,10 @@
         function openModal() {
             $('#myModal').modal('show');
         }
+        function openModalEliminaMorada() {
+            $('#eliminaMoradaModal').modal('show');
+        }
+        
 
     </script>
 
@@ -591,16 +595,16 @@
                             <div class="modal-body">
                                 <div class="form-row">
                                     <div class="col-md-10 mb-3">
-                                        <label for="validationCustom20">Description</label>
+                                        <label>Description</label>
                                         <div class="input-group">
-                                            <input type="text" class="form-control" id="tb_description" runat="server" placeholder="Description" required="required" />
+                                            <input type="text" class="form-control" id="tb_description" runat="server" placeholder="Description" required="required"  />
                                             <div class="invalid-feedback">
                                                 Please provide a valid Description.
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-2 mb-3">
-                                        <label for="validationCustom20">By Default</label>
+                                        <label>By Default</label>
                                         <div class="input-group">
                                             <asp:CheckBox ID="cb_byDefault" runat="server" Width="10px" />
 
@@ -609,7 +613,7 @@
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-6 mb-3">
-                                        <label for="validationCustom19">City</label>
+                                        <label>City</label>
                                         <div class="input-group">
                                             <input type="text" class="form-control" id="tb_city" runat="server" placeholder="City" required="required" />
                                             <div class="valid-feedback">
@@ -618,7 +622,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <label for="validationCustom19">Street</label>
+                                        <label>Street</label>
                                         <div class="input-group">
                                             <input type="text" class="form-control" id="tb_street" runat="server" placeholder="Street" required="required" />
                                             <div class="valid-feedback">
@@ -629,15 +633,15 @@
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-6 mb-3">
-                                        <label for="validationCustom20">Zip Code</label>
+                                        <label>Zip Code</label>
                                         <div class="input-group">
-                                            <input type="text" class="form-control" id="tb_zipCode" runat="server" placeholder="Zip Code" required="required" />
+                                            <asp:TextBox class="form-control" id="tb_zipCode" runat="server" placeholder="Zip Code" required="required" OnTextChanged="tb_zipCode_TextChanged" CausesValidation="false"></asp:TextBox>
                                             <div class="invalid-feedback">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <label for="validationCustom19">Locality</label>
+                                        <label>Locality</label>
                                         <div class="input-group">
                                             <input type="text" class="form-control" id="tb_localidade" runat="server" placeholder="Locality" required="required" />
                                             <div class="valid-feedback">
@@ -647,7 +651,7 @@
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-6 mb-3">
-                                        <label for="validationCustom20">Latitude</label>
+                                        <label>Latitude</label>
                                         <div class="input-group">
                                             <input type="text" class="form-control" id="tb_latitude" runat="server" placeholder="Latitude" required="required" />
                                             <div class="invalid-feedback">
@@ -656,7 +660,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <label for="validationCustom19">Longitude</label>
+                                        <label>Longitude</label>
                                         <div class="input-group">
                                             <input type="text" class="form-control" id="tb_longitude" runat="server" placeholder="Longitude" required="required" />
                                             <div class="valid-feedback">
@@ -667,12 +671,40 @@
 
                             </div>
                             <div class="modal-footer">
-                                <asp:Button ID="btn_adicionar" class="btn btn-primary" runat="server" Text="Button" OnClick="btn_adicionar_Click" />
+                                <asp:Button ID="btn_adicionar" class="btn btn-primary" runat="server" Text="Button" OnClick="btn_adicionar_Click" CausesValidation="false"/>
                                 
                             </div>
                         </div>
                     </div>
                 </div>
+
+
+                <!--Modal Elimina Morada -->
+                <!-- Modal -->
+                <div class="modal fade bd-example-modal-xl" id="eliminaMoradaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h6 class="modal-title" id="">Eliminar Morada</h6>
+                            </div>
+                            <div class="modal-body">
+                                <h4>Está Prestes a Eliminar uma Morada</h4>
+                                <br />
+                                <h4>Tem a Certeza que pretende continuar?</h4>
+
+                            </div>
+                            <div class="modal-footer">
+
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <asp:Button ID="btn_eliminar" class="btn btn-primary" runat="server" Text="Eliminar" OnClick="btn_eliminar_Click" CausesValidation="false"/>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- FIM Modal Elimina Morada -->
+
+
             </main>
             <!-- MODALS -->
             <!-- Quick bar -->

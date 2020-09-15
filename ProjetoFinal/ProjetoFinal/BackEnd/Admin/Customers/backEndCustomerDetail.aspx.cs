@@ -17,12 +17,17 @@ namespace ProjetoFinal.BackEnd.Admin.Customers
     public partial class backEndCustomerDetail : System.Web.UI.Page
     {
         static string nomeFoto = "";
+        static string idUtilizador = "";
+        static string idMoradaSelecionado = "";
+        static bool addAdress = false;
         protected void Page_Load(object sender, EventArgs e)
         {
             ////Request.QueryString["id"] = PassEncrypt.EncryptString("8");
             //if (Request.QueryString["id"] == null) { Response.Redirect("../../../Login/Login.aspx"); }
             //else
             //{
+            //idUtilizador = PassEncrypt.DecryptString(Request.QueryString["id"]);
+            idUtilizador = "8";
             if (!IsPostBack)
             {
                 devolveCliente();
@@ -51,13 +56,13 @@ namespace ProjetoFinal.BackEnd.Admin.Customers
             }
 
 
-            DBConnections.atualizarClienteAdmin("8", tb_userName.Value, tb_firstName.Value, tb_lastName.Value, tb_phone.Value, novoNomeFoto, tb_email.Value, ddl_usertype.SelectedValue, Convert.ToBoolean((ddl_state.SelectedValue == "1") ? true : false));
+            DBConnections.atualizarClienteAdmin(idUtilizador, tb_userName.Value, tb_firstName.Value, tb_lastName.Value, tb_phone.Value, novoNomeFoto, tb_email.Value, ddl_usertype.SelectedValue, Convert.ToBoolean((ddl_state.SelectedValue == "1") ? true : false));
             devolveCliente();
         }
 
         protected void devolveCliente()
         {
-            Utilizador utilizador = DBConnections.DevolveClienteDetailAdmin("8"); //PassEncrypt.DecryptString(Request.QueryString["id"]));
+            Utilizador utilizador = DBConnections.DevolveClienteDetailAdmin(idUtilizador); 
             tb_firstName.Value = utilizador.nome;
             tb_lastName.Value = utilizador.apelido;
             tb_email.Value = utilizador.email;
@@ -76,27 +81,58 @@ namespace ProjetoFinal.BackEnd.Admin.Customers
         {
             if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
             {
+                
                 DataRowView dr = (DataRowView)e.Item.DataItem;
                 ((TextBox)e.Item.FindControl("tb_morada")).Text = dr["rua"].ToString();
                 ((TextBox)e.Item.FindControl("tb_cidade")).Text = dr["nome"].ToString();
                 ((TextBox)e.Item.FindControl("tb_cod")).Text = dr["codPostal"].ToString();
-                ((CheckBox)e.Item.FindControl("cb_pre")).Checked = (dr["predefinida"].ToString() == "1") ? true : false;
+                ((CheckBox)e.Item.FindControl("cb_pre")).Checked = Convert.ToBoolean(dr["predefinida"].ToString());
                 ((HyperLink)e.Item.FindControl("hl_coord")).NavigateUrl = "https://www.google.pt/maps/dir//" + dr["latitude"].ToString() + "," + dr["longitude"].ToString();
                 ((LinkButton)e.Item.FindControl("btn_edit")).CommandArgument = dr["idMorada"].ToString();
                 ((LinkButton)e.Item.FindControl("btn_delete")).CommandArgument = dr["idMorada"].ToString();
+                
 
             }
         }
 
         protected void rp_moradas_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
+            if (e.CommandName.Equals("btn_delete"))
+            {
+                
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalEliminaMorada();", true);
+                idMoradaSelecionado = ((LinkButton)e.Item.FindControl("btn_delete")).CommandArgument;
+                
+                preencheMorada();
 
+
+
+            }
+
+            if (e.CommandName.Equals("btn_edit"))
+            {
+                addAdress = false;
+                Morada m;
+                string erro;
+                idMoradaSelecionado = ((LinkButton)e.Item.FindControl("btn_edit")).CommandArgument;
+                (erro,m)= DBConnections.listaMoradaClienteAdmin(idUtilizador, idMoradaSelecionado);
+                Response.Write(erro);
+                tb_city.Value = m.cidade;
+                tb_description.Value = m.descricao;
+                tb_localidade.Value = m.localidade;
+                tb_street.Value = m.rua;
+                tb_zipCode.Text = m.zip;
+                tb_longitude.Value = m.lon;
+                tb_latitude.Value = m.lat;
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
+                btn_adicionar.Text = "Save";
+            }
         }
 
         protected void tb_zipCode_TextChanged(object sender, EventArgs e)
         {
-            
-            string zipHTTP = tb_cod1.Text.Replace("-", "");
+            Response.Write("Caraças");
+            string zipHTTP = tb_zipCode.Text.Replace("-", "");
             string url = String.Format("http://codigospostais.appspot.com/cp7?codigo=" + zipHTTP);
             WebRequest request = WebRequest.Create(url);
             request.Method = "GET";
@@ -116,7 +152,7 @@ namespace ProjetoFinal.BackEnd.Admin.Customers
 
             string rua = objList.arteria;
             string cidade = objList.localidade;
-            Response.Write(rua);
+            
             tb_morada1.Text = rua;
             tb_cidade1.Text = cidade;
             tb_street.Value = rua;
@@ -127,12 +163,58 @@ namespace ProjetoFinal.BackEnd.Admin.Customers
 
         protected void btn_addAdress_Click(object sender, EventArgs e)
         {
+            addAdress = true;
+            btn_adicionar.Text = "Add";
+            limpaMorada();
             ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
         }
 
         protected void btn_adicionar_Click(object sender, EventArgs e)
         {
-           
+            if (addAdress == true)
+            {
+                
+                string retorno = DBConnections.insereMoradaClienteAdmin(idUtilizador, tb_city.Value, cb_byDefault.Checked, tb_zipCode.Text, tb_localidade.Value, tb_street.Value, tb_description.Value, tb_latitude.Value, tb_longitude.Value);
+                rp_moradas.DataBind();
+            }
+            else
+            {
+                
+            }
         }
+
+        protected void btn_eliminar_Click(object sender, EventArgs e)
+        {
+            DBConnections.eliminaMoradaClienteAdmin(idUtilizador, idMoradaSelecionado);
+            idMoradaSelecionado = "";
+            rp_moradas.DataBind();
+            limpaMorada();
+        }
+
+        protected void preencheMorada()
+        {
+            tb_city.Value = "...";
+            tb_description.Value = "...";
+            tb_localidade.Value = "...";
+            tb_street.Value = "...";
+            tb_zipCode.Text = "0000-000";
+            tb_longitude.Value = "...";
+            tb_latitude.Value = "...";
+             
+        }
+
+        protected void limpaMorada()
+        {
+            tb_city.Value = "";
+            tb_description.Value = "";
+            tb_localidade.Value = "";
+            tb_street.Value = "";
+            tb_zipCode.Text = "";
+            tb_longitude.Value = "";
+            tb_latitude.Value = "";
+
+        }
+
+
     }
 }
