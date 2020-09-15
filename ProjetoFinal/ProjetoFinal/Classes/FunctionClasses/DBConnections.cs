@@ -456,9 +456,6 @@ namespace ProjetoFinal.FunctionClasses
                     p.email = reader.GetString(10);
                 }
                 return p;
-
-
-
             }
             catch (Exception m)
             {
@@ -619,14 +616,14 @@ namespace ProjetoFinal.FunctionClasses
             }
         }
 
-        public static Morada listaMoradaClienteAdmin(string idCliente, string idMorada)
+        public static (string, Morada) listaMoradaClienteAdmin(string idCliente, string idMorada)
         {
             SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["ProjetoFinalConnectionString"].ConnectionString);
-
+            
             SqlCommand myCommand = new SqlCommand();
-
-            myCommand.Parameters.AddWithValue("@idUtilizador", idCliente);
-            myCommand.Parameters.AddWithValue("@idMorada", idMorada);
+            myCommand.Connection = myConn;
+            myCommand.Parameters.AddWithValue("@idUtilizador", idCliente.ToString());
+            myCommand.Parameters.AddWithValue("@idMorada", idMorada.ToString());
 
 
 
@@ -642,24 +639,20 @@ namespace ProjetoFinal.FunctionClasses
 
                 while (reader.Read())
                 {
-                    //m.cidade = reader.GetInt32(0);
-                    //m.def = reader.GetString(1);
-                    //m.descricao = reader.GetString(2);
-                    //m.lat= reader.GetString(3);
-                    //m.localidade
-                    //m.lon
-                    //m.rua
-                    //m.zip
-                    
+                    m.cidade = reader.GetString(0);
+                    m.rua = reader.GetString(1);
+                    m.def = reader.GetBoolean(2);
+                    m.descricao = reader.GetString(3);
+                    m.lon = reader.GetString(4);
+                    m.lat = reader.GetString(5);
+                    m.zip = reader.GetString(6);
+                    m.localidade = reader.GetString(7);
                 }
-                return m;
-
-
-
+                return ("ok",m);
             }
             catch (Exception m)
             {
-                return null;
+                return (m.ToString(),null);
             }
             finally
             {

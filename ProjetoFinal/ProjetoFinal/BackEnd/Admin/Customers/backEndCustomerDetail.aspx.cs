@@ -18,7 +18,7 @@ namespace ProjetoFinal.BackEnd.Admin.Customers
     {
         static string nomeFoto = "";
         static string idUtilizador = "";
-        static string idMoradaAEliminar = "";
+        static string idMoradaSelecionado = "";
         static bool addAdress = false;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -101,8 +101,8 @@ namespace ProjetoFinal.BackEnd.Admin.Customers
             {
                 
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalEliminaMorada();", true);
-                idMoradaAEliminar = ((LinkButton)e.Item.FindControl("btn_delete")).CommandArgument;
-                btn_adicionar.Text = "Add";
+                idMoradaSelecionado = ((LinkButton)e.Item.FindControl("btn_delete")).CommandArgument;
+                
                 preencheMorada();
 
 
@@ -112,8 +112,19 @@ namespace ProjetoFinal.BackEnd.Admin.Customers
             if (e.CommandName.Equals("btn_edit"))
             {
                 addAdress = false;
+                Morada m;
+                string erro;
+                idMoradaSelecionado = ((LinkButton)e.Item.FindControl("btn_edit")).CommandArgument;
+                (erro,m)= DBConnections.listaMoradaClienteAdmin(idUtilizador, idMoradaSelecionado);
+                Response.Write(erro);
+                tb_city.Value = m.cidade;
+                tb_description.Value = m.descricao;
+                tb_localidade.Value = m.localidade;
+                tb_street.Value = m.rua;
+                tb_zipCode.Text = m.zip;
+                tb_longitude.Value = m.lon;
+                tb_latitude.Value = m.lat;
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
-                idMoradaAEliminar = ((LinkButton)e.Item.FindControl("btn_edit")).CommandArgument;
                 btn_adicionar.Text = "Save";
             }
         }
@@ -153,6 +164,7 @@ namespace ProjetoFinal.BackEnd.Admin.Customers
         protected void btn_addAdress_Click(object sender, EventArgs e)
         {
             addAdress = true;
+            btn_adicionar.Text = "Add";
             limpaMorada();
             ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
         }
@@ -161,17 +173,20 @@ namespace ProjetoFinal.BackEnd.Admin.Customers
         {
             if (addAdress == true)
             {
+                
                 string retorno = DBConnections.insereMoradaClienteAdmin(idUtilizador, tb_city.Value, cb_byDefault.Checked, tb_zipCode.Text, tb_localidade.Value, tb_street.Value, tb_description.Value, tb_latitude.Value, tb_longitude.Value);
                 rp_moradas.DataBind();
             }
             else
-                Response.Write("Olá");
+            {
+                
+            }
         }
 
         protected void btn_eliminar_Click(object sender, EventArgs e)
         {
-            DBConnections.eliminaMoradaClienteAdmin(idUtilizador, idMoradaAEliminar);
-            idMoradaAEliminar = "";
+            DBConnections.eliminaMoradaClienteAdmin(idUtilizador, idMoradaSelecionado);
+            idMoradaSelecionado = "";
             rp_moradas.DataBind();
             limpaMorada();
         }
