@@ -255,7 +255,7 @@ namespace ProjetoFinal.BackEnd.Admin.Customers
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText tb_zipCode;
+        protected global::System.Web.UI.WebControls.TextBox tb_zipCode;
 
         /// <summary>
         /// tb_localidade control.
@@ -292,5 +292,14 @@ namespace ProjetoFinal.BackEnd.Admin.Customers
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_adicionar;
+
+        /// <summary>
+        /// btn_eliminar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_eliminar;
     }
 }
