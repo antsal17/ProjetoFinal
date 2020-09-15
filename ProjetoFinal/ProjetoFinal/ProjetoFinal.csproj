@@ -526,6 +526,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="FrontEnd\" />
     <Folder Include="PDF\" />
   </ItemGroup>
   <PropertyGroup>
