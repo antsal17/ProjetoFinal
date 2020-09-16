@@ -660,6 +660,55 @@ namespace ProjetoFinal.FunctionClasses
             }
         }
 
+        public static string atualizaMoradaClienteAdmin(string idUtilizador, string idMorada, string city, bool defa, string zipCode, string locality, string adress, string description, string lat, string lon)
+        {
+            SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["ProjetoFinalConnectionString"].ConnectionString);
 
+            SqlCommand myCommand = new SqlCommand();
+
+            myCommand.Parameters.AddWithValue("@idUtilizador", idUtilizador);
+            myCommand.Parameters.AddWithValue("@idMorada", idMorada);
+            myCommand.Parameters.AddWithValue("@city", city);
+            myCommand.Parameters.AddWithValue("@default", defa);
+            myCommand.Parameters.AddWithValue("@zipCode", zipCode);
+            myCommand.Parameters.AddWithValue("@locality", locality);
+            myCommand.Parameters.AddWithValue("@adress", adress);
+            myCommand.Parameters.AddWithValue("@description", description);
+            myCommand.Parameters.AddWithValue("@lat", lat);
+            myCommand.Parameters.AddWithValue("@lon", lon);
+
+
+            myCommand.CommandType = CommandType.StoredProcedure;
+            myCommand.CommandText = "usp_actualiza_morada_utilizador_admin";
+
+            SqlParameter valor = new SqlParameter();
+            valor.ParameterName = "@retorno";
+            valor.Direction = ParameterDirection.Output;
+            valor.SqlDbType = SqlDbType.Int;
+            valor.Size = 100000;
+
+
+            myCommand.Parameters.Add(valor);
+            myCommand.Connection = myConn;
+            try
+            {
+                myConn.Open();
+
+                myCommand.ExecuteNonQuery();
+
+                string resposta = myCommand.Parameters["@retorno"].Value.ToString();
+
+                return resposta;
+
+            }
+            catch (Exception m)
+            {
+                return m.ToString();
+            }
+            finally
+            {
+                myConn.Close();
+            }
+        }
     }
 }
