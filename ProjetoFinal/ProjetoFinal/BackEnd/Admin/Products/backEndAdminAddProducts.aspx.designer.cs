@@ -24,6 +24,24 @@ namespace ProjetoFinal.BackEnd.Admin.Products
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// div_insert control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_insert;
+
+        /// <summary>
+        /// lbl_insertMsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_insertMsg;
+
+        /// <summary>
         /// validationCustom18 control.
         /// </summary>
         /// <remarks>
@@ -87,6 +105,15 @@ namespace ProjetoFinal.BackEnd.Admin.Products
         protected global::System.Web.UI.HtmlControls.HtmlInputFile validatedCustomFile;
 
         /// <summary>
+        /// lblMain control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMain;
+
+        /// <summary>
         /// validatedCustomFile1 control.
         /// </summary>
         /// <remarks>
@@ -94,6 +121,15 @@ namespace ProjetoFinal.BackEnd.Admin.Products
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputFile validatedCustomFile1;
+
+        /// <summary>
+        /// lblImage1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblImage1;
 
         /// <summary>
         /// validatedCustomFile2 control.
@@ -105,6 +141,15 @@ namespace ProjetoFinal.BackEnd.Admin.Products
         protected global::System.Web.UI.HtmlControls.HtmlInputFile validatedCustomFile2;
 
         /// <summary>
+        /// lblImage2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblImage2;
+
+        /// <summary>
         /// validatedCustomFile3 control.
         /// </summary>
         /// <remarks>
@@ -112,6 +157,15 @@ namespace ProjetoFinal.BackEnd.Admin.Products
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputFile validatedCustomFile3;
+
+        /// <summary>
+        /// lblImage3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblImage3;
 
         /// <summary>
         /// DropDownList2 control.

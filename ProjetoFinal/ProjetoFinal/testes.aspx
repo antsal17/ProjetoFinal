@@ -56,6 +56,22 @@
 
         </div>
         <asp:Label ID="Label5" runat="server" Text="Label"></asp:Label>
+        <br />
+        <br />
+        <asp:TextBox ID="lat1" runat="server"></asp:TextBox>
+        <br />
+        <asp:TextBox ID="lat2" runat="server"></asp:TextBox>
+        <br />
+        <br />
+        <asp:TextBox ID="lat3" runat="server"></asp:TextBox>
+        <br />
+        <asp:TextBox ID="lat4" runat="server"></asp:TextBox>
+        <br />
+        <br />
+        <asp:Label ID="Label6" runat="server" Text="Label"></asp:Label>
+        <br />
+        <br />
+        <asp:Button ID="Button6" runat="server" OnClick="Button6_Click" Text="btn_go" />
     </form>
 </body>
 </html>

@@ -44,42 +44,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.ComponentModel.Composition" />
-    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -246,7 +210,7 @@
     <Content Include="BackEnd\Admin\vendors\iconic-fonts\font-awesome\webfonts\fa-brands-400.svg" />
     <Content Include="BackEnd\Admin\vendors\iconic-fonts\font-awesome\webfonts\fa-regular-400.svg" />
     <Content Include="BackEnd\Admin\vendors\iconic-fonts\font-awesome\webfonts\fa-solid-900.svg" />
-    <Content Include="BackEnd\Seller\Products\backEndSellerAddProduct.aspx" />
+    <Content Include="FrontEnd\Outros\Componentes\my-account.aspx" />
     <Content Include="Home\index.aspx" />
     <Content Include="Imagens\utilizadores\123546789foto.png" />
     <Content Include="Imagens\utilizadores\243635982foto.png" />
@@ -373,30 +337,25 @@
     <Compile Include="BackEnd\Admin\Products\backEndAdminProductList.aspx.designer.cs">
       <DependentUpon>backEndAdminProductList.aspx</DependentUpon>
     </Compile>
-    <Compile Include="BackEnd\Seller\masterPageSeller.Master.cs">
-      <DependentUpon>masterPageSeller.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="BackEnd\Seller\masterPageSeller.Master.designer.cs">
-      <DependentUpon>masterPageSeller.Master</DependentUpon>
-    </Compile>
-    <Compile Include="BackEnd\Seller\Products\backEndSellerAddProduct.aspx.cs">
-      <DependentUpon>backEndSellerAddProduct.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="BackEnd\Seller\Products\backEndSellerAddProduct.aspx.designer.cs">
-      <DependentUpon>backEndSellerAddProduct.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Classes\Models\AdressAPIGoogle.cs" />
-    <Compile Include="Classes\Models\CoordAPIGoogle.cs" />
-    <Compile Include="Classes\Models\zipCode.cs" />
+    <Compile Include="Classes\APIS\zipCode.cs" />
     <Compile Include="Classes\FunctionClasses\DBConnections.cs" />
     <Compile Include="Classes\FunctionClasses\EmailSending.cs" />
     <Compile Include="Classes\FunctionClasses\PassEncrypt.cs" />
     <Compile Include="Classes\ObjectClasses\Morada.cs" />
     <Compile Include="Classes\ObjectClasses\Utilizador.cs" />
-    <Compile Include="Classes\Services\AdressAPIGoogle_Service.cs" />
-    <Compile Include="Classes\Services\CoordAPIGoogle_Service.cs" />
+    <Compile Include="FrontEnd\Outros\Componentes\my-account.aspx.cs">
+      <DependentUpon>my-account.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontEnd\Outros\Componentes\my-account.aspx.designer.cs">
+      <DependentUpon>my-account.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontEnd\Outros\FrontEnd.Master.cs">
+      <DependentUpon>FrontEnd.Master</DependentUpon>
+    </Compile>
+    <Compile Include="FrontEnd\Outros\FrontEnd.Master.designer.cs">
+      <DependentUpon>FrontEnd.Master</DependentUpon>
+    </Compile>
     <Compile Include="Home\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -572,7 +531,7 @@
     <Content Include="BackEnd\Admin\vendors\iconic-fonts\font-awesome\webfonts\fa-solid-900.woff" />
     <Content Include="BackEnd\Admin\vendors\iconic-fonts\font-awesome\webfonts\fa-solid-900.woff2" />
     <Content Include="BackEnd\Admin\vendors\iconic-fonts\font-awesome\webfonts\fa-solid-900d41d.eot" />
-    <Content Include="BackEnd\Seller\masterPageSeller.Master" />
+    <Content Include="FrontEnd\Outros\FrontEnd.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -582,7 +541,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="FrontEnd\" />
+    <Folder Include="FrontEnd\Home\" />
+    <Folder Include="Imagens\produto\" />
     <Folder Include="PDF\" />
   </ItemGroup>
   <PropertyGroup>
