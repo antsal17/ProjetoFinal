@@ -114,6 +114,7 @@ namespace ProjetoFinal.BackEnd.Admin.Customers
         {
             if (e.CommandName.Equals("btn_delete"))
             {
+                addAdress = false;
                 eliminarMorada = true;
                 modal_body_text.Text = "Está prestes a eliminar uma morada, pertende continuar?";
                 modal_title_text.Text = "Eliminar Morada";
@@ -190,7 +191,7 @@ namespace ProjetoFinal.BackEnd.Admin.Customers
 
         protected void refresh_Click(object sender, EventArgs e)
         {
-            addAdress = false;
+            
             Rootobject obj = apiGoogle.devolveServico(tb_zipCode.Text);
              string latitude = obj.results[0].geometry.location.lat.ToString().Replace(",",".");
              string longitude = obj.results[0].geometry.location.lng.ToString().Replace(",", ".");
@@ -202,6 +203,12 @@ namespace ProjetoFinal.BackEnd.Admin.Customers
             tb_city.Value = objCoord.results[0].address_components[3].long_name.ToString();
             tb_longitude.Value = latitude;
             tb_latitude.Value = longitude;
+        }
+
+        protected void close_Click(object sender, EventArgs e)
+        {
+           
+            addAdress = false;
         }
 
         protected void preencheMorada()

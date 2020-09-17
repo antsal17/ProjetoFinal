@@ -1,22 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace ProjetoFinal
+namespace ProjetoFinal.BackEnd.Seller
 {
-    public partial class testes2 : System.Web.UI.Page
+    public partial class masterPageSeller : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+
         }
-
-        
-
-       
     }
 }

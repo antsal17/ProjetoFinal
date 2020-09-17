@@ -46,7 +46,7 @@
         function openModalEliminaMorada() {
             $('#eliminaMoradaModal').modal('show');
         }
-        
+
 
     </script>
 
@@ -520,17 +520,13 @@
                                                     </thead>
                                                     <tbody>
                                                         <tr>
-                                                            <td>
-                                                                </td>
-                                                            <td>
-                                                                </td>
-                                                            <td>
-                                                                </td>
-                                                            <td>
-                                                                </td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
                                                             <td></td>
                                                             <td>
-                                                                <asp:LinkButton ID="btn_addAdress" runat="server" OnClick="btn_addAdress_Click" ><i class="fas fa-plus"></i></asp:LinkButton></td>
+                                                                <asp:LinkButton ID="btn_addAdress" runat="server" OnClick="btn_addAdress_Click"><i class="fas fa-plus"></i></asp:LinkButton></td>
                                                             <td></td>
                                                         </tr>
                                                         <asp:Repeater ID="rp_moradas" runat="server" DataSourceID="SqlDataSource2" OnItemCommand="rp_moradas_ItemCommand" OnItemDataBound="rp_moradas_ItemDataBound">
@@ -554,7 +550,7 @@
                                                                     <td>
                                                                         <asp:LinkButton ID="btn_edit" runat="server" CommandName="btn_edit"><i class="fas fa-user-edit"></i></asp:LinkButton></td>
                                                                     <td>
-                                                                        <asp:LinkButton ID="btn_delete" runat="server" CommandName="btn_delete"><i class="fas fa-trash-alt"></i></asp:LinkButton></td>
+                                                                        <asp:LinkButton ID="btn_delete" runat="server" CommandName="btn_delete" UseSubmitBehavior="False"><i class="fas fa-trash-alt"></i></asp:LinkButton></td>
                                                                 </tr>
 
                                                             </ItemTemplate>
@@ -583,21 +579,20 @@
                 </div>
 
                 <!-- Modal -->
-                <div class="modal fade bd-example-modal-xl" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="false">
+                <div class="modal fade bd-example-modal-xl" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="false" data-backdrop="static" data-keyboard="false">
                     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h6 class="modal-title" id="exampleModalLongTitle">Adicionar Morada</h6>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
+                                <asp:Button ID="close" runat="server" Text="" class="close" data-dismiss="modal" aria-label="Close" OnClick="close_Click"/>
+                                <span aria-hidden="true">&times;</span>
                             </div>
                             <div class="modal-body">
                                 <div class="form-row">
                                     <div class="col-md-10 mb-3">
                                         <label>Description</label>
                                         <div class="input-group">
-                                            <input type="text" class="form-control" id="tb_description" runat="server" placeholder="Description" required="required"  />
+                                            <input type="text" class="form-control" id="tb_description" runat="server" placeholder="Description" required="required" />
                                             <div class="invalid-feedback">
                                                 Please provide a valid Description.
                                             </div>
@@ -635,8 +630,9 @@
                                     <div class="col-md-6 mb-3">
                                         <label>Zip Code</label>
                                         <div class="input-group">
-                                            <asp:TextBox class="form-control" id="tb_zipCode" runat="server" placeholder="Zip Code" required="required" CausesValidation="false"></asp:TextBox>
-                                            <asp:LinkButton ID="refresh" runat="server" OnClick="refresh_Click"><i class="fas fa-user-edit"></i></asp:LinkButton>
+                                            <asp:TextBox class="form-control" ID="tb_zipCode" runat="server" placeholder="Zip Code" required="required" CausesValidation="false"></asp:TextBox>
+                                <%-- <input id="refresh" type="button" value="button"  /> --%>      
+        <asp:LinkButton ID="refresh" runat="server" OnClick="refresh_Click"><i class="fas fa-user-edit"></i></asp:LinkButton>
                                             <div class="invalid-feedback">
                                             </div>
                                         </div>
@@ -672,8 +668,8 @@
 
                             </div>
                             <div class="modal-footer">
-                                <asp:LinkButton ID="btn_adicionar" class="btn btn-primary" runat="server" Text="Button" OnClick="btn_adicionar_Click" CausesValidation="false"/>
-                                
+                                <asp:LinkButton ID="btn_adicionar" class="btn btn-primary" runat="server" Text="Button" OnClick="btn_adicionar_Click" CausesValidation="false" />
+
                             </div>
                         </div>
                     </div>
@@ -686,20 +682,22 @@
                     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id=""><asp:Label ID="modal_title_text" runat="server" Text=""></asp:Label></h5>
+                                <h5 class="modal-title" id="">
+                                    <asp:Label ID="modal_title_text" runat="server" Text=""></asp:Label></h5>
                             </div>
                             <div class="modal-body">
-                                
-                                
-                                <h4><asp:Label ID="modal_body_text" runat="server" Text=""></asp:Label></h4>
-                                
+
+
+                                <h4>
+                                    <asp:Label ID="modal_body_text" runat="server" Text=""></asp:Label></h4>
+
 
                             </div>
                             <div class="modal-footer">
 
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <asp:Button ID="btn_eliminar" class="btn btn-primary" runat="server" Text="Eliminar" OnClick="btn_eliminar_Click" CausesValidation="false"/>
-                                
+                                <asp:Button ID="btn_eliminar" class="btn btn-primary" runat="server" Text="Eliminar" OnClick="btn_eliminar_Click" CausesValidation="false" />
+
                             </div>
                         </div>
                     </div>
@@ -727,7 +725,7 @@
                             <div class="ms-add-task-block">
                                 <div class="form-group mx-3 mt-0  fs-14 clearfix">
                                     <input type="text" class="form-control fs-14 float-left" id="task-block" name="todo-block" placeholder="Add Task Block" value="" />
-                                    <button type="submit" class="ms-btn-icon bg-primary float-right" ><i class="material-icons text-disabled">add</i></button>
+                                    <button type="submit" class="ms-btn-icon bg-primary float-right"><i class="material-icons text-disabled">add</i></button>
                                 </div>
                             </div>
 

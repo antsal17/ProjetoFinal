@@ -327,7 +327,7 @@ namespace ProjetoFinal.FunctionClasses
 
         //--------------------------Produtos ----------------------------------------------------------------------
         //inserir produto
-        public static string insereProduto(string nome, string descricao, bool status, int qtd, double preco, int id_categoria, string fotoMain, string foto1, string foto2, string foto3, int idUser, int idMorada)
+        public static string insereProduto(string nome, string descricao, bool status, int qtd, double preco, int id_categoria, string fotoMain, string foto1, int idUser, int idMorada)
         {
             SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["ProjetoFinalConnectionString"].ConnectionString);
 
@@ -338,14 +338,9 @@ namespace ProjetoFinal.FunctionClasses
             myCommand.Parameters.AddWithValue("@ativo", status);
             myCommand.Parameters.AddWithValue("@qtd", qtd);
             myCommand.Parameters.AddWithValue("@preco", preco);
-            myCommand.Parameters.AddWithValue("@id_categoria", id_categoria);
-            myCommand.Parameters.AddWithValue("@fotoMain", fotoMain);
-            myCommand.Parameters.AddWithValue("@foto1", foto1);
-            myCommand.Parameters.AddWithValue("@foto2", foto2);
-            myCommand.Parameters.AddWithValue("@foto3", foto3);
             myCommand.Parameters.AddWithValue("@idUser", idUser);
             myCommand.Parameters.AddWithValue("@idMorada", idMorada);
-
+           
 
             myCommand.CommandType = CommandType.StoredProcedure;
             myCommand.CommandText = "usp_addProduto";

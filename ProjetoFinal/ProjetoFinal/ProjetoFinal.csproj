@@ -246,6 +246,7 @@
     <Content Include="BackEnd\Admin\vendors\iconic-fonts\font-awesome\webfonts\fa-brands-400.svg" />
     <Content Include="BackEnd\Admin\vendors\iconic-fonts\font-awesome\webfonts\fa-regular-400.svg" />
     <Content Include="BackEnd\Admin\vendors\iconic-fonts\font-awesome\webfonts\fa-solid-900.svg" />
+    <Content Include="BackEnd\Seller\Products\backEndSellerAddProduct.aspx" />
     <Content Include="Home\index.aspx" />
     <Content Include="Imagens\utilizadores\123546789foto.png" />
     <Content Include="Imagens\utilizadores\243635982foto.png" />
@@ -371,6 +372,20 @@
     </Compile>
     <Compile Include="BackEnd\Admin\Products\backEndAdminProductList.aspx.designer.cs">
       <DependentUpon>backEndAdminProductList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BackEnd\Seller\masterPageSeller.Master.cs">
+      <DependentUpon>masterPageSeller.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BackEnd\Seller\masterPageSeller.Master.designer.cs">
+      <DependentUpon>masterPageSeller.Master</DependentUpon>
+    </Compile>
+    <Compile Include="BackEnd\Seller\Products\backEndSellerAddProduct.aspx.cs">
+      <DependentUpon>backEndSellerAddProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BackEnd\Seller\Products\backEndSellerAddProduct.aspx.designer.cs">
+      <DependentUpon>backEndSellerAddProduct.aspx</DependentUpon>
     </Compile>
     <Compile Include="Classes\Models\AdressAPIGoogle.cs" />
     <Compile Include="Classes\Models\CoordAPIGoogle.cs" />
@@ -557,6 +572,7 @@
     <Content Include="BackEnd\Admin\vendors\iconic-fonts\font-awesome\webfonts\fa-solid-900.woff" />
     <Content Include="BackEnd\Admin\vendors\iconic-fonts\font-awesome\webfonts\fa-solid-900.woff2" />
     <Content Include="BackEnd\Admin\vendors\iconic-fonts\font-awesome\webfonts\fa-solid-900d41d.eot" />
+    <Content Include="BackEnd\Seller\masterPageSeller.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
