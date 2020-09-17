@@ -210,6 +210,7 @@
     <Content Include="BackEnd\Admin\vendors\iconic-fonts\font-awesome\webfonts\fa-brands-400.svg" />
     <Content Include="BackEnd\Admin\vendors\iconic-fonts\font-awesome\webfonts\fa-regular-400.svg" />
     <Content Include="BackEnd\Admin\vendors\iconic-fonts\font-awesome\webfonts\fa-solid-900.svg" />
+    <Content Include="FrontEnd\Outros\Componentes\my-account.aspx" />
     <Content Include="Home\index.aspx" />
     <Content Include="Imagens\utilizadores\123546789foto.png" />
     <Content Include="Imagens\utilizadores\243635982foto.png" />
@@ -342,6 +343,19 @@
     <Compile Include="Classes\FunctionClasses\PassEncrypt.cs" />
     <Compile Include="Classes\ObjectClasses\Morada.cs" />
     <Compile Include="Classes\ObjectClasses\Utilizador.cs" />
+    <Compile Include="FrontEnd\Outros\Componentes\my-account.aspx.cs">
+      <DependentUpon>my-account.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontEnd\Outros\Componentes\my-account.aspx.designer.cs">
+      <DependentUpon>my-account.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontEnd\Outros\FrontEnd.Master.cs">
+      <DependentUpon>FrontEnd.Master</DependentUpon>
+    </Compile>
+    <Compile Include="FrontEnd\Outros\FrontEnd.Master.designer.cs">
+      <DependentUpon>FrontEnd.Master</DependentUpon>
+    </Compile>
     <Compile Include="Home\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -517,6 +531,7 @@
     <Content Include="BackEnd\Admin\vendors\iconic-fonts\font-awesome\webfonts\fa-solid-900.woff" />
     <Content Include="BackEnd\Admin\vendors\iconic-fonts\font-awesome\webfonts\fa-solid-900.woff2" />
     <Content Include="BackEnd\Admin\vendors\iconic-fonts\font-awesome\webfonts\fa-solid-900d41d.eot" />
+    <Content Include="FrontEnd\Outros\FrontEnd.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -526,7 +541,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="FrontEnd\" />
+    <Folder Include="FrontEnd\Home\" />
+    <Folder Include="Imagens\produto\" />
     <Folder Include="PDF\" />
   </ItemGroup>
   <PropertyGroup>

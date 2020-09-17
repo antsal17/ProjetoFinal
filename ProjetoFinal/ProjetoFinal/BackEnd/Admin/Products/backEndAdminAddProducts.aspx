@@ -374,8 +374,9 @@
                                 </ol>
                             </nav>
 
-                            <div class="alert alert-success" role="alert">
-                                <strong>Well done!</strong> You successfully read this important alert message.
+                            <div class="alert alert-success" role="alert" id="div_insert" runat="server">
+
+                                <asp:Label ID="lbl_insertMsg" runat="server" Text="" visible="false"></asp:Label>
                             </div>
                         </div>
 
@@ -443,7 +444,7 @@
                                                 <label for="validationCustom12">Product Image - Main Image</label>
                                                 <div class="custom-file">
                                                     <input type="file" class="custom-file-input" runat="server" id="validatedCustomFile" multiple accept='image/*'/>
-                                                    <label class="custom-file-label" for="validatedCustomFile">Upload Images...</label>
+                                                     <asp:Label ID="lblMain" class="custom-file-label" for="validatedCustomFile" runat="server" Text="Upload Images..."></asp:Label>
                                                     <div class="invalid-feedback">Example invalid custom file feedback</div>
                                                 </div>
                                             </div>
@@ -451,7 +452,7 @@
                                                 <label for="validationCustom12">Product Image - Image 1</label>
                                                 <div class="custom-file">
                                                     <input type="file" class="custom-file-input" runat="server" id="validatedCustomFile1"/>
-                                                    <label class="custom-file-label" for="validatedCustomFile">Upload Images...</label>
+                                                    <asp:Label ID="lblImage1" class="custom-file-label" for="validatedCustomFile" runat="server" Text="Upload Images..."></asp:Label>
                                                     <div class="invalid-feedback">Example invalid custom file feedback</div>
                                                 </div>
                                             </div>
@@ -459,7 +460,7 @@
                                                 <label for="validationCustom12">Product Image - Image 2</label>
                                                 <div class="custom-file">
                                                     <input type="file" class="custom-file-input" runat="server" id="validatedCustomFile2">
-                                                    <label class="custom-file-label" for="validatedCustomFile">Upload Images...</label>
+                                                    <asp:Label ID="lblImage2" class="custom-file-label" for="validatedCustomFile" runat="server" Text="Upload Images..."></asp:Label>
                                                     <div class="invalid-feedback">Example invalid custom file feedback</div>
                                                 </div>
                                             </div>
@@ -467,7 +468,7 @@
                                                 <label for="validationCustom12">Product Image - Image 3</label>
                                                 <div class="custom-file">
                                                     <input type="file" class="custom-file-input" runat="server" id="validatedCustomFile3">
-                                                    <label class="custom-file-label" for="validatedCustomFile">Upload Images...</label>
+                                                    <asp:Label ID="lblImage3" class="custom-file-label" for="validatedCustomFile" runat="server" Text="Upload Images..."></asp:Label>
                                                     <div class="invalid-feedback">Example invalid custom file feedback</div>
                                                 </div>
                                             </div>
