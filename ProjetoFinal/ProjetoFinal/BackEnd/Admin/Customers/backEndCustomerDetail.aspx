@@ -521,13 +521,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <asp:TextBox ID="tb_morada1" runat="server"></asp:TextBox></td>
+                                                                </td>
                                                             <td>
-                                                                <asp:TextBox ID="tb_cidade1" runat="server"></asp:TextBox></td>
+                                                                </td>
                                                             <td>
-                                                                <asp:TextBox ID="tb_cod1" runat="server" OnTextChanged="tb_zipCode_TextChanged"></asp:TextBox></td>
+                                                                </td>
                                                             <td>
-                                                                <asp:CheckBox ID="cb_pre1" runat="server" /></td>
+                                                                </td>
                                                             <td></td>
                                                             <td>
                                                                 <asp:LinkButton ID="btn_addAdress" runat="server" OnClick="btn_addAdress_Click" ><i class="fas fa-plus"></i></asp:LinkButton></td>
@@ -583,7 +583,7 @@
                 </div>
 
                 <!-- Modal -->
-                <div class="modal fade bd-example-modal-xl" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal fade bd-example-modal-xl" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="false">
                     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -635,7 +635,8 @@
                                     <div class="col-md-6 mb-3">
                                         <label>Zip Code</label>
                                         <div class="input-group">
-                                            <asp:TextBox class="form-control" id="tb_zipCode" runat="server" placeholder="Zip Code" required="required" OnTextChanged="tb_zipCode_TextChanged" CausesValidation="false"></asp:TextBox>
+                                            <asp:TextBox class="form-control" id="tb_zipCode" runat="server" placeholder="Zip Code" required="required" CausesValidation="false"></asp:TextBox>
+                                            <asp:LinkButton ID="refresh" runat="server" OnClick="refresh_Click"><i class="fas fa-user-edit"></i></asp:LinkButton>
                                             <div class="invalid-feedback">
                                             </div>
                                         </div>
@@ -671,7 +672,7 @@
 
                             </div>
                             <div class="modal-footer">
-                                <asp:Button ID="btn_adicionar" class="btn btn-primary" runat="server" Text="Button" OnClick="btn_adicionar_Click" CausesValidation="false"/>
+                                <asp:LinkButton ID="btn_adicionar" class="btn btn-primary" runat="server" Text="Button" OnClick="btn_adicionar_Click" CausesValidation="false"/>
                                 
                             </div>
                         </div>
@@ -685,12 +686,13 @@
                     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h6 class="modal-title" id="">Eliminar Morada</h6>
+                                <h5 class="modal-title" id=""><asp:Label ID="modal_title_text" runat="server" Text=""></asp:Label></h5>
                             </div>
                             <div class="modal-body">
-                                <h4>Está Prestes a Eliminar uma Morada</h4>
-                                <br />
-                                <h4>Tem a Certeza que pretende continuar?</h4>
+                                
+                                
+                                <h4><asp:Label ID="modal_body_text" runat="server" Text=""></asp:Label></h4>
+                                
 
                             </div>
                             <div class="modal-footer">
@@ -725,7 +727,7 @@
                             <div class="ms-add-task-block">
                                 <div class="form-group mx-3 mt-0  fs-14 clearfix">
                                     <input type="text" class="form-control fs-14 float-left" id="task-block" name="todo-block" placeholder="Add Task Block" value="" />
-                                    <button type="submit" class="ms-btn-icon bg-primary float-right"><i class="material-icons text-disabled">add</i></button>
+                                    <button type="submit" class="ms-btn-icon bg-primary float-right" ><i class="material-icons text-disabled">add</i></button>
                                 </div>
                             </div>
 

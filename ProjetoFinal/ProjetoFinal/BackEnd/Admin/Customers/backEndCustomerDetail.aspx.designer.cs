@@ -141,42 +141,6 @@ namespace ProjetoFinal.BackEnd.Admin.Customers
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
 
         /// <summary>
-        /// tb_morada1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_morada1;
-
-        /// <summary>
-        /// tb_cidade1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_cidade1;
-
-        /// <summary>
-        /// tb_cod1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_cod1;
-
-        /// <summary>
-        /// cb_pre1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cb_pre1;
-
-        /// <summary>
         /// btn_addAdress control.
         /// </summary>
         /// <remarks>
@@ -258,6 +222,15 @@ namespace ProjetoFinal.BackEnd.Admin.Customers
         protected global::System.Web.UI.WebControls.TextBox tb_zipCode;
 
         /// <summary>
+        /// refresh control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton refresh;
+
+        /// <summary>
         /// tb_localidade control.
         /// </summary>
         /// <remarks>
@@ -291,7 +264,25 @@ namespace ProjetoFinal.BackEnd.Admin.Customers
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_adicionar;
+        protected global::System.Web.UI.WebControls.LinkButton btn_adicionar;
+
+        /// <summary>
+        /// modal_title_text control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label modal_title_text;
+
+        /// <summary>
+        /// modal_body_text control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label modal_body_text;
 
         /// <summary>
         /// btn_eliminar control.

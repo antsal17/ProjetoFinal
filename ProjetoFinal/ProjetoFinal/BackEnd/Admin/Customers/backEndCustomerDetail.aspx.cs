@@ -1,6 +1,7 @@
 ﻿using ProjetoFinal.Classes.APIS;
 using ProjetoFinal.Classes.FunctionClasses;
 using ProjetoFinal.Classes.ObjectClasses;
+using ProjetoFinal.Classes.Services;
 using ProjetoFinal.FunctionClasses;
 using System;
 using System.Collections.Generic;
@@ -11,15 +12,19 @@ using System.Net;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using static ProjetoFinal.Classes.APIS.AdressAPIGoogle;
+using static ProjetoFinal.Classes.Models.CoordAPIGoogle;
 
 namespace ProjetoFinal.BackEnd.Admin.Customers
 {
     public partial class backEndCustomerDetail : System.Web.UI.Page
     {
-        static string nomeFoto = "";
+        static string nomeFoto = "", novoNomeFoto = "";
         static string idUtilizador = "";
         static string idMoradaSelecionado = "";
-        static bool addAdress = false;
+        static bool addAdress = false, eliminarMorada=false;
+        AdressAPIGoogle_Service apiGoogle = new AdressAPIGoogle_Service();
+        CoordAPIGoogle_Service apiCoordGoogle = new CoordAPIGoogle_Service();
         protected void Page_Load(object sender, EventArgs e)
         {
             ////Request.QueryString["id"] = PassEncrypt.EncryptString("8");
@@ -31,16 +36,21 @@ namespace ProjetoFinal.BackEnd.Admin.Customers
             if (!IsPostBack)
             {
                 devolveCliente();
-
-
-
+                preencheMorada();
+            }
+            else { 
+            if (addAdress ==true) {
+                    Response.Write("entrei no pageload vou mostrar o modal");
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
+                    addAdress = false;
+                }
             }
             //}
         }
 
         protected void btn_insert_Click(object sender, EventArgs e)
         {
-            string novoNomeFoto = "";
+            
             Response.Write(fu_img.PostedFile.FileName);
             if (fu_img.PostedFile.FileName != "")
             {
@@ -54,10 +64,15 @@ namespace ProjetoFinal.BackEnd.Admin.Customers
             {
                 novoNomeFoto = nomeFoto;
             }
+            
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalEliminaMorada();", true);
+            eliminarMorada = false;
+            modal_body_text.Text = "Tem a certeza que pertende salvar as alterações?";
+            modal_title_text.Text = "Guardar Alterações";
+            btn_eliminar.Text = "Gravar";
+            
 
 
-            DBConnections.atualizarClienteAdmin(idUtilizador, tb_userName.Value, tb_firstName.Value, tb_lastName.Value, tb_phone.Value, novoNomeFoto, tb_email.Value, ddl_usertype.SelectedValue, Convert.ToBoolean((ddl_state.SelectedValue == "1") ? true : false));
-            devolveCliente();
         }
 
         protected void devolveCliente()
@@ -99,14 +114,14 @@ namespace ProjetoFinal.BackEnd.Admin.Customers
         {
             if (e.CommandName.Equals("btn_delete"))
             {
-                
+                eliminarMorada = true;
+                modal_body_text.Text = "Está prestes a eliminar uma morada, pertende continuar?";
+                modal_title_text.Text = "Eliminar Morada";
+                btn_eliminar.Text = "Eliminar";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalEliminaMorada();", true);
                 idMoradaSelecionado = ((LinkButton)e.Item.FindControl("btn_delete")).CommandArgument;
                 
                 preencheMorada();
-
-
-
             }
 
             if (e.CommandName.Equals("btn_edit"))
@@ -124,42 +139,13 @@ namespace ProjetoFinal.BackEnd.Admin.Customers
                 tb_zipCode.Text = m.zip;
                 tb_longitude.Value = m.lon;
                 tb_latitude.Value = m.lat;
+                cb_byDefault.Checked = m.def;
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
                 btn_adicionar.Text = "Save";
             }
         }
 
-        protected void tb_zipCode_TextChanged(object sender, EventArgs e)
-        {
-            Response.Write("Caraças");
-            string zipHTTP = tb_zipCode.Text.Replace("-", "");
-            string url = String.Format("http://codigospostais.appspot.com/cp7?codigo=" + zipHTTP);
-            WebRequest request = WebRequest.Create(url);
-            request.Method = "GET";
-            HttpWebResponse responseObject = null;
-            responseObject = (HttpWebResponse)request.GetResponse();
-
-            string resultTest = null;
-            using (Stream st = responseObject.GetResponseStream())
-            {
-                StreamReader sr = new StreamReader(st);
-                resultTest = sr.ReadToEnd();
-                sr.Close();
-            }
-
-            var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
-            zipCode objList = (zipCode)serializer.Deserialize(resultTest, typeof(zipCode));
-
-            string rua = objList.arteria;
-            string cidade = objList.localidade;
-            
-            tb_morada1.Text = rua;
-            tb_cidade1.Text = cidade;
-            tb_street.Value = rua;
-            tb_localidade.Value = cidade;
-
-
-        }
+      
 
         protected void btn_addAdress_Click(object sender, EventArgs e)
         {
@@ -171,24 +157,51 @@ namespace ProjetoFinal.BackEnd.Admin.Customers
 
         protected void btn_adicionar_Click(object sender, EventArgs e)
         {
-            if (addAdress == true)
+            if (addAdress==true || btn_adicionar.Text == "Add")
             {
-                
                 string retorno = DBConnections.insereMoradaClienteAdmin(idUtilizador, tb_city.Value, cb_byDefault.Checked, tb_zipCode.Text, tb_localidade.Value, tb_street.Value, tb_description.Value, tb_latitude.Value, tb_longitude.Value);
                 rp_moradas.DataBind();
+                limpaMorada();
             }
             else
             {
-                
+                string retorno = DBConnections.atualizaMoradaClienteAdmin(idUtilizador, idMoradaSelecionado, tb_city.Value, cb_byDefault.Checked, tb_zipCode.Text, tb_localidade.Value, tb_street.Value, tb_description.Value, tb_latitude.Value, tb_longitude.Value);
+                Response.Write(retorno);
+                rp_moradas.DataBind();
             }
+            
         }
 
         protected void btn_eliminar_Click(object sender, EventArgs e)
         {
+            addAdress = false;
+            if (eliminarMorada==true) { 
             DBConnections.eliminaMoradaClienteAdmin(idUtilizador, idMoradaSelecionado);
             idMoradaSelecionado = "";
             rp_moradas.DataBind();
             limpaMorada();
+            }
+            else
+            {
+                DBConnections.atualizarClienteAdmin(idUtilizador, tb_userName.Value, tb_firstName.Value, tb_lastName.Value, tb_phone.Value, novoNomeFoto, tb_email.Value, ddl_usertype.SelectedValue, Convert.ToBoolean((ddl_state.SelectedValue == "1") ? true : false));
+                devolveCliente();
+            }
+        }
+
+        protected void refresh_Click(object sender, EventArgs e)
+        {
+            addAdress = false;
+            Rootobject obj = apiGoogle.devolveServico(tb_zipCode.Text);
+             string latitude = obj.results[0].geometry.location.lat.ToString().Replace(",",".");
+             string longitude = obj.results[0].geometry.location.lng.ToString().Replace(",", ".");
+
+            RootobjectCoord objCoord = apiCoordGoogle.devolveServico(latitude, longitude);
+
+            tb_street.Value= objCoord.results[0].address_components[1].long_name.ToString();
+            tb_localidade.Value = objCoord.results[0].address_components[2].long_name.ToString();
+            tb_city.Value = objCoord.results[0].address_components[3].long_name.ToString();
+            tb_longitude.Value = latitude;
+            tb_latitude.Value = longitude;
         }
 
         protected void preencheMorada()
@@ -200,6 +213,7 @@ namespace ProjetoFinal.BackEnd.Admin.Customers
             tb_zipCode.Text = "0000-000";
             tb_longitude.Value = "...";
             tb_latitude.Value = "...";
+            cb_byDefault.Checked = true;
              
         }
 
@@ -212,7 +226,7 @@ namespace ProjetoFinal.BackEnd.Admin.Customers
             tb_zipCode.Text = "";
             tb_longitude.Value = "";
             tb_latitude.Value = "";
-
+            cb_byDefault.Checked = false;
         }
 
 
