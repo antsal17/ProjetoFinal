@@ -486,7 +486,7 @@
                                 <div class="ms-card-body">
                                     <p>
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vulputate urna in faucibus venenatis. Etiam at dapibus neque,
-                                        vel varius metus. Pellentesque eget orci malesuada, venenatis magna et
+                  vel varius metus. Pellentesque eget orci malesuada, venenatis magna et
                                     </p>
                                     <ul class="ms-note-members clearfix mb-0">
                                         <li class="ms-deletable">
